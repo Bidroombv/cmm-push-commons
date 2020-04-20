@@ -1,4 +1,4 @@
-package ota_model
+package otamodel
 
 type HotelBookingRuleNotifRQ struct {
 	OTAHotelBookingRuleNotifRQ OTAHotelBookingRuleNotifRQ `json:"OTA_HotelBookingRuleNotifRQ"`

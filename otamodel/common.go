@@ -1,4 +1,4 @@
-package ota_model
+package otamodel
 
 type RequestorID struct {
 	ID        string `json:"ID"`

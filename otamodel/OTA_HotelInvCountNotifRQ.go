@@ -1,4 +1,4 @@
-package ota_model
+package otamodel
 
 type HotelInvCountNotifRQ struct {
 	OTAHotelInvCountNotifRQ OTAHotelInvCountNotifRQ `json:"OTA_HotelInvCountNotifRQ"`
