@@ -2,7 +2,6 @@ package otamodel
 
 type HotelInvCountNotifRQ struct {
 	OTAHotelInvCountNotifRQ OTAHotelInvCountNotifRQ `json:"OTA_HotelInvCountNotifRQ"`
-	POS                     POS                     `json:"POS"`
 }
 type InvCount struct {
 	Count        string                 `json:"Count"`

@@ -2,7 +2,6 @@ package otamodel
 
 type HotelRateAmountNotifRQ struct {
 	OTAHotelRateAmountNotifRQ OTAHotelRateAmountNotifRQ `json:"OTA_HotelRateAmountNotifRQ"`
-	POS                       POS                       `json:"POS"`
 }
 
 type UniqueID struct {
