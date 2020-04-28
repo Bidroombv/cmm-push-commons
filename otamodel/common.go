@@ -5,9 +5,11 @@ type RequestorID struct {
 	IDContext string `json:"ID_Context"`
 	Type      string `json:"Type"`
 }
+
 type Source struct {
 	RequestorID RequestorID `json:"RequestorId"`
 }
+
 type POS struct {
 	Source Source `json:"source"`
 }
@@ -24,4 +26,94 @@ type StatusApplicationControl struct {
 	Fri          string `json:"Fri"`
 	Sat          string `json:"Sat"`
 	Sun          string `json:"Sun"`
+}
+
+type LengthOfStay struct {
+	MinMaxMessageType string `json:"MinMaxMessageType"`
+	Time              string `json:"Time"`
+}
+
+type LengthsOfStay struct {
+	LengthOfStay []LengthOfStay `json:"LengthOfStay"`
+}
+
+type AdditionalGuestAmount struct {
+	Amount            string `json:"Amount"`
+	DecimalPlaces     string `json:"DecimalPlaces"`
+	TaxInclusive      string `json:"TaxInclusive"`
+	AgeQualifyingCode string `json:"AgeQualifyingCode"`
+	CurrencyCode      string `json:"CurrencyCode"`
+}
+
+type AdditionalGuestAmounts struct {
+	AdditionalGuestAmount []AdditionalGuestAmount `json:"AdditionalGuestAmount"`
+}
+
+type Rates struct {
+	Rate []Rate `json:"Rate"`
+}
+
+type DOWRestrictions struct {
+	AvailableDaysOfWeek DaysOfWeek `json:"AvailableDaysOfWeek"`
+	ArrivalDaysOfWeek   DaysOfWeek `json:"ArrivalDaysOfWeek"`
+	DepartureDaysOfWeek DaysOfWeek `json:"DepartureDaysOfWeek"`
+}
+
+type BookingRule struct {
+	RestrictionStatus        []RestrictionStatus    `json:"RestrictionStatus"`
+	LengthsOfStay            LengthsOfStay          `json:"LengthsOfStay"`
+	Start                    string                 `json:"Start"`
+	End                      string                 `json:"End"`
+	OriginalData             map[string]interface{} `json:"original_data"`
+	DOWRestrictions          DOWRestrictions        `json:"DOWRestrictions"`
+	MinAdvancedBookingOffset string                 `json:"MinAdvancedBookingOffset,omitempty"`
+	MaxAdvancedBookingOffset string                 `json:"MaxAdvancedBookingOffset,omitempty"`
+}
+
+type Rate struct {
+	BaseByGuestAmts        BaseByGuestAmts        `json:"BaseByGuestAmts"`
+	OriginalData           map[string]interface{} `json:"original_data"`
+	AdditionalGuestAmounts AdditionalGuestAmounts `json:"AdditionalGuestAmounts"`
+	CancelPolicies         CancelPolicies         `json:"CancelPolicies,omitempty"`
+	MealsIncluded          MealsIncluded          `json:"MealsIncluded,omitempty"`
+	Fees                   Fees                   `json:"Fees"`
+	GuaranteePolicies      GuaranteePolicies      `json:"GuaranteePolicies"`
+	RateDescription        RateDescription        `json:"RateDescription"`
+	NumberOfUnits          string                 `json:"NumberOfUnits"`
+	Mon                    string                 `json:"Mon"`
+	Tue                    string                 `json:"Tue"`
+	Weds                   string                 `json:"Weds"`
+	Thur                   string                 `json:"Thur"`
+	Fri                    string                 `json:"Fri"`
+	Sat                    string                 `json:"Sat"`
+	Sun                    string                 `json:"Sun"`
+	Start                  string                 `json:"Start"`
+	End                    string                 `json:"End"`
+	InvTypeCode            string                 `json:"InvTypeCode,omitempty"`
+	MaxLOS                 string                 `json:"MaxLOS,omitempty"`
+	MinLOS                 string                 `json:"MinLOS,omitempty"`
+	RateTimeUnit           string                 `json:"RateTimeUnit,omitempty"`
+}
+
+type BaseByGuestAmt struct {
+	NumberOfGuests    string `json:"NumberOfGuests"`
+	AgeQualifyingCode string `json:"AgeQualifyingCode"`
+	AmountAfterTax    string `json:"AmountAfterTax"`
+	AmountBeforeTax   string `json:"AmountBeforeTax"`
+	DecimalPlaces     string `json:"DecimalPlaces"`
+	CurrencyCode      string `json:"CurrencyCode"`
+}
+
+type BaseByGuestAmts struct {
+	BaseByGuestAmt []BaseByGuestAmt `json:"BaseByGuestAmt"`
+}
+
+type BookingRules struct {
+	InventoryInfo InventoryInfo `json:"InventoryInfo"`
+	BookingRule   []BookingRule `json:"BookingRule"`
+}
+
+type RateDescription struct {
+	Text Text   `json:"Text"`
+	Name string `json:"Name"`
 }

@@ -9,30 +9,6 @@ type RestrictionStatus struct {
 	Status      string `json:"Status"`
 }
 
-type LengthOfStay struct {
-	MinMaxMessageType string `json:"MinMaxMessageType"`
-	Time              string `json:"Time"`
-}
-
-type LengthsOfStay struct {
-	LengthOfStay []LengthOfStay `json:"LengthOfStay"`
-}
-
-type BookingRule struct {
-	RestrictionStatus []RestrictionStatus    `json:"RestrictionStatus"`
-	LengthsOfStay     LengthsOfStay          `json:"LengthsOfStay"`
-	Start             string                 `json:"Start"`
-	End               string                 `json:"End"`
-	OriginalData      map[string]interface{} `json:"original_data"`
-	DOWRestrictions   DOWRestrictions        `json:"DOWRestrictions"`
-}
-
-type DOWRestrictions struct {
-	AvailableDaysOfWeek DaysOfWeek `json:"AvailableDaysOfWeek"`
-	ArrivalDaysOfWeek   DaysOfWeek `json:"ArrivalDaysOfWeek"`
-	DepartureDaysOfWeek DaysOfWeek `json:"DepartureDaysOfWeek"`
-}
-
 // DaysOfWeek model
 type DaysOfWeek struct {
 	Mon  string `json:"Mon"`
@@ -42,10 +18,6 @@ type DaysOfWeek struct {
 	Fri  string `json:"Fri"`
 	Sat  string `json:"Sat"`
 	Sun  string `json:"Sun"`
-}
-
-type BookingRules struct {
-	BookingRule []BookingRule `json:"BookingRule"`
 }
 
 type RuleMessage struct {
