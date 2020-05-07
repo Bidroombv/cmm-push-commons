@@ -59,13 +59,16 @@ type DOWRestrictions struct {
 	DepartureDaysOfWeek DaysOfWeek `json:"DepartureDaysOfWeek"`
 }
 
+// Guestline supports DOWRestrictions instead of DOW_Restrictions
+
 type BookingRule struct {
 	RestrictionStatus        []RestrictionStatus    `json:"RestrictionStatus"`
 	LengthsOfStay            LengthsOfStay          `json:"LengthsOfStay"`
 	Start                    string                 `json:"Start"`
 	End                      string                 `json:"End"`
 	OriginalData             map[string]interface{} `json:"original_data"`
-	DOWRestrictions          DOWRestrictions        `json:"DOWRestrictions"`
+	OldDOWRestrictions       DOWRestrictions        `json:"DOWRestrictions"`
+	DOWRestrictions          DOWRestrictions        `json:"DOW_Restrictions"`
 	MinAdvancedBookingOffset string                 `json:"MinAdvancedBookingOffset,omitempty"`
 	MaxAdvancedBookingOffset string                 `json:"MaxAdvancedBookingOffset,omitempty"`
 }
