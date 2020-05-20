@@ -10,10 +10,6 @@ type Source struct {
 	RequestorID RequestorID `json:"RequestorId"`
 }
 
-type POS struct {
-	Source Source `json:"source"`
-}
-
 type StatusApplicationControl struct {
 	InvTypeCode  string `json:"InvTypeCode"`
 	RatePlanCode string `json:"RatePlanCode"`

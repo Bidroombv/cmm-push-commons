@@ -26,7 +26,6 @@ type Inventories struct {
 }
 
 type OTAHotelInvCountNotifRQ struct {
-	POS           POS         `json:"POS"`
 	Inventories   Inventories `json:"Inventories"`
 	EchoToken     string      `json:"EchoToken"`
 	PrimaryLangID string      `json:"PrimaryLangID"`
