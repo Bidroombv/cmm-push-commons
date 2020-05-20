@@ -4,11 +4,6 @@ type HotelBookingRuleNotifRQ struct {
 	OTAHotelBookingRuleNotifRQ OTAHotelBookingRuleNotifRQ `json:"OTA_HotelBookingRuleNotifRQ"`
 }
 
-type RestrictionStatus struct {
-	Restriction string `json:"Restriction"`
-	Status      string `json:"Status"`
-}
-
 // DaysOfWeek model
 type DaysOfWeek struct {
 	Mon  string `json:"Mon"`

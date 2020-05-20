@@ -116,3 +116,8 @@ type RateDescription struct {
 	Text Text   `json:"Text"`
 	Name string `json:"Name"`
 }
+
+type RestrictionStatus struct {
+	Restriction string `json:"Restriction"`
+	Status      string `json:"Status"`
+}
