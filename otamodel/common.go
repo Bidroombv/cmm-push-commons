@@ -1,15 +1,5 @@
 package otamodel
 
-type RequestorID struct {
-	ID        string `json:"ID"`
-	IDContext string `json:"ID_Context"`
-	Type      string `json:"Type"`
-}
-
-type Source struct {
-	RequestorID RequestorID `json:"RequestorId"`
-}
-
 type StatusApplicationControl struct {
 	InvTypeCode  string `json:"InvTypeCode"`
 	RatePlanCode string `json:"RatePlanCode"`
