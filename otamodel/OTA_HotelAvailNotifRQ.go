@@ -19,8 +19,3 @@ type AvailStatusMessage struct {
 	RestrictionStatus        RestrictionStatus        `json:"RestrictionStatus,omitempty"`
 }
 
-//type RestrictionStatus struct {
-//	Restriction string `json:"_Restriction"`
-//	Status      string `json:"_Status"`
-//	MinAdvancedBookingOffset string `json:"_MinAdvancedBookingOffset"`
-//}

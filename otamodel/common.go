@@ -1,15 +1,5 @@
 package otamodel
 
-type RequestorID struct {
-	ID        string `json:"ID"`
-	IDContext string `json:"ID_Context"`
-	Type      string `json:"Type"`
-}
-
-type Source struct {
-	RequestorID RequestorID `json:"RequestorId"`
-}
-
 type StatusApplicationControl struct {
 	InvTypeCode  string `json:"InvTypeCode"`
 	RatePlanCode string `json:"RatePlanCode"`
@@ -27,6 +17,7 @@ type StatusApplicationControl struct {
 type LengthOfStay struct {
 	MinMaxMessageType string `json:"MinMaxMessageType"`
 	Time              string `json:"Time"`
+	TimeUnit          string `json:"TimeUnit,omitempty"`
 }
 
 type LengthsOfStay struct {
@@ -118,6 +109,7 @@ type RateDescription struct {
 }
 
 type RestrictionStatus struct {
-	Restriction string `json:"Restriction"`
-	Status      string `json:"Status"`
+	Restriction              string `json:"Restriction"`
+	Status                   string `json:"Status"`
+	MinAdvancedBookingOffset string `json:"MinAdvancedBookingOffset,omitempty"`
 }
