@@ -17,6 +17,7 @@ type StatusApplicationControl struct {
 type LengthOfStay struct {
 	MinMaxMessageType string `json:"MinMaxMessageType"`
 	Time              string `json:"Time"`
+	TimeUnit          string `json:"TimeUnit,omitempty"`
 }
 
 type LengthsOfStay struct {
@@ -105,4 +106,10 @@ type BookingRules struct {
 type RateDescription struct {
 	Text Text   `json:"Text"`
 	Name string `json:"Name"`
+}
+
+type RestrictionStatus struct {
+	Restriction              string `json:"Restriction"`
+	Status                   string `json:"Status"`
+	MinAdvancedBookingOffset string `json:"MinAdvancedBookingOffset,omitempty"`
 }
