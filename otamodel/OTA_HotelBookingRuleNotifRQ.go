@@ -36,6 +36,5 @@ type OTAHotelBookingRuleNotifRQ struct {
 	Target        string       `json:"Target"`
 	TimeStamp     string       `json:"TimeStamp"`
 	Version       string       `json:"Version"`
-	POS           POS          `json:"POS"`
 	RuleMessages  RuleMessages `json:"RuleMessages"`
 }

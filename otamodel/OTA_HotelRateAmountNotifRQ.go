@@ -46,7 +46,6 @@ type RateAmountMessages struct {
 }
 
 type OTAHotelRateAmountNotifRQ struct {
-	POS                POS                `json:"POS"`
 	UniqueID           UniqueID           `json:"UniqueID"`
 	RateAmountMessages RateAmountMessages `json:"RateAmountMessages"`
 	EchoToken          string             `json:"EchoToken"`
