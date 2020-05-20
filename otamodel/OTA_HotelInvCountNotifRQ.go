@@ -22,7 +22,7 @@ type Inventory struct {
 type Inventories struct {
 	Inventory []Inventory `json:"Inventory"`
 	HotelCode string      `json:"HotelCode"  valid:"required~Hotel code cannot be blank"`
-	HotelName string      `xml:"HotelName,attr" json:"HotelName,omitempty"`
+	HotelName string      `json:"HotelName,omitempty"`
 }
 
 type OTAHotelInvCountNotifRQ struct {
