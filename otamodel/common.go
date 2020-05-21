@@ -5,13 +5,13 @@ type StatusApplicationControl struct {
 	RatePlanCode string `json:"RatePlanCode"`
 	Start        string `json:"Start"`
 	End          string `json:"End"`
-	Mon          string `json:"Mon"`
-	Tue          string `json:"Tue"`
-	Weds         string `json:"Weds"`
-	Thur         string `json:"Thur"`
-	Fri          string `json:"Fri"`
-	Sat          string `json:"Sat"`
-	Sun          string `json:"Sun"`
+	Mon          string `json:"Mon,omitempty"`
+	Tue          string `json:"Tue,omitempty"`
+	Weds         string `json:"Weds,omitempty"`
+	Thur         string `json:"Thur,omitempty"`
+	Fri          string `json:"Fri,omitempty"`
+	Sat          string `json:"Sat,omitempty"`
+	Sun          string `json:"Sun,omitempty"`
 }
 
 type LengthOfStay struct {
