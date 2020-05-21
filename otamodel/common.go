@@ -112,4 +112,5 @@ type RestrictionStatus struct {
 	Restriction              string `json:"Restriction"`
 	Status                   string `json:"Status"`
 	MinAdvancedBookingOffset string `json:"MinAdvancedBookingOffset,omitempty"`
+	MaxAdvancedBookingOffset string `json:"MaxAdvancedBookingOffset,omitempty"`
 }
