@@ -17,5 +17,5 @@ type AvailStatusMessage struct {
 	StatusApplicationControl StatusApplicationControl `json:"StatusApplicationControl"`
 	LengthsOfStay            LengthsOfStay            `json:"LengthsOfStay,omitempty"`
 	RestrictionStatus        RestrictionStatus        `json:"RestrictionStatus,omitempty"`
+	OriginalData             map[string]interface{}   `json:"original_data,omitempty"`
 }
-
