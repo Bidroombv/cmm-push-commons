@@ -21,7 +21,7 @@ type LengthOfStay struct {
 }
 
 type LengthsOfStay struct {
-	LengthOfStay []LengthOfStay `json:"LengthOfStay"`
+	LengthOfStay []LengthOfStay `json:"LengthOfStay,omitempty"`
 }
 
 type AdditionalGuestAmount struct {
@@ -109,8 +109,8 @@ type RateDescription struct {
 }
 
 type RestrictionStatus struct {
-	Restriction              string `json:"Restriction"`
-	Status                   string `json:"Status"`
+	Restriction              string `json:"Restriction,omitempty"`
+	Status                   string `json:"Status,omitempty"`
 	MinAdvancedBookingOffset string `json:"MinAdvancedBookingOffset,omitempty"`
 	MaxAdvancedBookingOffset string `json:"MaxAdvancedBookingOffset,omitempty"`
 }
