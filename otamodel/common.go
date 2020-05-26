@@ -26,8 +26,8 @@ type LengthsOfStay struct {
 
 type AdditionalGuestAmount struct {
 	Amount            string `json:"Amount"`
-	DecimalPlaces     string `json:"DecimalPlaces"`
-	TaxInclusive      string `json:"TaxInclusive"`
+	DecimalPlaces     string `json:"DecimalPlaces,omitempty"`
+	TaxInclusive      string `json:"TaxInclusive,omitempty"`
 	AgeQualifyingCode string `json:"AgeQualifyingCode"`
 	CurrencyCode      string `json:"CurrencyCode"`
 }
@@ -70,13 +70,13 @@ type Rate struct {
 	GuaranteePolicies      GuaranteePolicies      `json:"GuaranteePolicies"`
 	RateDescription        RateDescription        `json:"RateDescription"`
 	NumberOfUnits          string                 `json:"NumberOfUnits"`
-	Mon                    string                 `json:"Mon"`
-	Tue                    string                 `json:"Tue"`
-	Weds                   string                 `json:"Weds"`
-	Thur                   string                 `json:"Thur"`
-	Fri                    string                 `json:"Fri"`
-	Sat                    string                 `json:"Sat"`
-	Sun                    string                 `json:"Sun"`
+	Mon                    string                 `json:"Mon,omitempty"`
+	Tue                    string                 `json:"Tue,omitempty"`
+	Weds                   string                 `json:"Weds,omitempty"`
+	Thur                   string                 `json:"Thur,omitempty"`
+	Fri                    string                 `json:"Fri,omitempty"`
+	Sat                    string                 `json:"Sat,omitempty"`
+	Sun                    string                 `json:"Sun,omitempty"`
 	Start                  string                 `json:"Start"`
 	End                    string                 `json:"End"`
 	InvTypeCode            string                 `json:"InvTypeCode,omitempty"`
