@@ -64,12 +64,12 @@ type Rate struct {
 	BaseByGuestAmts        BaseByGuestAmts        `json:"BaseByGuestAmts"`
 	OriginalData           map[string]interface{} `json:"original_data"`
 	AdditionalGuestAmounts AdditionalGuestAmounts `json:"AdditionalGuestAmounts"`
-	CancelPolicies         CancelPolicies         `json:"CancelPolicies,omitempty"`
-	MealsIncluded          MealsIncluded          `json:"MealsIncluded,omitempty"`
-	Fees                   Fees                   `json:"Fees"`
-	GuaranteePolicies      GuaranteePolicies      `json:"GuaranteePolicies"`
-	RateDescription        RateDescription        `json:"RateDescription"`
-	NumberOfUnits          string                 `json:"NumberOfUnits"`
+	CancelPolicies         *CancelPolicies        `json:"CancelPolicies,omitempty"`
+	MealsIncluded          *MealsIncluded         `json:"MealsIncluded,omitempty"`
+	Fees                   *Fees                  `json:"Fees"`
+	GuaranteePolicies      *GuaranteePolicies     `json:"GuaranteePolicies"`
+	RateDescription        *RateDescription       `json:"RateDescription"`
+	NumberOfUnits          string                 `json:"NumberOfUnits,omitempty"`
 	Mon                    string                 `json:"Mon,omitempty"`
 	Tue                    string                 `json:"Tue,omitempty"`
 	Weds                   string                 `json:"Weds,omitempty"`
@@ -89,8 +89,8 @@ type BaseByGuestAmt struct {
 	NumberOfGuests    string `json:"NumberOfGuests"`
 	AgeQualifyingCode string `json:"AgeQualifyingCode"`
 	AmountAfterTax    string `json:"AmountAfterTax"`
-	AmountBeforeTax   string `json:"AmountBeforeTax"`
-	DecimalPlaces     string `json:"DecimalPlaces"`
+	AmountBeforeTax   string `json:"AmountBeforeTax,omitempty"`
+	DecimalPlaces     string `json:"DecimalPlaces,omitempty"`
 	CurrencyCode      string `json:"CurrencyCode"`
 }
 
