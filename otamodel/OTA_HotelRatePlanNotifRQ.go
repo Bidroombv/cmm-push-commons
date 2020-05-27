@@ -40,17 +40,17 @@ type Description struct {
 }
 
 type RatePlan struct {
-	OriginalData     string           `json:"original_data,omitempty"`
-	RatePlanID       string           `json:"RatePlanID,omitempty"`
-	BookingRules     BookingRules     `json:"BookingRules,omitempty"`
-	Rates            Rates            `json:"Rates"`
-	SellableProducts SellableProducts `json:"SellableProducts,omitempty"`
-	Description      []Description    `json:"Description,omitempty"`
+	OriginalData     string            `json:"original_data,omitempty"`
+	RatePlanID       string            `json:"RatePlanID,omitempty"`
+	BookingRules     *BookingRules     `json:"BookingRules,omitempty"`
+	Rates            Rates             `json:"Rates"`
+	SellableProducts *SellableProducts `json:"SellableProducts,omitempty"`
+	Description      []Description     `json:"Description,omitempty"`
 }
 
 type RatePlans struct {
 	HotelCode string     `json:"HotelCode"`
-	HotelName string     `json:"HotelName"`
+	HotelName string     `json:"HotelName,omitempty"`
 	RatePlan  []RatePlan `json:"RatePlan"`
 }
 
