@@ -66,9 +66,9 @@ type Rate struct {
 	AdditionalGuestAmounts AdditionalGuestAmounts `json:"AdditionalGuestAmounts"`
 	CancelPolicies         *CancelPolicies        `json:"CancelPolicies,omitempty"`
 	MealsIncluded          *MealsIncluded         `json:"MealsIncluded,omitempty"`
-	Fees                   *Fees                  `json:"Fees"`
-	GuaranteePolicies      *GuaranteePolicies     `json:"GuaranteePolicies"`
-	RateDescription        *RateDescription       `json:"RateDescription"`
+	Fees                   *Fees                  `json:"Fees,omitempty"`
+	GuaranteePolicies      *GuaranteePolicies     `json:"GuaranteePolicies,omitempty"`
+	RateDescription        *RateDescription       `json:"RateDescription,omitempty"`
 	NumberOfUnits          string                 `json:"NumberOfUnits,omitempty"`
 	Mon                    string                 `json:"Mon,omitempty"`
 	Tue                    string                 `json:"Tue,omitempty"`
