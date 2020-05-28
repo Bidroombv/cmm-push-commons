@@ -7,7 +7,7 @@ type HotelInvCountNotifRQ struct {
 type InvCount struct {
 	Count        string                 `json:"Count"`
 	CountType    string                 `json:"CountType"`
-	OriginalData map[string]interface{} `json:"original_data"`
+	OriginalData map[string]interface{} `json:"original_data,omitempty"`
 }
 
 type InvCounts struct {
@@ -26,10 +26,5 @@ type Inventories struct {
 }
 
 type OTAHotelInvCountNotifRQ struct {
-	Inventories   Inventories `json:"Inventories"`
-	EchoToken     string      `json:"EchoToken"`
-	PrimaryLangID string      `json:"PrimaryLangID"`
-	Target        string      `json:"Target"`
-	TimeStamp     string      `json:"TimeStamp"`
-	Version       string      `json:"Version"`
+	Inventories Inventories `json:"Inventories"`
 }
