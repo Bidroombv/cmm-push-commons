@@ -114,3 +114,72 @@ type RestrictionStatus struct {
 	MinAdvancedBookingOffset string `json:"MinAdvancedBookingOffset,omitempty"`
 	MaxAdvancedBookingOffset string `json:"MaxAdvancedBookingOffset,omitempty"`
 }
+
+type Contact struct {
+	Address *[]Address `xml:"Address,omitempty" valid:"required"`
+}
+
+type Address struct {
+	AddressLine *[]string `xml:"AddressLine"`
+}
+
+type RoomTypes struct {
+	Text     string      `xml:",chardata"`
+	RoomType *[]RoomType `xml:"RoomType,omitempty" valid:"required"`
+}
+
+type RoomType struct {
+	Text         string       `xml:",chardata"`
+	RoomTypeCode string       `xml:"RoomTypeCode,attr"`
+	RoomTypeName string       `xml:"RoomTypeName,attr"`
+	MaxOccupancy string       `xml:"MaxOccupancy,attr"`
+	Descriptons  []Descripton `xml:"Descriptons"`
+}
+
+type Descriptons struct {
+	Descripton *[]Descripton `xml:"Descripton,omitempty" valid:"required"`
+}
+
+type Descripton struct {
+	Image string `xml:"Image,omitempty" valid:"required"`
+	URL   string `xml:"URL,omitempty" valid:"required"`
+	Text  string `xml:"Text,omitempty" valid:"required"`
+}
+
+type RatePlans struct {
+	RatePlan *[]RatePlan `xml:"RatePlan,omitempty" valid:"required"`
+}
+
+type RatePlan struct {
+	RatePlanCode  string          `xml:"RatePlanCode,attr,omitempty" valid:"required"`
+	RatePlanName  string          `xml:"RatePlanName,attr,omitempty" valid:"required"`
+	RatePlanType  string          `xml:"RatePlanType,attr,omitempty" valid:"required"`
+	CurrencyCode  string          `xml:"CurrencyCode,attr,omitempty" valid:"required"`
+	BaseOccupancy string          `xml:"BaseOccupancy,attr,omitempty" valid:"required"`
+	Descriptons   Descriptons     `xml:"Descriptons,omitempty" valid:"required"`
+	StayDateRange []StayDateRange `xml:"StayDateRange,omitempty" valid:"required"`
+}
+
+type StayDateRange struct {
+	Duration string `xml:"Duration,attr,omitempty" valid:"required"`
+	Start    string `xml:"Start,attr,omitempty" valid:"required"`
+	End      string `xml:"End,attr,omitempty" valid:"required"`
+}
+
+type Taxes struct {
+	Tax *[]Tax `xml:"Tax,omitempty" valid:"required"`
+}
+
+type Tax struct {
+	ChargeFrequency           string `xml:"ChargeFrequency,attr"`
+	ChargeFrequencyExempt     string `xml:"ChargeFrequencyExempt,attr"`
+	ChargeUnit                string `xml:"ChargeUnit,attr"`
+	ChargeUnitExempt          string `xml:"ChargeUnitExempt,attr"`
+	MaxChargeFrequencyApplies string `xml:"MaxChargeFrequencyApplies,attr"`
+	MaxChargeUnitApplies      string `xml:"MaxChargeUnitApplies,attr"`
+	Amount                    string `xml:"Amount,attr"`
+	CurrencyCode              string `xml:"CurrencyCode,attr"`
+	DecimalPlaces             string `xml:"DecimalPlaces,attr"`
+	Percent                   string `xml:"Percent,attr"`
+	Type                      string `xml:"Type,attr"`
+}
