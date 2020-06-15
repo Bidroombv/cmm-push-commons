@@ -14,9 +14,9 @@ type OTAHotelProductNotifRQ struct {
 }
 
 type HotelProducts struct {
-	HotelCode    string       `xml:"HotelCode,attr,omitempty" valid:"required" json:"HotelCode,omitempty"`
-	HotelName    string       `xml:"HotelName,attr,omitempty" valid:"required" json:"HotelName,omitempty"`
-	HotelProduct HotelProduct `xml:"HotelProduct,omitempty" valid:"required" json:"HotelProduct,omitempty"`
+	HotelCode    string          `xml:"HotelCode,attr,omitempty" valid:"required" json:"HotelCode,omitempty"`
+	HotelName    string          `xml:"HotelName,attr,omitempty" valid:"required" json:"HotelName,omitempty"`
+	HotelProduct *[]HotelProduct `xml:"HotelProduct,omitempty" valid:"required" json:"HotelProduct,omitempty"`
 }
 
 type HotelProduct struct {
