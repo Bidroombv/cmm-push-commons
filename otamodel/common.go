@@ -116,70 +116,54 @@ type RestrictionStatus struct {
 }
 
 type Contact struct {
-	Address *[]Address `xml:"Address,omitempty" valid:"required"`
+	Address *[]Address `xml:"Address,omitempty" valid:"required" json:"Address,omitempty"`
 }
 
 type Address struct {
-	AddressLine *[]string `xml:"AddressLine"`
+	AddressLine *[]string `xml:"AddressLine" json:"AddressLine"`
 }
 
 type RoomTypes struct {
-	Text     string      `xml:",chardata"`
-	RoomType *[]RoomType `xml:"RoomType,omitempty" valid:"required"`
+	RoomType *[]RoomType `xml:"RoomType,omitempty" valid:"required" json:"RoomType,omitempty"`
 }
 
 type RoomType struct {
-	Text         string       `xml:",chardata"`
-	RoomTypeCode string       `xml:"RoomTypeCode,attr"`
-	RoomTypeName string       `xml:"RoomTypeName,attr"`
-	MaxOccupancy string       `xml:"MaxOccupancy,attr"`
-	Descriptons  []Descripton `xml:"Descriptons"`
+	RoomTypeCode string               `xml:"RoomTypeCode,attr" json:"RoomTypeCode"`
+	RoomTypeName string               `xml:"RoomTypeName,attr" json:"RoomTypeName"`
+	MaxOccupancy string               `xml:"MaxOccupancy,attr" json:"MaxOccupancy"`
+	Descriptions []ProductDescription `xml:"Descriptions" json:"Descriptions"`
 }
 
-type Descriptons struct {
-	Descripton *[]Descripton `xml:"Descripton,omitempty" valid:"required"`
+type Descriptions struct {
+	Description *[]ProductDescription `xml:"Description,omitempty" valid:"required" json:"Description,omitempty"`
 }
 
-type Descripton struct {
-	Image string `xml:"Image,omitempty" valid:"required"`
-	URL   string `xml:"URL,omitempty" valid:"required"`
-	Text  string `xml:"Text,omitempty" valid:"required"`
-}
-
-type RatePlans struct {
-	RatePlan *[]RatePlan `xml:"RatePlan,omitempty" valid:"required"`
-}
-
-type RatePlan struct {
-	RatePlanCode  string          `xml:"RatePlanCode,attr,omitempty" valid:"required"`
-	RatePlanName  string          `xml:"RatePlanName,attr,omitempty" valid:"required"`
-	RatePlanType  string          `xml:"RatePlanType,attr,omitempty" valid:"required"`
-	CurrencyCode  string          `xml:"CurrencyCode,attr,omitempty" valid:"required"`
-	BaseOccupancy string          `xml:"BaseOccupancy,attr,omitempty" valid:"required"`
-	Descriptons   Descriptons     `xml:"Descriptons,omitempty" valid:"required"`
-	StayDateRange []StayDateRange `xml:"StayDateRange,omitempty" valid:"required"`
+type ProductDescription struct {
+	Image string `xml:"Image,omitempty" valid:"required" json:"Image,omitempty"`
+	URL   string `xml:"URL,omitempty" valid:"required" json:"URL,omitempty"`
+	Text  string `xml:"Text,omitempty" valid:"required" json:"Text,omitempty"`
 }
 
 type StayDateRange struct {
-	Duration string `xml:"Duration,attr,omitempty" valid:"required"`
-	Start    string `xml:"Start,attr,omitempty" valid:"required"`
-	End      string `xml:"End,attr,omitempty" valid:"required"`
+	Duration string `xml:"Duration,attr,omitempty" valid:"required" json:"Duration,omitempty"`
+	Start    string `xml:"Start,attr,omitempty" valid:"required" json:"Start,omitempty"`
+	End      string `xml:"End,attr,omitempty" valid:"required" json:"End,omitempty"`
 }
 
 type Taxes struct {
-	Tax *[]Tax `xml:"Tax,omitempty" valid:"required"`
+	Tax *[]Tax `xml:"Tax,omitempty" valid:"required" json:"Tax,omitempty"`
 }
 
 type Tax struct {
-	ChargeFrequency           string `xml:"ChargeFrequency,attr"`
-	ChargeFrequencyExempt     string `xml:"ChargeFrequencyExempt,attr"`
-	ChargeUnit                string `xml:"ChargeUnit,attr"`
-	ChargeUnitExempt          string `xml:"ChargeUnitExempt,attr"`
-	MaxChargeFrequencyApplies string `xml:"MaxChargeFrequencyApplies,attr"`
-	MaxChargeUnitApplies      string `xml:"MaxChargeUnitApplies,attr"`
-	Amount                    string `xml:"Amount,attr"`
-	CurrencyCode              string `xml:"CurrencyCode,attr"`
-	DecimalPlaces             string `xml:"DecimalPlaces,attr"`
-	Percent                   string `xml:"Percent,attr"`
-	Type                      string `xml:"Type,attr"`
+	ChargeFrequency           string `xml:"ChargeFrequency,attr" json:"ChargeFrequency"`
+	ChargeFrequencyExempt     string `xml:"ChargeFrequencyExempt,attr" json:"ChargeFrequencyExempt"`
+	ChargeUnit                string `xml:"ChargeUnit,attr" json:"ChargeUnit"`
+	ChargeUnitExempt          string `xml:"ChargeUnitExempt,attr" json:"ChargeUnitExempt"`
+	MaxChargeFrequencyApplies string `xml:"MaxChargeFrequencyApplies,attr" json:"MaxChargeFrequencyApplies"`
+	MaxChargeUnitApplies      string `xml:"MaxChargeUnitApplies,attr" json:"MaxChargeUnitApplies"`
+	Amount                    string `xml:"Amount,attr" json:"Amount"`
+	CurrencyCode              string `xml:"CurrencyCode,attr" json:"CurrencyCode"`
+	DecimalPlaces             string `xml:"DecimalPlaces,attr" json:"DecimalPlaces"`
+	Percent                   string `xml:"Percent,attr" json:"Percent"`
+	Type                      string `xml:"Type,attr" json:"Type"`
 }
