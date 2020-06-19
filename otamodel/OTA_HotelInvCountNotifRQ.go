@@ -26,5 +26,6 @@ type Inventories struct {
 }
 
 type OTAHotelInvCountNotifRQ struct {
+	EchoToken   string      `json:"EchoToken"`
 	Inventories Inventories `json:"Inventories"`
 }
