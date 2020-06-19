@@ -53,16 +53,16 @@ type BookingRule struct {
 	LengthsOfStay            LengthsOfStay          `json:"LengthsOfStay"`
 	Start                    string                 `json:"Start"`
 	End                      string                 `json:"End"`
-	OriginalData             map[string]interface{} `json:"original_data"`
-	OldDOWRestrictions       DOWRestrictions        `json:"DOWRestrictions"`
-	DOWRestrictions          DOWRestrictions        `json:"DOW_Restrictions"`
+	OriginalData             map[string]interface{} `json:"original_data,omitempty"`
+	OldDOWRestrictions       *DOWRestrictions       `json:"DOWRestrictions,omitempty"`
+	DOWRestrictions          *DOWRestrictions       `json:"DOW_Restrictions,omitempty"`
 	MinAdvancedBookingOffset string                 `json:"MinAdvancedBookingOffset,omitempty"`
 	MaxAdvancedBookingOffset string                 `json:"MaxAdvancedBookingOffset,omitempty"`
 }
 
 type Rate struct {
 	BaseByGuestAmts        BaseByGuestAmts        `json:"BaseByGuestAmts"`
-	OriginalData           map[string]interface{} `json:"original_data"`
+	OriginalData           map[string]interface{} `json:"original_data,omitempty"`
 	AdditionalGuestAmounts AdditionalGuestAmounts `json:"AdditionalGuestAmounts"`
 	CancelPolicies         *CancelPolicies        `json:"CancelPolicies,omitempty"`
 	MealsIncluded          *MealsIncluded         `json:"MealsIncluded,omitempty"`
