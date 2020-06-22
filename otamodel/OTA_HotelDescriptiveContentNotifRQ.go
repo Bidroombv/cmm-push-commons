@@ -11,7 +11,7 @@ type OTAHotelDescriptiveContentNotifRQ struct {
 }
 
 type HotelDescriptiveContents struct {
-	HotelDescriptiveContent HotelDescriptiveContent `json:"HotelDescriptiveContent"`
+	HotelDescriptiveContent []HotelDescriptiveContent `json:"HotelDescriptiveContent"`
 }
 
 type HotelDescriptiveContent struct {
