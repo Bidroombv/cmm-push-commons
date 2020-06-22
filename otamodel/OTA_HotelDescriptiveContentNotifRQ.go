@@ -1,12 +1,12 @@
 package otamodel
 
 type OTAHotelDescriptiveContentNotifRQ struct {
-	PrimaryLangID            string                   `json:"PrimaryLangID,attr"`
-	EchoToken                string                   `json:"EchoToken,attr"`
-	TimeStamp                string                   `json:"TimeStamp,attr"`
-	CorrelationID            string                   `json:"CorrelationID,attr"`
-	Version                  string                   `json:"Version,attr"`
-	Target                   string                   `json:"Target,attr"`
+	PrimaryLangID            string                   `json:"PrimaryLangID"`
+	EchoToken                string                   `json:"EchoToken"`
+	TimeStamp                string                   `json:"TimeStamp"`
+	CorrelationID            string                   `json:"CorrelationID"`
+	Version                  string                   `json:"Version"`
+	Target                   string                   `json:"Target"`
 	HotelDescriptiveContents HotelDescriptiveContents `json:"HotelDescriptiveContents"`
 }
 
@@ -15,9 +15,9 @@ type HotelDescriptiveContents struct {
 }
 
 type HotelDescriptiveContent struct {
-	HotelName              string                 `json:"HotelName,attr"`
-	HotelCode              string                 `json:"HotelCode,attr"`
-	LanguageCode           string                 `json:"LanguageCode,attr"`
+	HotelName              string                 `json:"HotelName"`
+	HotelCode              string                 `json:"HotelCode"`
+	LanguageCode           string                 `json:"LanguageCode"`
 	ContactInfos           ContactInfos           `json:"ContactInfos"`
 	HotelInfo              HotelInfo              `json:"HotelInfo"`
 	FacilityInfo           FacilityInfo           `json:"FacilityInfo"`
@@ -45,12 +45,12 @@ type CategoryCodes struct {
 }
 
 type GuestRoomInfo struct {
-	Quantity string `json:"Quantity,attr"`
+	Quantity string `json:"Quantity"`
 }
 
 type HotelCategory struct {
-	Code       string `json:"Code,attr"`
-	ExistsCode string `json:"ExistsCode,attr"`
+	Code       string `json:"Code"`
+	ExistsCode string `json:"ExistsCode"`
 }
 
 type Languages struct {
@@ -58,12 +58,12 @@ type Languages struct {
 }
 
 type Language struct {
-	LanguageCode string `json:"LanguageCode,attr"`
+	LanguageCode string `json:"LanguageCode"`
 }
 
 type Position struct {
-	Latitude  string `json:"Latitude,attr"`
-	Longitude string `json:"Longitude,attr"`
+	Latitude  string `json:"Latitude"`
+	Longitude string `json:"Longitude"`
 }
 
 type Services struct {
@@ -71,13 +71,13 @@ type Services struct {
 }
 
 type Service struct {
-	Code           string         `json:"Code,attr"`
-	Included       string         `json:"Included,attr,omitempty"`
-	Price          string         `json:"Price,attr,omitempty"`
-	CurrencyCode   string         `json:"CurrencyCode,attr,omitempty"`
-	ExistsCode     string         `json:"ExistsCode,attr,omitempty"`
-	Quantity       string         `json:"Quantity,attr,omitempty"`
-	OperationTimes OperationTimes `json:"OperationTimes,attr,omitempty"`
+	Code           string         `json:"Code"`
+	Included       string         `json:"Included,omitempty"`
+	Price          string         `json:"Price,omitempty"`
+	CurrencyCode   string         `json:"CurrencyCode,omitempty"`
+	ExistsCode     string         `json:"ExistsCode,omitempty"`
+	Quantity       string         `json:"Quantity,omitempty"`
+	OperationTimes OperationTimes `json:"OperationTimes,omitempty"`
 	Features       Features       `json:"Features,omitempty"`
 }
 
@@ -90,13 +90,13 @@ type Features struct {
 }
 
 type Feature struct {
-	ID              string `json:"ID,attr,omitempty"`
+	ID              string `json:"ID,omitempty"`
 	DescriptiveText string `json:"DescriptiveText,omitempty"`
 	Charge          Charge `json:"Charge"`
 }
 
 type Charge struct {
-	Amount string `json:"Amount,attr"`
+	Amount string `json:"Amount"`
 }
 
 type OwnershipManagementInfos struct {
@@ -108,7 +108,7 @@ type OwnershipManagementInfo struct {
 }
 
 type CompanyName struct {
-	Code string `json:"Code,attr"`
+	Code string `json:"Code"`
 }
 
 type FacilityInfo struct {
@@ -120,19 +120,19 @@ type GuestRooms struct {
 }
 
 type GuestRoom struct {
-	MaxAdultOccupancy string    `json:"MaxAdultOccupancy,attr"`
-	MaxChildOccupancy string    `json:"MaxChildOccupancy,attr"`
-	MaxOccupancy      string    `json:"MaxOccupancy,attr"`
-	MinOccupancy      string    `json:"MinOccupancy,attr"`
-	RoomTypeName      string    `json:"RoomTypeName,attr"`
+	MaxAdultOccupancy string    `json:"MaxAdultOccupancy"`
+	MaxChildOccupancy string    `json:"MaxChildOccupancy"`
+	MaxOccupancy      string    `json:"MaxOccupancy"`
+	MinOccupancy      string    `json:"MinOccupancy"`
+	RoomTypeName      string    `json:"RoomTypeName"`
 	TypeRoom          TypeRoom  `json:"TypeRoom"`
 	Amenities         Amenities `json:"Amenities"`
 }
 
 type TypeRoom struct {
-	BedTypeCode  string `json:"BedTypeCode,attr"`
-	RoomTypeCode string `json:"RoomTypeCode,attr"`
-	NonSmoking   string `json:"NonSmoking,attr"`
+	BedTypeCode  string `json:"BedTypeCode"`
+	RoomTypeCode string `json:"RoomTypeCode"`
+	NonSmoking   string `json:"NonSmoking"`
 }
 
 type Amenities struct {
@@ -140,8 +140,8 @@ type Amenities struct {
 }
 
 type Amenity struct {
-	RoomAmenityCode string `json:"RoomAmenityCode,attr"`
-	Quantity        string `json:"Quantity,attr"`
+	RoomAmenityCode string `json:"RoomAmenityCode"`
+	Quantity        string `json:"Quantity"`
 }
 
 type Restaurants struct {
@@ -149,9 +149,9 @@ type Restaurants struct {
 }
 
 type Restaurant struct {
-	RestaurantName     string             `json:"RestaurantName,attr"`
-	OfferBreakfast     string             `json:"OfferBreakfast,attr"`
-	OfferDinner        string             `json:"OfferDinner,attr"`
+	RestaurantName     string             `json:"RestaurantName"`
+	OfferBreakfast     string             `json:"OfferBreakfast"`
+	OfferDinner        string             `json:"OfferDinner"`
 	CuisineCodes       CuisineCodes       `json:"CuisineCodes"`
 	OperationSchedules OperationSchedules `json:"OperationSchedules"`
 	Features           Features           `json:"Features"`
@@ -162,7 +162,7 @@ type CuisineCodes struct {
 }
 
 type CuisineCode struct {
-	Code string `xml:"Code,attr"`
+	Code string `xml:"Code"`
 }
 
 type OperationSchedules struct {
@@ -182,11 +182,11 @@ type Attractions struct {
 }
 
 type Attraction struct {
-	AttractionName         string `json:"AttractionName,attr"`
-	AttractionCategoryCode string `json:"AttractionCategoryCode,attr"`
-	Distance               string `json:"Distance,attr"`
-	DistanceUnit           string `json:"DistanceUnit,attr,omitempty"`
-	LanguageCode           string `json:"LanguageCode,attr,omitempty"`
+	AttractionName         string `json:"AttractionName"`
+	AttractionCategoryCode string `json:"AttractionCategoryCode"`
+	Distance               string `json:"Distance"`
+	DistanceUnit           string `json:"DistanceUnit,omitempty"`
+	LanguageCode           string `json:"LanguageCode,omitempty"`
 }
 
 type Policies struct {
@@ -202,17 +202,17 @@ type Policy struct {
 }
 
 type PolicyInfo struct {
-	CheckInTime  string `json:"CheckInTime,attr"`
-	CheckOutTime string `json:"CheckOutTime,attr"`
+	CheckInTime  string `json:"CheckInTime"`
+	CheckOutTime string `json:"CheckOutTime"`
 }
 
 type PetsPolicies struct {
-	PetsAllowedCode string       `json:"PetsAllowedCode,attr"`
+	PetsAllowedCode string       `json:"PetsAllowedCode"`
 	PetsPolicy      []PetsPolicy `json:"PetsPolicy"`
 }
 
 type PetsPolicy struct {
-	NonRefundableFee string `json:"NonRefundableFee,attr"`
+	NonRefundableFee string `json:"NonRefundableFee"`
 }
 
 type TaxPolicies struct {
@@ -220,11 +220,11 @@ type TaxPolicies struct {
 }
 
 type TaxPolicy struct {
-	Code            string `json:"Code,attr"`
-	Percent         string `json:"Percent,attr"`
-	Type            string `json:"Type,attr"`
-	Amount          string `json:"Amount,attr"`
-	ChargeFrequency string `json:"ChargeFrequency,attr"`
+	Code            string `json:"Code"`
+	Percent         string `json:"Percent"`
+	Type            string `json:"Type"`
+	Amount          string `json:"Amount"`
+	ChargeFrequency string `json:"ChargeFrequency"`
 }
 
 type FeePolicies struct {
@@ -232,10 +232,10 @@ type FeePolicies struct {
 }
 
 type FeePolicy struct {
-	Code            string `json:"Code,attr"`
-	Amount          string `json:"Amount,attr"`
-	Type            string `json:"Type,attr"`
-	ChargeFrequency string `json:"ChargeFrequency,attr"`
+	Code            string `json:"Code"`
+	Amount          string `json:"Amount"`
+	Type            string `json:"Type"`
+	ChargeFrequency string `json:"ChargeFrequency"`
 }
 
 type AffiliationInfo struct {
@@ -247,8 +247,8 @@ type Awards struct {
 }
 
 type Award struct {
-	Provider string `json:"Provider,attr"`
-	Rating   string `json:"Rating,attr"`
+	Provider string `json:"Provider"`
+	Rating   string `json:"Rating"`
 }
 
 type MultimediaDescriptions struct {
@@ -268,13 +268,13 @@ type ImageItem struct {
 }
 
 type ImageFormat struct {
-	Main string `json:"Main,attr,omitempty"`
-	Sort string `json:"Sort,attr,omitempty"`
+	Main string `json:"Main,omitempty"`
+	Sort string `json:"Sort,omitempty"`
 	URL  string `json:"URL"`
 }
 
 type ContactInfo struct {
-	ContactProfileType string    `json:"ContactProfileType,attr"`
+	ContactProfileType string    `json:"ContactProfileType"`
 	Addresses          Addresses `json:"Addresses"`
 	Names              Names     `json:"Names,omitempty"`
 	Emails             Emails    `json:"Emails,omitempty"`
@@ -286,7 +286,7 @@ type Addresses struct {
 }
 
 type Address struct {
-	Language    string    `json:"Language,attr,omitempty"`
+	Language    string    `json:"Language,omitempty"`
 	AddressLine string    `json:"AddressLine"`
 	CityName    string    `json:"CityName"`
 	PostalCode  string    `json:"PostalCode"`
@@ -296,7 +296,7 @@ type Address struct {
 }
 
 type StateProv struct {
-	StateCode string `json:"StateCode,attr"`
+	StateCode string `json:"StateCode"`
 }
 
 type Names struct {
@@ -304,8 +304,8 @@ type Names struct {
 }
 
 type Name struct {
-	Gender    string `json:"Gender,attr"`
-	Language  string `json:"Language,attr"`
+	Gender    string `json:"Gender"`
+	Language  string `json:"Language"`
 	GivenName string `json:"GivenName"`
 	Surname   string `json:"Surname"`
 	JobTitle  string `json:"JobTitle"`
@@ -320,7 +320,7 @@ type Phones struct {
 }
 
 type Phone struct {
-	Extension     string `json:"Extension,attr,omitempty"`
-	PhoneNumber   string `json:"PhoneNumber,attr"`
-	PhoneTechType string `json:"PhoneTechType,attr"`
+	Extension     string `json:"Extension,omitempty"`
+	PhoneNumber   string `json:"PhoneNumber"`
+	PhoneTechType string `json:"PhoneTechType"`
 }

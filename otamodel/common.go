@@ -3,15 +3,7 @@ package otamodel
 type StatusApplicationControl struct {
 	InvTypeCode  string `json:"InvTypeCode"`
 	RatePlanCode string `json:"RatePlanCode"`
-	Start        string `json:"Start"`
-	End          string `json:"End"`
-	Mon          string `json:"Mon,omitempty"`
-	Tue          string `json:"Tue,omitempty"`
-	Weds         string `json:"Weds,omitempty"`
-	Thur         string `json:"Thur,omitempty"`
-	Fri          string `json:"Fri,omitempty"`
-	Sat          string `json:"Sat,omitempty"`
-	Sun          string `json:"Sun,omitempty"`
+	DaysOfWeek
 }
 
 type LengthOfStay struct {
@@ -70,19 +62,11 @@ type Rate struct {
 	GuaranteePolicies      *GuaranteePolicies     `json:"GuaranteePolicies,omitempty"`
 	RateDescription        *RateDescription       `json:"RateDescription,omitempty"`
 	NumberOfUnits          string                 `json:"NumberOfUnits,omitempty"`
-	Mon                    string                 `json:"Mon,omitempty"`
-	Tue                    string                 `json:"Tue,omitempty"`
-	Weds                   string                 `json:"Weds,omitempty"`
-	Thur                   string                 `json:"Thur,omitempty"`
-	Fri                    string                 `json:"Fri,omitempty"`
-	Sat                    string                 `json:"Sat,omitempty"`
-	Sun                    string                 `json:"Sun,omitempty"`
-	Start                  string                 `json:"Start"`
-	End                    string                 `json:"End"`
-	InvTypeCode            string                 `json:"InvTypeCode,omitempty"`
-	MaxLOS                 string                 `json:"MaxLOS,omitempty"`
-	MinLOS                 string                 `json:"MinLOS,omitempty"`
-	RateTimeUnit           string                 `json:"RateTimeUnit,omitempty"`
+	DaysOfWeek
+	InvTypeCode  string `json:"InvTypeCode,omitempty"`
+	MaxLOS       string `json:"MaxLOS,omitempty"`
+	MinLOS       string `json:"MinLOS,omitempty"`
+	RateTimeUnit string `json:"RateTimeUnit,omitempty"`
 }
 
 type BaseByGuestAmt struct {
@@ -115,13 +99,13 @@ type RestrictionStatus struct {
 	MaxAdvancedBookingOffset string `json:"MaxAdvancedBookingOffset,omitempty"`
 }
 type DaysOfWeek struct {
-	Mon   string `json:"Mon,attr"`
-	Tue   string `json:"Tue,attr"`
-	Weds  string `json:"Weds,attr"`
-	Thur  string `json:"Thur,attr"`
-	Fri   string `json:"Fri,attr"`
-	Sat   string `json:"Sat,attr"`
-	Sun   string `json:"Sun,attr"`
-	Start string `json:"Start,attr,omitempty"`
-	End   string `json:"End,attr",omitempty`
+	Mon   string `json:"Mon,omitempty"`
+	Tue   string `json:"Tue,omitempty"`
+	Weds  string `json:"Weds,omitempty"`
+	Thur  string `json:"Thur,omitempty"`
+	Fri   string `json:"Fri,omitempty"`
+	Sat   string `json:"Sat,omitempty"`
+	Sun   string `json:"Sun,omitempty"`
+	Start string `json:"Start,omitempty"`
+	End   string `json:"End,omitempty"`
 }
