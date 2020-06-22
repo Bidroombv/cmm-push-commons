@@ -114,7 +114,7 @@ type RestrictionStatus struct {
 	MinAdvancedBookingOffset string `json:"MinAdvancedBookingOffset,omitempty"`
 	MaxAdvancedBookingOffset string `json:"MaxAdvancedBookingOffset,omitempty"`
 }
-type OperationTime struct {
+type DaysOfWeek struct {
 	Mon   string `json:"Mon,attr"`
 	Tue   string `json:"Tue,attr"`
 	Weds  string `json:"Weds,attr"`
@@ -122,6 +122,6 @@ type OperationTime struct {
 	Fri   string `json:"Fri,attr"`
 	Sat   string `json:"Sat,attr"`
 	Sun   string `json:"Sun,attr"`
-	Start string `json:"Start,attr"`
-	End   string `json:"End,attr"`
+	Start string `json:"Start,attr,omitempty"`
+	End   string `json:"End,attr",omitempty`
 }

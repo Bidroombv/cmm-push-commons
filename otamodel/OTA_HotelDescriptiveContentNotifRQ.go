@@ -82,7 +82,7 @@ type Service struct {
 }
 
 type OperationTimes struct {
-	OperationTime []OperationTime `json:"OperationTime"`
+	OperationTime []DaysOfWeek `json:"OperationTime"`
 }
 
 type Features struct {
