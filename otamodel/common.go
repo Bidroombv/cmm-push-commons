@@ -3,7 +3,15 @@ package otamodel
 type StatusApplicationControl struct {
 	InvTypeCode  string `json:"InvTypeCode"`
 	RatePlanCode string `json:"RatePlanCode"`
-	DaysOfWeek
+	Mon          string `json:"Mon,omitempty"`
+	Tue          string `json:"Tue,omitempty"`
+	Weds         string `json:"Weds,omitempty"`
+	Thur         string `json:"Thur,omitempty"`
+	Fri          string `json:"Fri,omitempty"`
+	Sat          string `json:"Sat,omitempty"`
+	Sun          string `json:"Sun,omitempty"`
+	Start        string `json:"Start"`
+	End          string `json:"End"`
 }
 
 type LengthOfStay struct {
@@ -62,11 +70,19 @@ type Rate struct {
 	GuaranteePolicies      *GuaranteePolicies     `json:"GuaranteePolicies,omitempty"`
 	RateDescription        *RateDescription       `json:"RateDescription,omitempty"`
 	NumberOfUnits          string                 `json:"NumberOfUnits,omitempty"`
-	DaysOfWeek
-	InvTypeCode  string `json:"InvTypeCode,omitempty"`
-	MaxLOS       string `json:"MaxLOS,omitempty"`
-	MinLOS       string `json:"MinLOS,omitempty"`
-	RateTimeUnit string `json:"RateTimeUnit,omitempty"`
+	Mon                    string                 `json:"Mon,omitempty"`
+	Tue                    string                 `json:"Tue,omitempty"`
+	Weds                   string                 `json:"Weds,omitempty"`
+	Thur                   string                 `json:"Thur,omitempty"`
+	Fri                    string                 `json:"Fri,omitempty"`
+	Sat                    string                 `json:"Sat,omitempty"`
+	Sun                    string                 `json:"Sun,omitempty"`
+	Start                  string                 `json:"Start"`
+	End                    string                 `json:"End"`
+	InvTypeCode            string                 `json:"InvTypeCode,omitempty"`
+	MaxLOS                 string                 `json:"MaxLOS,omitempty"`
+	MinLOS                 string                 `json:"MinLOS,omitempty"`
+	RateTimeUnit           string                 `json:"RateTimeUnit,omitempty"`
 }
 
 type BaseByGuestAmt struct {
