@@ -3,8 +3,6 @@ package otamodel
 type StatusApplicationControl struct {
 	InvTypeCode  string `json:"InvTypeCode"`
 	RatePlanCode string `json:"RatePlanCode"`
-	Start        string `json:"Start"`
-	End          string `json:"End"`
 	Mon          string `json:"Mon,omitempty"`
 	Tue          string `json:"Tue,omitempty"`
 	Weds         string `json:"Weds,omitempty"`
@@ -12,6 +10,8 @@ type StatusApplicationControl struct {
 	Fri          string `json:"Fri,omitempty"`
 	Sat          string `json:"Sat,omitempty"`
 	Sun          string `json:"Sun,omitempty"`
+	Start        string `json:"Start"`
+	End          string `json:"End"`
 }
 
 type LengthOfStay struct {
@@ -113,4 +113,15 @@ type RestrictionStatus struct {
 	Status                   string `json:"Status,omitempty"`
 	MinAdvancedBookingOffset string `json:"MinAdvancedBookingOffset,omitempty"`
 	MaxAdvancedBookingOffset string `json:"MaxAdvancedBookingOffset,omitempty"`
+}
+type DaysOfWeek struct {
+	Mon   string `json:"Mon,omitempty"`
+	Tue   string `json:"Tue,omitempty"`
+	Weds  string `json:"Weds,omitempty"`
+	Thur  string `json:"Thur,omitempty"`
+	Fri   string `json:"Fri,omitempty"`
+	Sat   string `json:"Sat,omitempty"`
+	Sun   string `json:"Sun,omitempty"`
+	Start string `json:"Start,omitempty"`
+	End   string `json:"End,omitempty"`
 }
