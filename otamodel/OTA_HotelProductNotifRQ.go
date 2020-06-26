@@ -3,83 +3,96 @@ package otamodel
 import "encoding/xml"
 
 type OTAHotelProductNotifRQ struct {
-	XMLName       xml.Name       `xml:"OTA_HotelProductNotifRQ" json:"-"`
-	Xmlns         string         `xml:"xmlns,attr" json:"xmlns"`
-	Xsi           string         `xml:"xsi,attr" json:"xsi"`
-	PrimaryLangID string         `xml:"PrimaryLangID,attr" json:"PrimaryLangID"`
-	EchoToken     string         `xml:"EchoToken,attr" json:"EchoToken"`
-	Version       string         `xml:"Version,attr,omitempty"  valid:"required" json:"Version,omitempty"`
-	Target        string         `xml:"Target,attr" json:"Target"`
-	HotelProducts *HotelProducts `xml:"HotelProducts,omitempty" valid:"required" json:"HotelProducts,omitempty"`
+	XMLName       xml.Name       `xml:"OTA_HotelProductNotifRQ" json:"-,omitempty"`
+	HotelProducts *HotelProducts `json:"HotelProducts,omitempty,required"`
+	Xmlns         string         `json:"xmlns,omitempty"`
+	Xsi           string         `json:"xsi,omitempty"`
+	PrimaryLangID string         `json:"PrimaryLangID,omitempty"`
+	EchoToken     string         `json:"EchoToken,omitempty"`
+	Version       string         `json:"Version,omitempty,required"`
+	Target        string         `json:"Target,omitempty"`
 }
-
-type HotelProducts struct {
-	HotelCode    string          `xml:"HotelCode,attr,omitempty" valid:"required" json:"HotelCode,omitempty"`
-	HotelName    string          `xml:"HotelName,attr,omitempty" valid:"required" json:"HotelName,omitempty"`
-	HotelProduct *[]HotelProduct `xml:"HotelProduct,omitempty" valid:"required" json:"HotelProduct,omitempty"`
+type Address struct {
+	AddressLine *[]string `json:"AddressLine,omitempty,required"`
 }
-
-type HotelProduct struct {
-	ProductNotifType string            `xml:"ProductNotifType,attr,omitempty" valid:"required" json:"ProductNotifType,omitempty"`
-	Contact          *[]Contact        `xml:"Contact,omitempty" valid:"required" json:"Contact,omitempty"`
-	RoomTypes        *RoomTypes        `xml:"RoomTypes,omitempty" valid:"required" json:"RoomTypes,omitempty"`
-	RatePlans        *ProductRatePlans `xml:"RatePlans,omitempty" valid:"required" json:"RatePlans,omitempty"`
-	PolicyInfo       *PolicyInfo       `xml:"PolicyInfo,omitempty" valid:"required" json:"PolicyInfo,omitempty"`
-	Taxes            *Taxes            `xml:"Taxes,omitempty" valid:"required" json:"Taxes,omitempty"`
-	Descriptions     *Descriptions     `xml:"Descriptions,omitempty" valid:"required" json:"Descriptions,omitempty"`
+type Contact struct {
+	Address *[]Address `json:"Address,omitempty,required"`
 }
-
-type PolicyInfo struct {
-	BookingRules *ProductBookingRules `xml:"BookingRules,omitempty" valid:"required" json:"BookingRules,omitempty"`
-	CancelPolicy *CancelPolicy        `xml:"CancelPolicy,omitempty" valid:"required" json:"CancelPolicy,omitempty"`
+type ArrivalDaysOfWeek struct {
+	Mon  string `json:"Mon,omitempty"`
+	Tue  string `json:"Tue,omitempty"`
+	Weds string `json:"Weds,omitempty"`
+	Thur string `json:"Thur,omitempty"`
+	Fri  string `json:"Fri,omitempty"`
+	Sat  string `json:"Sat,omitempty"`
+	Sun  string `json:"Sun,omitempty"`
 }
-
-type ProductBookingRules struct {
-	BookingRule *[]ProductBookingRule `xml:"BookingRule,omitempty" valid:"required" json:"BookingRule,omitempty"`
-}
-
-type ProductBookingRule struct {
-	MinAdvancedBookingOffset string `xml:"MinAdvancedBookingOffset,attr,omitempty" valid:"required" json:"MinAdvancedBookingOffset,omitempty"`
-}
-
-type CancelPolicy struct {
-	CancelPolicyIndicator string                `xml:"CancelPolicyIndicator,attr,omitempty" valid:"required" json:"CancelPolicyIndicator,omitempty"`
-	CancelPenalty         *ProductCancelPenalty `xml:"CancelPenalty,omitempty" valid:"required" json:"CancelPenalty,omitempty"`
-}
-
-type ProductCancelPenalty struct {
-	PolicyCode    string         `xml:"PolicyCode,attr,omitempty" valid:"required" json:"PolicyCode,omitempty"`
-	AmountPercent *AmountPercent `xml:"AmountPercent,omitempty" valid:"required" json:"AmountPercent,omitempty"`
-	Deadline      *Deadline      `xml:"Deadline,omitempty" valid:"required" json:"Deadline,omitempty"`
-}
-
 type Deadline struct {
-	AbsoluteDeadline     string `xml:"AbsoluteDeadline,attr" json:"AbsoluteDeadline"`
-	OffsetDropTime       string `xml:"OffsetDropTime,attr" json:"OffsetDropTime"`
-	OffsetTimeUnit       string `xml:"OffsetTimeUnit,attr" json:"OffsetTimeUnit"`
-	OffsetUnitMultiplier string `xml:"OffsetUnitMultiplier,attr" json:"OffsetUnitMultiplier"`
+	Time string `json:"Time,omitempty"`
 }
-
 type AmountPercent struct {
-	TaxInclusive  string `xml:"TaxInclusive,attr" json:"TaxInclusive"`
-	Percent       string `xml:"Percent,attr" json:"Percent"`
-	NmbrOfNights  string `xml:"NmbrOfNights,attr" json:"NmbrOfNights"`
-	FeesInclusive string `xml:"FeesInclusive,attr" json:"FeesInclusive"`
-	Amount        string `xml:"Amount,attr" json:"Amount"`
-	CurrencyCode  string `xml:"CurrencyCode,attr" json:"CurrencyCode"`
-	DecimalPlaces string `xml:"DecimalPlaces,attr" json:"DecimalPlaces"`
+	Amount string `json:"Amount,omitempty"`
 }
-
-type ProductRatePlans struct {
-	RatePlan *[]ProductRatePlan `xml:"RatePlan,omitempty" valid:"required" json:"RatePlan,omitempty"`
+type CancelPolicy struct {
+	CancelPolicyIndicator string          `json:"CancelPolicyIndicator,omitempty"`
+	CancelPenalty         []CancelPenalty `json:"CancelPenalty,omitempty"`
 }
-
-type ProductRatePlan struct {
-	RatePlanCode  string          `xml:"RatePlanCode,attr,omitempty" valid:"required" json:"RatePlanCode,omitempty"`
-	RatePlanName  string          `xml:"RatePlanName,attr,omitempty" valid:"required" json:"RatePlanName,omitempty"`
-	RatePlanType  string          `xml:"RatePlanType,attr,omitempty" valid:"required" json:"RatePlanType,omitempty"`
-	CurrencyCode  string          `xml:"CurrencyCode,attr,omitempty" valid:"required" json:"CurrencyCode,omitempty"`
-	BaseOccupancy string          `xml:"BaseOccupancy,attr,omitempty" valid:"required" json:"BaseOccupancy,omitempty"`
-	Descriptions  Descriptions    `xml:"Descriptions,omitempty" valid:"required" json:"Descriptions,omitempty"`
-	StayDateRange []StayDateRange `xml:"StayDateRange,omitempty" valid:"required" json:"StayDateRange,omitempty"`
+type PolicyInfo struct {
+	BookingRules BookingRules `json:"BookingRules,omitempty"`
+	CancelPolicy CancelPolicy `json:"CancelPolicy,omitempty"`
+}
+type Descriptions struct {
+	Description []Description `json:"Description,omitempty"`
+}
+type RoomType struct {
+	RoomTypeCode string       `json:"RoomTypeCode,omitempty,required"`
+	RoomTypeName string       `json:"RoomTypeName,omitempty,required"`
+	MaxOccupancy string       `json:"MaxOccupancy,omitempty,required"`
+	Descriptions Descriptions `json:"Descriptions,omitempty"`
+}
+type RoomTypes struct {
+	RoomType *[]RoomType `json:"RoomType,omitempty,required"`
+}
+type StayDateRange struct {
+	Duration string `json:"Duration,omitempty"`
+	Start    string `json:"Start,omitempty"`
+	End      string `json:"End,omitempty,omitempty"`
+}
+type HotelProductRatePlan struct {
+	RatePlanCode  string          `json:"RatePlanCode,omitempty,required"`
+	RatePlanName  string          `json:"RatePlanName,omitempty,required"`
+	RatePlanType  string          `json:"RatePlanType,omitempty"`
+	CurrencyCode  string          `json:"CurrencyCode,omitempty,required"`
+	BaseOccupancy string          `json:"BaseOccupancy,omitempty,required"`
+	Descriptions  Descriptions    `json:"Descriptions,omitempty,required"`
+	StayDateRange []StayDateRange `json:"StayDateRange,omitempty,required"`
+}
+type HotelProductRatePlans struct {
+	RatePlan *[]HotelProductRatePlan `json:"RatePlan,omitempty,required"`
+}
+type PrepaymentPolicy struct {
+	EffectiveFrom string `json:"EffectiveFrom,omitempty"`
+}
+type TPAExtensions struct {
+	PrepaymentPolicy PrepaymentPolicy `json:"PrepaymentPolicy,omitempty"`
+}
+type GuaranteePayment struct {
+	TPAExtensions TPAExtensions `json:"TPA_Extensions,omitempty"`
+	PolicyCode    string        `json:"PolicyCode,omitempty,omitempty"`
+}
+type GuaranteePaymentPolicy struct {
+	GuaranteePayment []GuaranteePayment `json:"GuaranteePayment,omitempty"`
+}
+type HotelProduct struct {
+	Contact                *[]Contact             `json:"Contact,omitempty,required"`
+	PolicyInfo             *PolicyInfo            `json:"PolicyInfo,omitempty,required"`
+	ProductNotifType       string                 `json:"ProductNotifType,omitempty"`
+	RoomTypes              RoomTypes              `json:"RoomTypes,omitempty"`
+	RatePlans              HotelProductRatePlans  `json:"RatePlans,omitempty"`
+	GuaranteePaymentPolicy GuaranteePaymentPolicy `json:"GuaranteePaymentPolicy,omitempty"`
+}
+type HotelProducts struct {
+	HotelCode    string          `json:"HotelCode,omitempty,required"`
+	HotelName    string          `json:"HotelName,omitempty,required"`
+	HotelProduct *[]HotelProduct `json:"HotelProduct,omitempty,required"`
 }
