@@ -63,7 +63,7 @@ type BookingRule struct {
 type Rate struct {
 	BaseByGuestAmts        BaseByGuestAmts         `json:"BaseByGuestAmts"`
 	OriginalData           map[string]interface{}  `json:"original_data,omitempty"`
-	AdditionalGuestAmounts *AdditionalGuestAmounts `json:"AdditionalGuestAmounts"`
+	AdditionalGuestAmounts *AdditionalGuestAmounts `json:"AdditionalGuestAmounts,omitempty"`
 	CancelPolicies         *CancelPolicies         `json:"CancelPolicies,omitempty"`
 	MealsIncluded          *MealsIncluded          `json:"MealsIncluded,omitempty"`
 	Fees                   *Fees                   `json:"Fees,omitempty"`
