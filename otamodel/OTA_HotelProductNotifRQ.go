@@ -56,7 +56,7 @@ type RoomTypes struct {
 type StayDateRange struct {
 	Duration string `json:"Duration,omitempty"`
 	Start    string `json:"Start,omitempty"`
-	End      string `json:"End,omitempty,omitempty"`
+	End      string `json:"End,omitempty"`
 }
 type HotelProductRatePlan struct {
 	RatePlanCode  string          `json:"RatePlanCode,omitempty,required"`
@@ -78,7 +78,7 @@ type TPAExtensions struct {
 }
 type GuaranteePayment struct {
 	TPAExtensions TPAExtensions `json:"TPA_Extensions,omitempty"`
-	PolicyCode    string        `json:"PolicyCode,omitempty,omitempty"`
+	PolicyCode    string        `json:"PolicyCode,omitempty"`
 }
 type GuaranteePaymentPolicy struct {
 	GuaranteePayment []GuaranteePayment `json:"GuaranteePayment,omitempty"`
