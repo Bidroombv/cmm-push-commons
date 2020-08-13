@@ -12,9 +12,7 @@ type OTAHotelProductNotifRQ struct {
 	Version       string         `json:"Version,omitempty,required"`
 	Target        string         `json:"Target,omitempty"`
 }
-type Address struct {
-	AddressLine *[]string `json:"AddressLine,omitempty,required"`
-}
+
 type Contact struct {
 	Address *[]Address `json:"Address,omitempty,required"`
 }
@@ -36,10 +34,6 @@ type AmountPercent struct {
 type CancelPolicy struct {
 	CancelPolicyIndicator string          `json:"CancelPolicyIndicator,omitempty"`
 	CancelPenalty         []CancelPenalty `json:"CancelPenalty,omitempty"`
-}
-type PolicyInfo struct {
-	BookingRules BookingRules `json:"BookingRules,omitempty"`
-	CancelPolicy CancelPolicy `json:"CancelPolicy,omitempty"`
 }
 type Descriptions struct {
 	Description []Description `json:"Description,omitempty"`
