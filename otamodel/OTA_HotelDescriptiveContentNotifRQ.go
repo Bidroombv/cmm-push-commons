@@ -37,6 +37,7 @@ type HotelInfo struct {
 	Position                 Position                 `json:"Position"`
 	Services                 Services                 `json:"Services,omitempty"`
 	OwnershipManagementInfos OwnershipManagementInfos `json:"OwnershipManagementInfos,omitempty"`
+	Descriptions             Descriptions             `json:"Descriptions,omitempty"`
 }
 
 type CategoryCodes struct {
@@ -68,6 +69,14 @@ type Position struct {
 
 type Services struct {
 	Service []Service `json:"Service"`
+}
+
+type Descriptions struct {
+	Description []HotelDescription `json:"Description"`
+}
+
+type HotelDescription struct {
+	DescriptiveText string `json:"DescriptiveText,omitempty"`
 }
 
 type Service struct {
