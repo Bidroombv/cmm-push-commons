@@ -1,5 +1,9 @@
 package otamodel
 
+type HotelDescriptiveContentNotifRQ struct {
+	OTAHotelDescriptiveContentNotifRQ OTAHotelDescriptiveContentNotifRQ `json:"OTA_HotelDescriptiveContentNotifRQ"`
+}
+
 type OTAHotelDescriptiveContentNotifRQ struct {
 	PrimaryLangID            string                   `json:"PrimaryLangID"`
 	EchoToken                string                   `json:"EchoToken"`
