@@ -18,6 +18,7 @@ type HotelDescriptiveContent struct {
 	HotelName              string                 `json:"HotelName"`
 	HotelCode              string                 `json:"HotelCode"`
 	LanguageCode           string                 `json:"LanguageCode"`
+	CurrencyCode           string                 `json:"CurrencyCode"`
 	ContactInfos           ContactInfos           `json:"ContactInfos"`
 	HotelInfo              HotelInfo              `json:"HotelInfo"`
 	FacilityInfo           FacilityInfo           `json:"FacilityInfo"`
@@ -37,7 +38,7 @@ type HotelInfo struct {
 	Position                 Position                 `json:"Position"`
 	Services                 Services                 `json:"Services,omitempty"`
 	OwnershipManagementInfos OwnershipManagementInfos `json:"OwnershipManagementInfos,omitempty"`
-	Descriptions             Descriptions             `json:"Descriptions,omitempty"`
+	Descriptions             HotelDescriptions        `json:"Descriptions,omitempty"`
 }
 
 type CategoryCodes struct {
@@ -71,7 +72,7 @@ type Services struct {
 	Service []Service `json:"Service"`
 }
 
-type Descriptions struct {
+type HotelDescriptions struct {
 	Description []HotelDescription `json:"Description"`
 }
 
@@ -288,10 +289,15 @@ type ContactInfo struct {
 	Names              Names     `json:"Names,omitempty"`
 	Emails             Emails    `json:"Emails,omitempty"`
 	Phones             Phones    `json:"Phones,omitempty"`
+	URLs               []URLs    `json:"URLs,omitempty"`
 }
 
 type Addresses struct {
 	Address []Address `json:"Address"`
+}
+
+type URLs struct {
+	URL string `json:"URL"`
 }
 
 type Address struct {
