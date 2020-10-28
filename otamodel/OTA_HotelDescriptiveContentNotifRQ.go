@@ -46,8 +46,8 @@ type HotelInfo struct {
 }
 
 type CategoryCodes struct {
-	GuestRoomInfo *GuestRoomInfo `json:"GuestRoomInfo,omitempty"`
-	HotelCategory *HotelCategory `json:"HotelCategory,omitempty"`
+	GuestRoomInfo *[]GuestRoomInfo `json:"GuestRoomInfo,omitempty"`
+	HotelCategory *[]HotelCategory `json:"HotelCategory,omitempty"`
 }
 
 type GuestRoomInfo struct {
@@ -309,7 +309,8 @@ type Address struct {
 	AddressLine string     `json:"AddressLine"`
 	CityName    string     `json:"CityName"`
 	PostalCode  string     `json:"PostalCode"`
-	CountryName string     `json:"CountryName"`
+	CountryName string     `json:"CountryName,omitempty"`
+	CountryCode string     `json:"CountryCode"`
 	HotelName   string     `json:"HotelName,omitempty"`
 	StateProv   *StateProv `json:"StateProv,omitempty"`
 }
