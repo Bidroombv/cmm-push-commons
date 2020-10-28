@@ -134,19 +134,23 @@ type GuestRooms struct {
 }
 
 type GuestRoom struct {
-	MaxAdultOccupancy string    `json:"MaxAdultOccupancy"`
-	MaxChildOccupancy string    `json:"MaxChildOccupancy"`
-	MaxOccupancy      string    `json:"MaxOccupancy"`
-	MinOccupancy      string    `json:"MinOccupancy"`
-	RoomTypeName      string    `json:"RoomTypeName"`
-	TypeRoom          TypeRoom  `json:"TypeRoom"`
-	Amenities         Amenities `json:"Amenities"`
+	MaxAdultOccupancy      string                 `json:"MaxAdultOccupancy"`
+	MaxChildOccupancy      string                 `json:"MaxChildOccupancy"`
+	MaxOccupancy           string                 `json:"MaxOccupancy"`
+	MinOccupancy           string                 `json:"MinOccupancy"`
+	RoomTypeName           string                 `json:"RoomTypeName"`
+	Code                   string                 `json:"Code"`
+	DescriptiveText        string                 `json:"DescriptiveText,omitempty"`
+	TypeRoom               TypeRoom               `json:"TypeRoom"`
+	Amenities              Amenities              `json:"Amenities"`
+	MultimediaDescriptions MultimediaDescriptions `json:"MultimediaDescriptions"`
 }
 
 type TypeRoom struct {
-	BedTypeCode  string `json:"BedTypeCode"`
-	RoomTypeCode string `json:"RoomTypeCode"`
-	NonSmoking   string `json:"NonSmoking"`
+	BedTypeCode     string `json:"BedTypeCode"`
+	RoomTypeCode    string `json:"RoomTypeCode"`
+	NonSmoking      string `json:"NonSmoking"`
+	StandardNumBeds string `json:"StandardNumBeds"`
 }
 
 type Amenities struct {
@@ -156,6 +160,7 @@ type Amenities struct {
 type Amenity struct {
 	RoomAmenityCode string `json:"RoomAmenityCode"`
 	Quantity        string `json:"Quantity"`
+	ExistsCode      string `json:"ExistsCode"`
 }
 
 type Restaurants struct {
