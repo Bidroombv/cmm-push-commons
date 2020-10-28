@@ -40,6 +40,7 @@ type Description struct {
 }
 
 type RatePlan struct {
+	CurrencyCode     string            `json:"CurrencyCode,omitempty"`
 	OriginalData     string            `json:"original_data,omitempty"`
 	RatePlanID       string            `json:"RatePlanID,omitempty"`
 	BookingRules     *BookingRules     `json:"BookingRules,omitempty"`
