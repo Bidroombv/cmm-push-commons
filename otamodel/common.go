@@ -29,7 +29,7 @@ type AdditionalGuestAmount struct {
 	DecimalPlaces     string `json:"DecimalPlaces,omitempty"`
 	TaxInclusive      string `json:"TaxInclusive,omitempty"`
 	AgeQualifyingCode string `json:"AgeQualifyingCode"`
-	CurrencyCode      string `json:"CurrencyCode"`
+	CurrencyCode      string `json:"CurrencyCode,omitempty"`
 }
 
 type AdditionalGuestAmounts struct {
@@ -41,9 +41,9 @@ type Rates struct {
 }
 
 type DOWRestrictions struct {
-	AvailableDaysOfWeek DaysOfWeek `json:"AvailableDaysOfWeek"`
-	ArrivalDaysOfWeek   DaysOfWeek `json:"ArrivalDaysOfWeek"`
-	DepartureDaysOfWeek DaysOfWeek `json:"DepartureDaysOfWeek"`
+	AvailableDaysOfWeek DaysOfWeek `json:"AvailableDaysOfWeek,omitempty"`
+	ArrivalDaysOfWeek   DaysOfWeek `json:"ArrivalDaysOfWeek,omitempty"`
+	DepartureDaysOfWeek DaysOfWeek `json:"DepartureDaysOfWeek,omitempty"`
 }
 
 // Guestline supports DOWRestrictions instead of DOW_Restrictions
@@ -91,7 +91,7 @@ type BaseByGuestAmt struct {
 	AmountAfterTax    string `json:"AmountAfterTax"`
 	AmountBeforeTax   string `json:"AmountBeforeTax,omitempty"`
 	DecimalPlaces     string `json:"DecimalPlaces,omitempty"`
-	CurrencyCode      string `json:"CurrencyCode"`
+	CurrencyCode      string `json:"CurrencyCode,omitempty"`
 }
 
 type BaseByGuestAmts struct {
