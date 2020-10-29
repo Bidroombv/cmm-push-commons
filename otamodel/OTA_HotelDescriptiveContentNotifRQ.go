@@ -51,7 +51,9 @@ type CategoryCodes struct {
 }
 
 type GuestRoomInfo struct {
-	Quantity string `json:"Quantity,omitempty"`
+	Quantity   string `json:"Quantity,omitempty"`
+	Code       string `json:"Code,omitempty"`
+	ExistsCode string `json:"ExistsCode,omitempty"`
 }
 
 type HotelCategory struct {
@@ -134,16 +136,16 @@ type GuestRooms struct {
 }
 
 type GuestRoom struct {
-	MaxAdultOccupancy      string                 `json:"MaxAdultOccupancy,omitempty"`
-	MaxChildOccupancy      string                 `json:"MaxChildOccupancy,omitempty"`
-	MaxOccupancy           string                 `json:"MaxOccupancy,omitempty"`
-	MinOccupancy           string                 `json:"MinOccupancy,omitempty"`
-	RoomTypeName           string                 `json:"RoomTypeName"`
-	TypeRoom               *TypeRoom              `json:"TypeRoom,omitempty"`
-	Amenities              *Amenities             `json:"Amenities,omitempty"`
-	Code                   string                 `json:"Code"`
-	DescriptiveText        string                 `json:"DescriptiveText,omitempty"`
-	MultimediaDescriptions MultimediaDescriptions `json:"MultimediaDescriptions"`
+	MaxAdultOccupancy      string                  `json:"MaxAdultOccupancy,omitempty"`
+	MaxChildOccupancy      string                  `json:"MaxChildOccupancy,omitempty"`
+	MaxOccupancy           string                  `json:"MaxOccupancy,omitempty"`
+	MinOccupancy           string                  `json:"MinOccupancy,omitempty"`
+	RoomTypeName           string                  `json:"RoomTypeName"`
+	TypeRoom               *TypeRoom               `json:"TypeRoom,omitempty"`
+	Amenities              *Amenities              `json:"Amenities,omitempty"`
+	Code                   string                  `json:"Code"`
+	DescriptiveText        string                  `json:"DescriptiveText,omitempty"`
+	MultimediaDescriptions *MultimediaDescriptions `json:"MultimediaDescriptions,omitempty"`
 }
 
 type TypeRoom struct {
