@@ -176,7 +176,7 @@ type CuisineCodes struct {
 }
 
 type CuisineCode struct {
-	Code string `xml:"Code,omitempty"`
+	Code string `json:"Code,omitempty"`
 }
 
 type OperationSchedules struct {
