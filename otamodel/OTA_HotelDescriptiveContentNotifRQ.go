@@ -385,4 +385,4 @@ type ImageFormat struct {
 	Resolution string `json:"Resolution,omitempty"`
 	Format     string `json:"Format,omitempty"`
 	FileSize   string `json:"FileSize,omitempty"`
-	
+}
