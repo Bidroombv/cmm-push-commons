@@ -32,14 +32,14 @@ type HotelDescriptiveContent struct {
 	HotelInfo              HotelInfo               `json:"HotelInfo"`
 	FacilityInfo           FacilityInfo            `json:"FacilityInfo"`
 	Policies               Policies                `json:"Policies"`
-	MultimediaDescriptions *MultimediaDescriptions `json:"MultimediaDescriptions"`
-	AffiliationInfo        *AffiliationInfo        `json:"AffiliationInfo"`
-	ContactInfos           *ContactInfos           `json:"ContactInfos"`
+	MultimediaDescriptions *MultimediaDescriptions `json:"MultimediaDescriptions,omitempty"`
+	AffiliationInfo        *AffiliationInfo        `json:"AffiliationInfo,omitempty"`
+	ContactInfos           *ContactInfos           `json:"ContactInfos,omitempty"`
 }
 
 // ContactInfos **
 type ContactInfos struct {
-	ContactInfo []ContactInfo `json:"Awards"`
+	ContactInfo []ContactInfo `json:"ContactInfo"`
 }
 
 // ContactInfo **
