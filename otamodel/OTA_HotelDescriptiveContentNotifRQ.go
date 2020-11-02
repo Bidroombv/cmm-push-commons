@@ -262,24 +262,14 @@ type TypeRoom struct {
 
 //HotelInfo **
 type HotelInfo struct {
-	HotelStatus     string             `json:"HotelStatus,omitempty"`
-	HotelStatusCode string             `json:"HotelStatusCode,omitempty"`
-	CategoryCodes   CategoryCodes      `json:"CategoryCodes"`
-	Descriptions    *HotelDescriptions `json:"Descriptions,omitempty"`
-	HotelName       *HotelName         `json:"HotelName,omitempty"`
-	Languages       *Languages         `json:"Languages,omitempty"`
-	Position        *Position          `json:"Position,omitempty"`
-	Services        *Services          `json:"Services,omitempty"`
-}
-
-// HotelDescriptions **
-type HotelDescriptions struct {
-	Description []HotelDescription `json:"Description,omitempty"`
-}
-
-// HotelDescription **
-type HotelDescription struct {
-	DescriptiveText string `json:"DescriptiveText,omitempty"`
+	HotelStatus     string        `json:"HotelStatus,omitempty"`
+	HotelStatusCode string        `json:"HotelStatusCode,omitempty"`
+	CategoryCodes   CategoryCodes `json:"CategoryCodes"`
+	Descriptions    *Descriptions `json:"Descriptions,omitempty"`
+	HotelName       *HotelName    `json:"HotelName,omitempty"`
+	Languages       *Languages    `json:"Languages,omitempty"`
+	Position        *Position     `json:"Position,omitempty"`
+	Services        *Services     `json:"Services,omitempty"`
 }
 
 // Services **
@@ -369,6 +359,16 @@ type MultimediaDescription struct {
 
 // ImageItems **
 type ImageItems struct {
+	ImageItem []ImageItem `json:"ImageItem"`
+}
+
+// ImageItem **
+type ImageItem struct {
+	ImageFormat []ImageFormat `json:"ImageFormat"`
+}
+
+// ImageFormat **
+type ImageFormat struct {
 	URL        string `json:"URL"`
 	Width      string `json:"Width,omitempty"`
 	Height     string `json:"Height,omitempty"`
