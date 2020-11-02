@@ -217,10 +217,10 @@ type GuestRooms struct {
 // GuestRoom **
 type GuestRoom struct {
 	Language               string                  `json:"Language,omitempty"`
-	MaxAdultOccupancy      string                  `json:"MaxAdultOccupancy"`
-	MaxChildOccupancy      string                  `json:"MaxChildOccupancy"`
-	MaxOccupancy           string                  `json:"MaxOccupancy"`
-	MinOccupancy           string                  `json:"MinOccupancy"`
+	MaxAdultOccupancy      int                     `json:"MaxAdultOccupancy"`
+	MaxChildOccupancy      int                     `json:"MaxChildOccupancy"`
+	MaxOccupancy           int                     `json:"MaxOccupancy"`
+	MinOccupancy           int                     `json:"MinOccupancy"`
 	NonsmokingQuantity     string                  `json:"NonsmokingQuantity"`
 	Quality                string                  `json:"Quality,omitempty"`
 	RoomTypeName           string                  `json:"RoomTypeName"`
