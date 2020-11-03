@@ -290,6 +290,7 @@ type Services struct {
 // Service **
 type Service struct {
 	Code            string    `json:"Code"`
+	ExistsCode      string    `json:"ExistsCode,omitempty"`
 	MealPlanCode    string    `json:"MealPlanCode,omitempty"`
 	InvCode         string    `json:"InvCode,omitempty"`
 	DescriptiveText string    `json:"DescriptiveText,omitempty"`
