@@ -17,8 +17,9 @@ type CancelPolicies struct {
 }
 
 type MealsIncluded struct {
-	Breakfast bool `json:"Breakfast"`
-	Dinner    bool `json:"Dinner"`
+	Breakfast     bool   `json:"Breakfast"`
+	Dinner        bool   `json:"Dinner"`
+	MealPlanCodes string `json:"MealPlanCodes"`
 }
 
 type Text struct {
@@ -27,11 +28,16 @@ type Text struct {
 }
 
 type SellableProduct struct {
-	InvCode string `json:"InvCode"`
+	InvTypeCode string `json:"InvTypeCode"`
+	IsRoom      string `json:"IsRoom"`
 }
 
 type SellableProducts struct {
 	SellableProduct []SellableProduct `json:"SellableProduct"`
+}
+
+type RatePlanLevelFee struct {
+	Fee []Fee `json:"Fee"`
 }
 
 type Description struct {
@@ -47,6 +53,7 @@ type RatePlan struct {
 	Rates            Rates             `json:"Rates"`
 	SellableProducts *SellableProducts `json:"SellableProducts,omitempty"`
 	Description      []Description     `json:"Description,omitempty"`
+	RatePlanLevelFee *RatePlanLevelFee `json:"RatePlanLevelFee,omitempty"`
 }
 
 type RatePlans struct {

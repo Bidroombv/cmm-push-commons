@@ -15,8 +15,11 @@ type Fees struct {
 }
 
 type Fee struct {
-	Amount string `json:"Amount"`
-	Code   string `json:"Code"`
+	Amount          string `json:"Amount"`
+	Code            string `json:"Code"`
+	DecimalPlaces   string `json:"DecimalPlaces"`
+	Percent         string `json:"Percent"`
+	ChargeFrequency string `json:"ChargeFrequency"`
 }
 
 type GuaranteeAccepted struct {
