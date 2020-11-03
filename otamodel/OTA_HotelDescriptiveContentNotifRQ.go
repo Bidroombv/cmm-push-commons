@@ -378,7 +378,7 @@ type ImageItem struct {
 	ImageFormat []ImageFormat `json:"ImageFormat"`
 }
 
-// ImageFormat **
+// ImageFormat
 type ImageFormat struct {
 	URL        string `json:"URL"`
 	Width      string `json:"Width,omitempty"`
