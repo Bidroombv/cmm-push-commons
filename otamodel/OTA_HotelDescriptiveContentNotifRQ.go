@@ -221,7 +221,7 @@ type GuestRoom struct {
 	MaxChildOccupancy      int                     `json:"MaxChildOccupancy"`
 	MaxOccupancy           int                     `json:"MaxOccupancy"`
 	MinOccupancy           int                     `json:"MinOccupancy"`
-	NonsmokingQuantity     string                  `json:"NonsmokingQuantity"`
+	NonsmokingQuantity     string                  `json:"NonsmokingQuantity,omitempty"`
 	Quality                string                  `json:"Quality,omitempty"`
 	RoomTypeName           string                  `json:"RoomTypeName"`
 	Code                   string                  `json:"Code"`
@@ -289,11 +289,11 @@ type Services struct {
 
 // Service **
 type Service struct {
-	Code            string   `json:"Code"`
-	MealPlanCode    string   `json:"MealPlanCode,omitempty"`
-	InvCode         string   `json:"InvCode,omitempty"`
-	DescriptiveText string   `json:"DescriptiveText,omitempty"`
-	Features        Features `json:"Features,omitempty"`
+	Code            string    `json:"Code"`
+	MealPlanCode    string    `json:"MealPlanCode,omitempty"`
+	InvCode         string    `json:"InvCode,omitempty"`
+	DescriptiveText string    `json:"DescriptiveText,omitempty"`
+	Features        *Features `json:"Features,omitempty"`
 }
 
 // Features **
@@ -339,7 +339,7 @@ type HotelName struct {
 // CategoryCodes **
 type CategoryCodes struct {
 	GuestRoomInfo []GuestRoomInfo  `json:"GuestRoomInfo"`
-	HotelCategory *[]HotelCategory `json:"HotelCategory"`
+	HotelCategory *[]HotelCategory `json:"HotelCategory,omitempty"`
 }
 
 // HotelCategory **
@@ -354,7 +354,7 @@ type GuestRoomInfo struct {
 	ExistsCode             string                  `json:"ExistsCode,omitempty"`
 	Quantity               string                  `json:"Quantity,omitempty"`
 	DescriptiveText        string                  `json:"DescriptiveText,omitempty"`
-	MultimediaDescriptions *MultimediaDescriptions `json:"MultimediaDescriptions"`
+	MultimediaDescriptions *MultimediaDescriptions `json:"MultimediaDescriptions,omitempty"`
 }
 
 // MultimediaDescriptions **
