@@ -20,6 +20,7 @@ type Fee struct {
 	DecimalPlaces   string `json:"DecimalPlaces"`
 	Percent         string `json:"Percent"`
 	ChargeFrequency string `json:"ChargeFrequency"`
+	Description     string `json:"Description"`
 }
 
 type GuaranteeAccepted struct {
