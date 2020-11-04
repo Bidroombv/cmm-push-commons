@@ -49,8 +49,9 @@ type RatePlan struct {
 	CurrencyCode     string            `json:"CurrencyCode,omitempty"`
 	OriginalData     string            `json:"original_data,omitempty"`
 	RatePlanID       string            `json:"RatePlanID,omitempty"`
-	BookingRules     *BookingRules     `json:"BookingRules,omitempty"`
+	RatePlanCode     string            `json:"RatePlanCode,omitempty"`
 	Rates            Rates             `json:"Rates"`
+	BookingRules     *BookingRules     `json:"BookingRules,omitempty"`
 	SellableProducts *SellableProducts `json:"SellableProducts,omitempty"`
 	Description      []Description     `json:"Description,omitempty"`
 	RatePlanLevelFee *RatePlanLevelFee `json:"RatePlanLevelFee,omitempty"`
