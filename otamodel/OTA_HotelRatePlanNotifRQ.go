@@ -9,11 +9,33 @@ type InventoryInfo struct {
 }
 
 type CancelPenalty struct {
-	NonRefundable bool `json:"NonRefundable"`
+	Start              string                `json:"Start,omitempty"`
+	End                string                `json:"End,omitempty"`
+	NonRefundable      bool                  `json:"NonRefundable"`
+	Deadline           *PenaltyDeadline      `json:"Deadline,omitempty"`
+	AmountPercent      *PenaltyAmountPercent `json:"AmountPercent,omitempty"`
+	PenaltyDescription *[]PenaltyDescription `json:"PenaltyDescription,omitempty"`
+}
+
+type PenaltyAmountPercent struct {
+	Percent      string `json:"Percent,omitempty"`
+	BasisType    string `json:"BasisType,omitempty"`
+	Amount       string `json:"Amount,omitempty"`
+	NmbrOfNights string `json:"NmbrOfNights,omitempty"`
+}
+
+type PenaltyDescription struct {
+	Text string `json:"Text,omitempty"`
+}
+
+type PenaltyDeadline struct {
+	OffsetDropTime       string `json:"OffsetDropTime,omitempty"`
+	OffsetTimeUnit       string `json:"OffsetTimeUnit,omitempty"`
+	OffsetUnitMultiplier string `json:"OffsetUnitMultiplier,omitempty"`
 }
 
 type CancelPolicies struct {
-	CancelPenalty []CancelPenalty `json:"CancelPenalty"`
+	CancelPenalty []CancelPenalty `json:"CancelPenalty,omitempty"`
 }
 
 type MealsIncluded struct {
