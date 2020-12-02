@@ -15,7 +15,7 @@ type AvailStatusMessages struct {
 }
 
 type AvailStatusMessage struct {
-	BookingLimit             int                      `json:"BookingLimit,omitempty"`
+	BookingLimit             *int                     `json:"BookingLimit,omitempty"`
 	StatusApplicationControl StatusApplicationControl `json:"StatusApplicationControl"`
 	LengthsOfStay            *LengthsOfStay           `json:"LengthsOfStay,omitempty"`
 	RestrictionStatus        *RestrictionStatus       `json:"RestrictionStatus,omitempty"`
