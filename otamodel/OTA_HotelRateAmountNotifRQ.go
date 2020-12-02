@@ -4,12 +4,6 @@ type HotelRateAmountNotifRQ struct {
 	OTAHotelRateAmountNotifRQ OTAHotelRateAmountNotifRQ `json:"OTA_HotelRateAmountNotifRQ"`
 }
 
-type UniqueID struct {
-	Type     string `json:"Type"`
-	Instance string `json:"Instance"`
-	ID       string `json:"ID"`
-}
-
 type Fees struct {
 	Fee []Fee `json:"Fee"`
 }
@@ -50,11 +44,6 @@ type RateAmountMessages struct {
 }
 
 type OTAHotelRateAmountNotifRQ struct {
-	UniqueID           UniqueID           `json:"UniqueID"`
 	RateAmountMessages RateAmountMessages `json:"RateAmountMessages"`
 	EchoToken          string             `json:"EchoToken"`
-	PrimaryLangID      string             `json:"PrimaryLangID"`
-	Target             string             `json:"Target"`
-	TimeStamp          string             `json:"TimeStamp"`
-	Version            string             `json:"Version"`
 }
