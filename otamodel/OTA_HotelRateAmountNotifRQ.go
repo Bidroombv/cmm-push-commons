@@ -46,4 +46,13 @@ type RateAmountMessages struct {
 type OTAHotelRateAmountNotifRQ struct {
 	RateAmountMessages RateAmountMessages `json:"RateAmountMessages"`
 	EchoToken          string             `json:"EchoToken"`
+	OriginalData       OriginalData       `json:"original_data"`
+}
+
+type OriginalData struct {
+	OriginalDataForRateAmount OriginalDataForRateAmount `json:"original_data_for_rate_amount"`
+}
+
+type OriginalDataForRateAmount struct {
+	RateAmountMessages []RateAmountMessage `json:"RateAmountMessage"`
 }
