@@ -265,14 +265,14 @@ type TypeRoom struct {
 
 //HotelInfo **
 type HotelInfo struct {
-	HotelStatus     string             `json:"HotelStatus,omitempty"`
-	HotelStatusCode string             `json:"HotelStatusCode,omitempty"`
-	CategoryCodes   *CategoryCodes     `json:"CategoryCodes,omitempty"`
-	Descriptions    *HotelDescriptions `json:"Descriptions,omitempty"`
-	HotelName       *HotelName         `json:"HotelName,omitempty"`
-	Languages       *Languages         `json:"Languages,omitempty"`
-	Position        *Position          `json:"Position,omitempty"`
-	Services        *Services          `json:"Services,omitempty"`
+	HotelStatus     string               `json:"HotelStatus,omitempty"`
+	HotelStatusCode string               `json:"HotelStatusCode,omitempty"`
+	CategoryCodes   *CategoryCodes       `json:"CategoryCodes,omitempty"`
+	Descriptions    *[]HotelDescriptions `json:"Descriptions,omitempty"`
+	HotelName       *HotelName           `json:"HotelName,omitempty"`
+	Languages       *Languages           `json:"Languages,omitempty"`
+	Position        *Position            `json:"Position,omitempty"`
+	Services        *Services            `json:"Services,omitempty"`
 }
 
 // HotelDescriptions **
