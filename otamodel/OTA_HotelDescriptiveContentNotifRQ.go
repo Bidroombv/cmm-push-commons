@@ -277,13 +277,8 @@ type HotelInfo struct {
 
 // HotelDescriptions **
 type HotelDescriptions struct {
-	Description            []HotelDescription      `json:"Description,omitempty"`
 	MultimediaDescriptions *MultimediaDescriptions `json:"MultimediaDescriptions,omitempty"`
-}
-
-// HotelDescription **
-type HotelDescription struct {
-	DescriptiveText string `json:"DescriptiveText,omitempty"`
+	DescriptiveText        string                  `json:"DescriptiveText,omitempty"`
 }
 
 // Services **
