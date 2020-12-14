@@ -411,11 +411,11 @@ type TPAExtensionsImageItem struct {
 
 //TPAExtension **
 type TPAExtension struct {
-	Extension Extension `json:"Extension"`
+	Extension ExtensionImageItem `json:"Extension"`
 }
 
-//Extension **
-type Extension struct {
+// ExtensionImageItem **
+type ExtensionImageItem struct {
 	Name string `json:"Name,omitempty"`
 	Item *Item  `json:"Item,omitempty"`
 }
