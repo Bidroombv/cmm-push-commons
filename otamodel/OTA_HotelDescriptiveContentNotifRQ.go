@@ -105,7 +105,7 @@ type Phones struct {
 type Phone struct {
 	Extension         string `json:"Extension,omitempty"`
 	PhoneNumber       string `json:"PhoneNumber"`
-	PhoneTechType     string `json:"PhoneTechType,omitempty"`
+	PhoneTechType     int    `json:"PhoneTechType,omitempty"`
 	AreaCityCode      string `json:"AreaCityCode,omitempty"`
 	CountryAccessCode string `json:"CountryAccessCode,omitempty"`
 	PIN               string `json:"PIN,omitempty"`
@@ -282,8 +282,8 @@ type HotelDescriptions struct {
 
 // HotelDescription **
 type HotelDescription struct {
-	DescriptiveText        string                  `json:"DescriptiveText,omitempty"`
 	MultimediaDescriptions *MultimediaDescriptions `json:"MultimediaDescriptions,omitempty"`
+	DescriptiveText        string                  `json:"DescriptiveText,omitempty"`
 }
 
 // Services **
@@ -381,7 +381,7 @@ type MultimediaDescription struct {
 
 //TextItems **
 type TextItems struct {
-	TextItem TextItem `json:"TextItem"`
+	TextItem []TextItem `json:"TextItem"`
 }
 
 //TextItem **
@@ -405,6 +405,7 @@ type ImageItem struct {
 
 //TPAExtensionsImageItem **
 type TPAExtensionsImageItem struct {
+	Category     string       `json:"Category"`
 	TPAExtension TPAExtension `json:"TPAExtension"`
 }
 
