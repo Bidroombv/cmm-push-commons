@@ -12,7 +12,6 @@ type CancelPenalty struct {
 	Start              string                `json:"Start,omitempty"`
 	End                string                `json:"End,omitempty"`
 	NonRefundable      bool                  `json:"NonRefundable,omitempty"`
-	NoCancelInd        bool                  `json:"NoCancelInd,omitempty"`
 	Deadline           *PenaltyDeadline      `json:"Deadline,omitempty"`
 	AmountPercent      *PenaltyAmountPercent `json:"AmountPercent,omitempty"`
 	PenaltyDescription *[]PenaltyDescription `json:"PenaltyDescription,omitempty"`
