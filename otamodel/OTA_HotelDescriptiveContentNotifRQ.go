@@ -411,6 +411,11 @@ type TPAExtensionsImageItem struct {
 
 //TPAExtension **
 type TPAExtension struct {
+	Extension ExtensionImageItem `json:"Extension"`
+}
+
+// ExtensionImageItem **
+type ExtensionImageItem struct {
 	Name string `json:"Name,omitempty"`
 	Item *Item  `json:"Item,omitempty"`
 }
