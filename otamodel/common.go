@@ -80,8 +80,8 @@ type Rate struct {
 	Fri                    string                  `json:"Fri,omitempty"`
 	Sat                    string                  `json:"Sat,omitempty"`
 	Sun                    string                  `json:"Sun,omitempty"`
-	Start                  string                  `json:"Start"`
-	End                    string                  `json:"End"`
+	Start                  string                  `json:"Start,omitempty"`
+	End                    string                  `json:"End,omitempty"`
 	InvTypeCode            string                  `json:"InvTypeCode,omitempty"`
 	InvCode                string                  `json:"InvCode,omitempty"`
 	MaxLOS                 string                  `json:"MaxLOS,omitempty"`
