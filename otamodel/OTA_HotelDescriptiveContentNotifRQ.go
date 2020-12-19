@@ -219,15 +219,15 @@ type GuestRooms struct {
 // GuestRoom **
 type GuestRoom struct {
 	Language               string                  `json:"Language,omitempty"`
-	MaxAdultOccupancy      int                     `json:"MaxAdultOccupancy"`
-	MaxChildOccupancy      int                     `json:"MaxChildOccupancy"`
-	MaxOccupancy           int                     `json:"MaxOccupancy"`
-	MinOccupancy           int                     `json:"MinOccupancy"`
+	MaxAdultOccupancy      int                     `json:"MaxAdultOccupancy,omitempty"`
+	MaxChildOccupancy      int                     `json:"MaxChildOccupancy,omitempty"`
+	MaxOccupancy           int                     `json:"MaxOccupancy,omitempty"`
+	MinOccupancy           int                     `json:"MinOccupancy,omitempty"`
 	NonsmokingQuantity     int                     `json:"NonsmokingQuantity,omitempty"`
 	Quality                string                  `json:"Quality,omitempty"`
-	RoomTypeName           string                  `json:"RoomTypeName"`
+	RoomTypeName           string                  `json:"RoomTypeName,omitempty"`
 	Code                   string                  `json:"Code"`
-	Quantity               int                     `json:"Quantity"`
+	Quantity               int                     `json:"Quantity,omitempty"`
 	DescriptiveText        string                  `json:"DescriptiveText,omitempty"`
 	Amenities              Amenities               `json:"Amenities"`
 	Features               *Features               `json:"Features,omitempty"`
@@ -368,15 +368,15 @@ type GuestRoomInfo struct {
 
 // MultimediaDescriptions **
 type MultimediaDescriptions struct {
-	InfoCode              int                     `json:"InfoCode,omitempty"`
-	AdditionalDetailCode  int                     `json:"AdditionalDetailCode,omitempty"`
 	MultimediaDescription []MultimediaDescription `json:"MultimediaDescription"`
 }
 
 // MultimediaDescription **
 type MultimediaDescription struct {
-	ImageItems *ImageItems `json:"ImageItems,omitempty"`
-	TextItems  *TextItems  `json:"TextItems,omitempty"`
+	InfoCode             int         `json:"InfoCode,omitempty"`
+	AdditionalDetailCode int         `json:"AdditionalDetailCode,omitempty"`
+	ImageItems           *ImageItems `json:"ImageItems,omitempty"`
+	TextItems            *TextItems  `json:"TextItems,omitempty"`
 }
 
 //TextItems **

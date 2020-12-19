@@ -71,19 +71,32 @@ type TPAExtensions struct {
 	PrepaymentPolicy PrepaymentPolicy `json:"PrepaymentPolicy,omitempty"`
 }
 type GuaranteePayment struct {
-	TPAExtensions TPAExtensions `json:"TPA_Extensions,omitempty"`
-	PolicyCode    string        `json:"PolicyCode,omitempty"`
+	AcceptedPayments *AcceptedPayments `json:"AcceptedPayments,omitempty"`
+	TPAExtensions    *TPAExtensions    `json:"TPA_Extensions,omitempty"`
+	PolicyCode       string            `json:"PolicyCode,omitempty"`
+}
+
+type AcceptedPayments struct {
+	AcceptedPayment []AcceptedPayment `json:"AcceptedPayment"`
+}
+
+type AcceptedPayment struct {
+	PaymentCard PaymentCard `json:"PaymentCard"`
+}
+
+type PaymentCard struct {
+	CardCode string `json:"CardCode,attr"`
 }
 type GuaranteePaymentPolicy struct {
 	GuaranteePayment []GuaranteePayment `json:"GuaranteePayment,omitempty"`
 }
 type HotelProduct struct {
-	Contact                *[]Contact             `json:"Contact,omitempty,required"`
-	PolicyInfo             *PolicyInfo            `json:"PolicyInfo,omitempty,required"`
-	ProductNotifType       string                 `json:"ProductNotifType,omitempty"`
-	RoomTypes              RoomTypes              `json:"RoomTypes,omitempty"`
-	RatePlans              HotelProductRatePlans  `json:"RatePlans,omitempty"`
-	GuaranteePaymentPolicy GuaranteePaymentPolicy `json:"GuaranteePaymentPolicy,omitempty"`
+	Contact                *[]Contact              `json:"Contact,omitempty,required"`
+	PolicyInfo             *PolicyInfo             `json:"PolicyInfo,omitempty,required"`
+	ProductNotifType       string                  `json:"ProductNotifType,omitempty"`
+	RoomTypes              RoomTypes               `json:"RoomTypes,omitempty"`
+	RatePlans              HotelProductRatePlans   `json:"RatePlans,omitempty"`
+	GuaranteePaymentPolicy *GuaranteePaymentPolicy `json:"GuaranteePaymentPolicy,omitempty"`
 }
 type HotelProducts struct {
 	HotelCode    string          `json:"HotelCode,omitempty,required"`
