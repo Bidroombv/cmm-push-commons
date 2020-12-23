@@ -178,17 +178,33 @@ type PaymentPolicies struct {
 }
 
 type PaymentPoliciesGuaranteePayment struct {
-	Start         string                `json:"Start,omitempty"`
-	End           string                `json:"End,omitempty"`
-	GuaranteeType string                `json:"GuaranteeType,omitempty"`
-	HoldTime      string                `json:"HoldTime,omitempty"`
-	Mon           string                `json:"Mon,omitempty"`
-	Tue           string                `json:"Tue,omitempty"`
-	Weds          string                `json:"Weds,omitempty"`
-	Thur          string                `json:"Thur,omitempty"`
-	Fri           string                `json:"Fri,omitempty"`
-	Sat           string                `json:"Sat,omitempty"`
-	Sun           string                `json:"Sun,omitempty"`
-	AmountPercent *PenaltyAmountPercent `json:"AmountPercent,omitempty"`
-	Description   *Description          `json:"Description,omitempty"`
+	Start            string                `json:"Start,omitempty"`
+	End              string                `json:"End,omitempty"`
+	GuaranteeType    string                `json:"GuaranteeType,omitempty"`
+	HoldTime         string                `json:"HoldTime,omitempty"`
+	Mon              string                `json:"Mon,omitempty"`
+	Tue              string                `json:"Tue,omitempty"`
+	Weds             string                `json:"Weds,omitempty"`
+	Thur             string                `json:"Thur,omitempty"`
+	Fri              string                `json:"Fri,omitempty"`
+	Sat              string                `json:"Sat,omitempty"`
+	Sun              string                `json:"Sun,omitempty"`
+	AmountPercent    *PenaltyAmountPercent `json:"AmountPercent,omitempty"`
+	Description      *Description          `json:"Description,omitempty"`
+	AcceptedPayments *AcceptedPayments     `json:"AcceptedPayments,omitempty"`
+}
+
+//AcceptedPayments **
+type AcceptedPayments struct {
+	AcceptedPayment []AcceptedPayment `json:"AcceptedPayment"`
+}
+
+//AcceptedPayment **
+type AcceptedPayment struct {
+	PaymentCard PaymentCard `json:"PaymentCard"`
+}
+
+//PaymentCard **
+type PaymentCard struct {
+	CardCode string `json:"CardCode,attr"`
 }
