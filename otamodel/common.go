@@ -58,9 +58,9 @@ type BaseByGuestAmts struct {
 
 type BaseByGuestAmt struct {
 	AmountBeforeTax   string `json:"AmountBeforeTax,omitempty"`
-	AmountAfterTax    string `json:"AmountAfterTax"`
-	NumberOfGuests    string `json:"NumberOfGuests"`
-	AgeQualifyingCode string `json:"AgeQualifyingCode"`
+	AmountAfterTax    string `json:"AmountAfterTax,omitempty"`
+	NumberOfGuests    string `json:"NumberOfGuests,omitempty"`
+	AgeQualifyingCode string `json:"AgeQualifyingCode,omitempty"`
 	DecimalPlaces     string `json:"DecimalPlaces,omitempty"`
 	CurrencyCode      string `json:"CurrencyCode,omitempty"`
 }
