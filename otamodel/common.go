@@ -14,18 +14,6 @@ type StatusApplicationControl struct {
 	End          string `json:"End"`
 }
 
-type LengthOfStay struct {
-	MinMaxMessageType string `json:"MinMaxMessageType,omitempty"`
-	Time              string `json:"Time,omitempty"`
-	TimeUnit          string `json:"TimeUnit,omitempty"`
-	MinLOS            string `json:"MinLOS,omitempty"`
-	MaxLOS            string `json:"MaxLOS,omitempty"`
-}
-
-type LengthsOfStay struct {
-	LengthOfStay []LengthOfStay `json:"LengthOfStay,omitempty"`
-}
-
 type AdditionalGuestAmount struct {
 	Amount            string `json:"Amount"`
 	DecimalPlaces     string `json:"DecimalPlaces,omitempty"`
@@ -36,26 +24,6 @@ type AdditionalGuestAmount struct {
 
 type Rates struct {
 	Rate []Rate `json:"Rate"`
-}
-
-type DOWRestrictions struct {
-	AvailableDaysOfWeek DaysOfWeek `json:"AvailableDaysOfWeek,omitempty"`
-	ArrivalDaysOfWeek   DaysOfWeek `json:"ArrivalDaysOfWeek,omitempty"`
-	DepartureDaysOfWeek DaysOfWeek `json:"DepartureDaysOfWeek,omitempty"`
-}
-
-// Guestline supports DOWRestrictions instead of DOW_Restrictions
-
-type BookingRule struct {
-	RestrictionStatus        *[]RestrictionStatus   `json:"RestrictionStatus,omitempty"`
-	LengthsOfStay            *LengthsOfStay         `json:"LengthsOfStay,omitempty"`
-	Start                    string                 `json:"Start,omitempty"`
-	End                      string                 `json:"End,omitempty"`
-	OriginalData             map[string]interface{} `json:"original_data,omitempty"`
-	OldDOWRestrictions       *DOWRestrictions       `json:"DOWRestrictions,omitempty"`
-	DOWRestrictions          *DOWRestrictions       `json:"DOW_Restrictions,omitempty"`
-	MinAdvancedBookingOffset string                 `json:"MinAdvancedBookingOffset,omitempty"`
-	MaxAdvancedBookingOffset string                 `json:"MaxAdvancedBookingOffset,omitempty"`
 }
 
 type Rate struct {
@@ -92,6 +60,10 @@ type Rate struct {
 	AdvancedBooking        *AdvancedBooking        `json:"AdvancedBooking,omitempty"`
 }
 
+type BaseByGuestAmts struct {
+	BaseByGuestAmt *[]BaseByGuestAmt `json:"BaseByGuestAmt,omitempty"`
+}
+
 type BaseByGuestAmt struct {
 	NumberOfGuests    string `json:"NumberOfGuests"`
 	AgeQualifyingCode string `json:"AgeQualifyingCode"`
@@ -103,10 +75,6 @@ type BaseByGuestAmt struct {
 
 type AdditionalGuestAmounts struct {
 	AdditionalGuestAmount []AdditionalGuestAmount `json:"AdditionalGuestAmount"`
-}
-
-type BaseByGuestAmts struct {
-	BaseByGuestAmt *[]BaseByGuestAmt `json:"BaseByGuestAmt,omitempty"`
 }
 
 type CancelPolicies struct {
@@ -129,9 +97,24 @@ type CancelPenalty struct {
 	Sun                string                `json:"Sun,omitempty"`
 }
 
-type BookingRules struct {
-	InventoryInfo *InventoryInfo `json:"InventoryInfo,omitempty"`
-	BookingRule   *[]BookingRule `json:"BookingRule,omitempty"`
+type PaymentPolicies struct {
+	GuaranteePayment []PaymentPoliciesGuaranteePayment `json:"GuaranteePayment,omitempty"`
+}
+
+type PaymentPoliciesGuaranteePayment struct {
+	Start         string                `json:"Start,omitempty"`
+	End           string                `json:"End,omitempty"`
+	GuaranteeType string                `json:"GuaranteeType,omitempty"`
+	HoldTime      string                `json:"HoldTime,omitempty"`
+	Mon           string                `json:"Mon,omitempty"`
+	Tue           string                `json:"Tue,omitempty"`
+	Weds          string                `json:"Weds,omitempty"`
+	Thur          string                `json:"Thur,omitempty"`
+	Fri           string                `json:"Fri,omitempty"`
+	Sat           string                `json:"Sat,omitempty"`
+	Sun           string                `json:"Sun,omitempty"`
+	AmountPercent *PenaltyAmountPercent `json:"AmountPercent,omitempty"`
+	Description   *Description          `json:"Description,omitempty"`
 }
 
 type MealsIncluded struct {
@@ -141,13 +124,24 @@ type MealsIncluded struct {
 	MealPlanCodes string `json:"MealPlanCodes,omitempty"`
 }
 
-type Text struct {
-	TextFormat string `json:"TextFormat"`
-	Text       string `json:"__text"`
+type Fees struct {
+	Fee []Fee `json:"Fee"`
 }
 
-type InventoryInfo struct {
-	InvTypeCode string `json:"InvTypeCode"`
+type GuaranteePolicies struct {
+	GuaranteePolicy []GuaranteePolicy `json:"GuaranteePolicy"`
+}
+
+type GuaranteePolicy struct {
+	GuaranteesAccepted GuaranteesAccepted `json:"GuaranteesAccepted"`
+}
+
+type GuaranteesAccepted struct {
+	GuaranteeAccepted GuaranteeAccepted `json:"GuaranteeAccepted"`
+}
+
+type GuaranteeAccepted struct {
+	PaymentCard string `json:"PaymentCard"`
 }
 
 type RateDescription struct {
@@ -155,27 +149,22 @@ type RateDescription struct {
 	Name string `json:"Name"`
 }
 
-type RestrictionStatus struct {
-	Restriction              string `json:"Restriction,omitempty"`
-	Status                   string `json:"Status,omitempty"`
-	MinAdvancedBookingOffset string `json:"MinAdvancedBookingOffset,omitempty"`
-	MaxAdvancedBookingOffset string `json:"MaxAdvancedBookingOffset,omitempty"`
-}
-type DaysOfWeek struct {
-	Mon   string `json:"Mon,omitempty"`
-	Tue   string `json:"Tue,omitempty"`
-	Weds  string `json:"Weds,omitempty"`
-	Thur  string `json:"Thur,omitempty"`
-	Fri   string `json:"Fri,omitempty"`
-	Sat   string `json:"Sat,omitempty"`
-	Sun   string `json:"Sun,omitempty"`
-	Start string `json:"Start,omitempty"`
-	End   string `json:"End,omitempty"`
+type Text struct {
+	TextFormat string `json:"TextFormat"`
+	Text       string `json:"__text"`
 }
 
 type Restrictions struct {
 	ClosedToArrival   string `json:"ClosedToArrival,omitempty"`
 	ClosedToDeparture string `json:"ClosedToDeparture,omitempty"`
+}
+
+type LengthOfStay struct {
+	MinMaxMessageType string `json:"MinMaxMessageType,omitempty"`
+	Time              string `json:"Time,omitempty"`
+	TimeUnit          string `json:"TimeUnit,omitempty"`
+	MinLOS            string `json:"MinLOS,omitempty"`
+	MaxLOS            string `json:"MaxLOS,omitempty"`
 }
 
 type StayOfThrough struct {
@@ -186,6 +175,57 @@ type StayOfThrough struct {
 type AdvancedBooking struct {
 	MinAD string `json:"MinAD,omitempty"`
 	MaxAD string `json:"MaxAD,omitempty"`
+}
+
+type BookingRules struct {
+	InventoryInfo *InventoryInfo `json:"InventoryInfo,omitempty"`
+	BookingRule   *[]BookingRule `json:"BookingRule,omitempty"`
+}
+
+type InventoryInfo struct {
+	InvTypeCode string `json:"InvTypeCode"`
+}
+
+type BookingRule struct {
+	RestrictionStatus        *[]RestrictionStatus   `json:"RestrictionStatus,omitempty"`
+	LengthsOfStay            *LengthsOfStay         `json:"LengthsOfStay,omitempty"`
+	Start                    string                 `json:"Start,omitempty"`
+	End                      string                 `json:"End,omitempty"`
+	OriginalData             map[string]interface{} `json:"original_data,omitempty"`
+	OldDOWRestrictions       *DOWRestrictions       `json:"DOWRestrictions,omitempty"`
+	DOWRestrictions          *DOWRestrictions       `json:"DOW_Restrictions,omitempty"`
+	MinAdvancedBookingOffset string                 `json:"MinAdvancedBookingOffset,omitempty"`
+	MaxAdvancedBookingOffset string                 `json:"MaxAdvancedBookingOffset,omitempty"`
+}
+
+type RestrictionStatus struct {
+	Restriction              string `json:"Restriction,omitempty"`
+	Status                   string `json:"Status,omitempty"`
+	MinAdvancedBookingOffset string `json:"MinAdvancedBookingOffset,omitempty"`
+	MaxAdvancedBookingOffset string `json:"MaxAdvancedBookingOffset,omitempty"`
+}
+
+type LengthsOfStay struct {
+	LengthOfStay []LengthOfStay `json:"LengthOfStay,omitempty"`
+}
+
+// Guestline supports DOWRestrictions instead of DOW_Restrictions
+type DOWRestrictions struct {
+	AvailableDaysOfWeek DaysOfWeek `json:"AvailableDaysOfWeek,omitempty"`
+	ArrivalDaysOfWeek   DaysOfWeek `json:"ArrivalDaysOfWeek,omitempty"`
+	DepartureDaysOfWeek DaysOfWeek `json:"DepartureDaysOfWeek,omitempty"`
+}
+
+type DaysOfWeek struct {
+	Mon   string `json:"Mon,omitempty"`
+	Tue   string `json:"Tue,omitempty"`
+	Weds  string `json:"Weds,omitempty"`
+	Thur  string `json:"Thur,omitempty"`
+	Fri   string `json:"Fri,omitempty"`
+	Sat   string `json:"Sat,omitempty"`
+	Sun   string `json:"Sun,omitempty"`
+	Start string `json:"Start,omitempty"`
+	End   string `json:"End,omitempty"`
 }
 
 type RatePlanTPAExtensions struct {
@@ -209,26 +249,6 @@ type RatePlanItem struct {
 	Value string `json:"Value,omitempty"`
 }
 
-type PaymentPolicies struct {
-	GuaranteePayment []PaymentPoliciesGuaranteePayment `json:"GuaranteePayment,omitempty"`
-}
-
-type PaymentPoliciesGuaranteePayment struct {
-	Start         string                `json:"Start,omitempty"`
-	End           string                `json:"End,omitempty"`
-	GuaranteeType string                `json:"GuaranteeType,omitempty"`
-	HoldTime      string                `json:"HoldTime,omitempty"`
-	Mon           string                `json:"Mon,omitempty"`
-	Tue           string                `json:"Tue,omitempty"`
-	Weds          string                `json:"Weds,omitempty"`
-	Thur          string                `json:"Thur,omitempty"`
-	Fri           string                `json:"Fri,omitempty"`
-	Sat           string                `json:"Sat,omitempty"`
-	Sun           string                `json:"Sun,omitempty"`
-	AmountPercent *PenaltyAmountPercent `json:"AmountPercent,omitempty"`
-	Description   *Description          `json:"Description,omitempty"`
-}
-
 type PenaltyAmountPercent struct {
 	TaxInclusive  bool   `json:"TaxInclusive,omitempty"`
 	FeesInclusive bool   `json:"FeesInclusive,omitempty"`
@@ -238,6 +258,11 @@ type PenaltyAmountPercent struct {
 	NmbrOfNights  string `json:"NmbrOfNights,omitempty"`
 	DecimalPlaces string `json:"DecimalPlaces,omitempty"`
 	CurrencyCode  string `json:"CurrencyCode,omitempty"`
+}
+
+type Description struct {
+	Name string `json:"Name,omitempty"`
+	Text string `json:"Text,omitempty"`
 }
 
 type PenaltyDescription struct {

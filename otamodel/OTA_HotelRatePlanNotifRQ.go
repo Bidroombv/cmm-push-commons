@@ -17,12 +17,11 @@ type RatePlans struct {
 }
 
 type RatePlan struct {
+	RatePlanID         string                 `json:"RatePlanID"`
+	Rates              Rates                  `json:"Rates"`
 	CurrencyCode       string                 `json:"CurrencyCode,omitempty"`
 	OriginalData       string                 `json:"original_data,omitempty"`
-	RatePlanID         string                 `json:"RatePlanID,omitempty"`
-	RatePlanCode       string                 `json:"RatePlanCode,omitempty"`
 	RatePlanNotifType  string                 `json:"RatePlanNotifType,omitempty"`
-	Rates              Rates                  `json:"Rates"`
 	RatePlanStatusType string                 `json:"RatePlanStatusType,omitempty"`
 	Start              string                 `json:"Start,omitempty"`
 	End                string                 `json:"End,omitempty"`
@@ -34,20 +33,6 @@ type RatePlan struct {
 
 type SellableProducts struct {
 	SellableProduct []SellableProduct `json:"SellableProduct"`
-}
-
-type RatePlanDescription struct {
-	Name string                     `json:"Name,omitempty"`
-	Text *[]RatePlanDescriptionText `json:"Text,omitempty"`
-}
-
-type RatePlanLevelFee struct {
-	Fee []Fee `json:"Fee"`
-}
-
-type RatePlanDescriptionText struct {
-	Language string `json:"Language,omitempty"`
-	Text     string `json:"Text,omitempty"`
 }
 
 type SellableProduct struct {
@@ -66,7 +51,16 @@ type SellableProductRoom struct {
 	RoomTypeCode string `json:"RoomTypeCode,omitempty"`
 }
 
-type Description struct {
-	Name string `json:"Name,omitempty"`
-	Text string `json:"Text,omitempty"`
+type RatePlanDescription struct {
+	Name string                     `json:"Name,omitempty"`
+	Text *[]RatePlanDescriptionText `json:"Text,omitempty"`
+}
+
+type RatePlanDescriptionText struct {
+	Language string `json:"Language,omitempty"`
+	Text     string `json:"Text,omitempty"`
+}
+
+type RatePlanLevelFee struct {
+	Fee []Fee `json:"Fee"`
 }
