@@ -99,8 +99,9 @@ type TPAExtensions struct {
 
 //GuaranteePayment **
 type GuaranteePayment struct {
-	TPAExtensions *TPAExtensions `json:"TPA_Extensions,omitempty"`
-	PolicyCode    string         `json:"PolicyCode,omitempty"`
+	TPAExtensions    *TPAExtensions    `json:"TPA_Extensions,omitempty"`
+	PolicyCode       string            `json:"PolicyCode,omitempty"`
+	AcceptedPayments *AcceptedPayments `json:"AcceptedPayments,omitempty"`
 }
 
 //GuaranteePaymentPolicy **

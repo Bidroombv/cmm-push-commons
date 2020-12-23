@@ -180,21 +180,6 @@ type GuaranteePaymentHotelContent struct {
 	AcceptedPayments *AcceptedPayments `json:"AcceptedPayments,omitempty"`
 }
 
-//AcceptedPayments **
-type AcceptedPayments struct {
-	AcceptedPayment []AcceptedPayment `json:"AcceptedPayment"`
-}
-
-//AcceptedPayment **
-type AcceptedPayment struct {
-	PaymentCard PaymentCard `json:"PaymentCard"`
-}
-
-//PaymentCard **
-type PaymentCard struct {
-	CardCode string `json:"CardCode,attr"`
-}
-
 // PetsPolicies **
 type PetsPolicies struct {
 	PetsAllowedCode string        `json:"PetsAllowedCode"`
