@@ -229,6 +229,15 @@ type DaysOfWeek struct {
 	End   string `json:"End,omitempty"`
 }
 
+type Fee struct {
+	Amount          string `json:"Amount"`
+	Code            string `json:"Code"`
+	DecimalPlaces   string `json:"DecimalPlaces"`
+	Percent         string `json:"Percent"`
+	ChargeFrequency string `json:"ChargeFrequency"`
+	Description     string `json:"Description"`
+}
+
 type RatePlanTPAExtensions struct {
 	TPAExtension RatePlanTPAExtension `json:"TPA_Extension,omitempty"`
 }
