@@ -11,9 +11,9 @@ type OTAHotelRatePlanNotifRQ struct {
 
 type RatePlans struct {
 	HotelCode string     `json:"HotelCode"`
-	RatePlan  []RatePlan `json:"RatePlan"`
 	ChainCode string     `json:"ChainCode,omitempty"`
 	HotelName string     `json:"HotelName,omitempty"`
+	RatePlan  []RatePlan `json:"RatePlan"`
 }
 
 type RatePlan struct {
