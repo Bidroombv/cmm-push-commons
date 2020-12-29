@@ -27,14 +27,40 @@ type HotelDescriptiveContent struct {
 	CurrencyCode           string                  `json:"CurrencyCode,omitempty"`
 	ChainCode              string                  `json:"ChainCode,omitempty"`
 	ChainName              string                  `json:"ChainName,omitempty"`
-	HotelName              string                  `json:"HotelName"`
-	HotelCode              string                  `json:"HotelCode"`
-	HotelInfo              HotelInfo               `json:"HotelInfo"`
-	FacilityInfo           FacilityInfo            `json:"FacilityInfo"`
-	Policies               Policies                `json:"Policies"`
+	HotelName              string                  `json:"HotelName,omitempty"`
+	HotelCode              string                  `json:"HotelCode,omitempty"`
+	HotelInfo              *HotelInfo              `json:"HotelInfo,omitempty"`
+	FacilityInfo           *FacilityInfo           `json:"FacilityInfo,omitempty"`
+	Policies               *Policies               `json:"Policies,omitempty"`
 	MultimediaDescriptions *MultimediaDescriptions `json:"MultimediaDescriptions,omitempty"`
 	AffiliationInfo        *AffiliationInfo        `json:"AffiliationInfo,omitempty"`
 	ContactInfos           *ContactInfos           `json:"ContactInfos,omitempty"`
+	TPAExtensions          *TPAExtensionsImageItem `json:"TPA_Extensions,omitempty"`
+	AreaInfo               *AreaInfo               `json:"AreaInfo,omitempty"`
+}
+
+//AreaInfo **
+type AreaInfo struct {
+	Attractions *Attractions `json:"Attractions,omitempty"`
+}
+
+//Attractions **
+type Attractions struct {
+	Attraction []Attraction `json:"Attraction,omitempty"`
+}
+
+//Attraction **
+type Attraction struct {
+	Items Items `json:"items,omitempty"`
+}
+
+//Items **
+type Items struct {
+	AttractionName         string `json:"AttractionName"`
+	AttractionCategoryCode string `json:"AttractionCategoryCode"`
+	Distance               string `json:"Distance"`
+	DistanceUnit           string `json:"DistanceUnit"`
+	LanguageCode           string `json:"LanguageCode"`
 }
 
 // ContactInfos **
@@ -62,11 +88,11 @@ type Addresses struct {
 // Address **
 type Address struct {
 	Language    string     `json:"Language,omitempty"`
-	AddressLine string     `json:"AddressLine"`
-	CityName    string     `json:"CityName"`
-	PostalCode  string     `json:"PostalCode"`
+	AddressLine string     `json:"AddressLine,omitempty"`
+	CityName    string     `json:"CityName,omitempty"`
+	PostalCode  string     `json:"PostalCode,omitempty"`
 	CountryName string     `json:"CountryName,omitempty"`
-	CountryCode string     `json:"CountryCode"`
+	CountryCode string     `json:"CountryCode,omitempty"`
 	HotelName   string     `json:"HotelName,omitempty"`
 	StateProv   *StateProv `json:"StateProv,omitempty"`
 }
@@ -124,7 +150,7 @@ type AffiliationInfo struct {
 type Award struct {
 	Date         string `json:"Date,omitempty"`
 	Provider     string `json:"Provider,omitempty"`
-	Rating       string `json:"Rating,omitempty"`
+	Rating       string `json:"Rating"`
 	RatingSymbol string `json:"RatingSymbol,omitempty"`
 }
 
@@ -135,13 +161,23 @@ type Policies struct {
 
 // Policy **
 type Policy struct {
-	Code                   string                  `json:"Code"`
-	CancelPolicy           *CancelPolicy           `json:"CancelPolicy,omitempty"`
-	FeePolicies            *FeePolicies            `json:"FeePolicies,omitempty"`
-	PetsPolicies           *PetsPolicies           `json:"PetsPolicies,omitempty"`
-	GuaranteePaymentPolicy *GuaranteePaymentPolicy `json:"GuaranteePaymentPolicy,omitempty"`
-	PolicyInfo             *PolicyInfo             `json:"PolicyInfo,omitempty"`
-	TaxPolicies            *TaxPolicies            `json:"TaxPolicies,omitempty"`
+	Code                   string                              `json:"Code"`
+	CancelPolicy           *CancelPolicy                       `json:"CancelPolicy,omitempty"`
+	FeePolicies            *FeePolicies                        `json:"FeePolicies,omitempty"`
+	PetsPolicies           *PetsPolicies                       `json:"PetsPolicies,omitempty"`
+	GuaranteePaymentPolicy *GuaranteePaymentPolicyHotelContent `json:"GuaranteePaymentPolicy,omitempty"`
+	PolicyInfo             *PolicyInfo                         `json:"PolicyInfo,omitempty"`
+	TaxPolicies            *TaxPolicies                        `json:"TaxPolicies,omitempty"`
+}
+
+//GuaranteePaymentPolicyHotelContent **
+type GuaranteePaymentPolicyHotelContent struct {
+	GuaranteePayment []GuaranteePaymentHotelContent `json:"GuaranteePayment,omitempty"`
+}
+
+//GuaranteePaymentHotelContent **
+type GuaranteePaymentHotelContent struct {
+	AcceptedPayments *AcceptedPayments `json:"AcceptedPayments,omitempty"`
 }
 
 // PetsPolicies **
@@ -196,6 +232,7 @@ type PolicyInfo struct {
 	MaxChildAge       string `json:"MaxChildAge,omitempty"`
 	MinGuestAge       string `json:"MinGuestAge,omitempty"`
 	AcceptedGuestType string `json:"AcceptedGuestType,omitempty"`
+	KidsStayFree      string `json:"KidsStayFree,omitempty"`
 }
 
 // TaxPolicies **
@@ -217,17 +254,17 @@ type GuestRooms struct {
 // GuestRoom **
 type GuestRoom struct {
 	Language               string                  `json:"Language,omitempty"`
-	MaxAdultOccupancy      string                     `json:"MaxAdultOccupancy"`
-	MaxChildOccupancy      string                     `json:"MaxChildOccupancy"`
-	MaxOccupancy           string                     `json:"MaxOccupancy"`
-	MinOccupancy           string                     `json:"MinOccupancy"`
+	MaxAdultOccupancy      string                  `json:"MaxAdultOccupancy,omitempty"`
+	MaxChildOccupancy      string                  `json:"MaxChildOccupancy,omitempty"`
+	MaxOccupancy           string                  `json:"MaxOccupancy,omitempty"`
+	MinOccupancy           string                  `json:"MinOccupancy,omitempty"`
 	NonsmokingQuantity     string                  `json:"NonsmokingQuantity,omitempty"`
 	Quality                string                  `json:"Quality,omitempty"`
-	RoomTypeName           string                  `json:"RoomTypeName"`
+	RoomTypeName           string                  `json:"RoomTypeName,omitempty"`
 	Code                   string                  `json:"Code"`
-	Quantity               string                  `json:"Quantity"`
+	Quantity               string                  `json:"Quantity,omitempty"`
 	DescriptiveText        string                  `json:"DescriptiveText,omitempty"`
-	Amenities              Amenities               `json:"Amenities"`
+	Amenities              *Amenities              `json:"Amenities,omitempty"`
 	Features               *Features               `json:"Features,omitempty"`
 	MultimediaDescriptions *MultimediaDescriptions `json:"MultimediaDescriptions,omitempty"`
 	TypeRoom               *[]TypeRoom             `json:"TypeRoom,omitempty"`
@@ -240,10 +277,11 @@ type Amenities struct {
 
 // Amenity **
 type Amenity struct {
-	ExistsCode      string `json:"ExistsCode,omitempty"`
-	RoomAmenityCode string `json:"RoomAmenityCode"`
-	CodeDetail      string `json:"CodeDetail,omitempty"`
-	DescriptiveText string `json:"DescriptiveText,omitempty"`
+	ExistsCode              string `json:"ExistsCode"`
+	RoomAmenityCode         string `json:"RoomAmenityCode"`
+	IncludedInRateIndicator string `json:"IncludedInRateIndicator,omitempty"`
+	CodeDetail              string `json:"CodeDetail,omitempty"`
+	DescriptiveText         string `json:"DescriptiveText,omitempty"`
 }
 
 // TypeRoom **
@@ -264,7 +302,7 @@ type TypeRoom struct {
 type HotelInfo struct {
 	HotelStatus     string             `json:"HotelStatus,omitempty"`
 	HotelStatusCode string             `json:"HotelStatusCode,omitempty"`
-	CategoryCodes   CategoryCodes      `json:"CategoryCodes"`
+	CategoryCodes   *CategoryCodes     `json:"CategoryCodes,omitempty"`
 	Descriptions    *HotelDescriptions `json:"Descriptions,omitempty"`
 	HotelName       *HotelName         `json:"HotelName,omitempty"`
 	Languages       *Languages         `json:"Languages,omitempty"`
@@ -279,7 +317,8 @@ type HotelDescriptions struct {
 
 // HotelDescription **
 type HotelDescription struct {
-	DescriptiveText string `json:"DescriptiveText,omitempty"`
+	MultimediaDescriptions *MultimediaDescriptions `json:"MultimediaDescriptions,omitempty"`
+	DescriptiveText        string                  `json:"DescriptiveText,omitempty"`
 }
 
 // Services **
@@ -304,8 +343,12 @@ type Features struct {
 
 // Feature **
 type Feature struct {
-	DescriptiveText string `json:"DescriptiveText"`
-	Charge          Charge `json:"Charge,omitempty"`
+	CodeDetail             string                  `json:"CodeDetail"`
+	UnitOfMeasure          string                  `json:"UnitOfMeasure,omitempty"`
+	UnitOfMeasureQuantity  string                  `json:"UnitOfMeasureQuantity,omitempty"`
+	MultimediaDescriptions *MultimediaDescriptions `json:"MultimediaDescriptions,omitempty"`
+	DescriptiveText        string                  `json:"DescriptiveText"`
+	Charge                 *Charge                 `json:"Charge,omitempty"`
 }
 
 // Charge **
@@ -339,7 +382,7 @@ type HotelName struct {
 
 // CategoryCodes **
 type CategoryCodes struct {
-	GuestRoomInfo []GuestRoomInfo  `json:"GuestRoomInfo"`
+	GuestRoomInfo *[]GuestRoomInfo `json:"GuestRoomInfo,omitempty"`
 	HotelCategory *[]HotelCategory `json:"HotelCategory,omitempty"`
 }
 
@@ -365,7 +408,21 @@ type MultimediaDescriptions struct {
 
 // MultimediaDescription **
 type MultimediaDescription struct {
-	ImageItems ImageItems `json:"ImageItems"`
+	InfoCode             string      `json:"InfoCode,omitempty"`
+	AdditionalDetailCode string      `json:"AdditionalDetailCode,omitempty"`
+	ImageItems           *ImageItems `json:"ImageItems,omitempty"`
+	TextItems            *TextItems  `json:"TextItems,omitempty"`
+}
+
+//TextItems **
+type TextItems struct {
+	TextItem []TextItem `json:"TextItem"`
+}
+
+//TextItem **
+type TextItem struct {
+	Title       string `json:"Title"`
+	Description string `json:"Description"`
 }
 
 // ImageItems **
@@ -375,10 +432,42 @@ type ImageItems struct {
 
 // ImageItem **
 type ImageItem struct {
-	ImageFormat []ImageFormat `json:"ImageFormat"`
+	Category      string                  `json:"Category,omitempty"`
+	ImageFormat   []ImageFormat           `json:"ImageFormat"`
+	Description   *DescriptionImageItem   `json:"Description,omitempty"`
+	TPAExtensions *TPAExtensionsImageItem `json:"TPA_Extensions,omitempty"`
 }
 
-// ImageFormat
+//TPAExtensionsImageItem **
+type TPAExtensionsImageItem struct {
+	Category     string       `json:"Category,omitempty"`
+	Code         string       `json:"Code,omitempty"`
+	TPAExtension TPAExtension `json:"TPAExtension"`
+}
+
+//TPAExtension **
+type TPAExtension struct {
+	Extension ExtensionImageItem `json:"Extension"`
+}
+
+// ExtensionImageItem **
+type ExtensionImageItem struct {
+	Name string `json:"Name,omitempty"`
+	Item *Item  `json:"Item,omitempty"`
+}
+
+//Item **
+type Item struct {
+	Key   string `json:"Key"`
+	Value string `json:"Value"`
+}
+
+//DescriptionImageItem **
+type DescriptionImageItem struct {
+	Caption string `json:"Caption"`
+}
+
+// ImageFormat **
 type ImageFormat struct {
 	URL        string `json:"URL"`
 	Width      string `json:"Width,omitempty"`
