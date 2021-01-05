@@ -143,14 +143,18 @@ type URLs struct {
 
 // AffiliationInfo **
 type AffiliationInfo struct {
-	Awards []Award `json:"Awards,omitempty"`
+	Awards Awards `json:"Awards,omitempty"`
+}
+
+type Awards struct {
+	Award []Award `json:"Award,omitempty"`
 }
 
 // Award **
 type Award struct {
 	Date         string `json:"Date,omitempty"`
 	Provider     string `json:"Provider,omitempty"`
-	Rating       string `json:"Rating"`
+	Rating       string `json:"Rating,omitempty"`
 	RatingSymbol string `json:"RatingSymbol,omitempty"`
 }
 
