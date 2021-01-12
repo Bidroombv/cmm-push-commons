@@ -113,6 +113,7 @@ type PaymentPoliciesGuaranteePayment struct {
 	Fri              string                `json:"Fri,omitempty"`
 	Sat              string                `json:"Sat,omitempty"`
 	Sun              string                `json:"Sun,omitempty"`
+	PaymentCode      string                `json:"PaymentCode,omitempty"`
 	Description      *Description          `json:"Description,omitempty"`
 	AmountPercent    *PenaltyAmountPercent `json:"AmountPercent,omitempty"`
 	AcceptedPayments *AcceptedPayments     `json:"AcceptedPayments,omitempty"`
