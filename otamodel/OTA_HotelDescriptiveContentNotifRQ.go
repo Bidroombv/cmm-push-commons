@@ -192,8 +192,11 @@ type PetsPolicies struct {
 
 // PetsPolicy **
 type PetsPolicy struct {
-	PetsPolicyCode string `json:"PetsPolicyCode"`
-	MaxPetQuantity string `json:"MaxPetQuantity"`
+	PetsPolicyCode    string       `json:"PetsPolicyCode,omitempty"`
+	MaxPetQuantity    string       `json:"MaxPetQuantity,omitempty"`
+	UnitOfMeasureCode string       `json:"UnitOfMeasureCode,omitempty"`
+	NonRefundableFee  string       `json:"NonRefundableFee,omitempty"`
+	Description       *Description `json:"Description,omitempty"`
 }
 
 // FeePolicies **
@@ -237,6 +240,9 @@ type PolicyInfo struct {
 	MinGuestAge       string `json:"MinGuestAge,omitempty"`
 	AcceptedGuestType string `json:"AcceptedGuestType,omitempty"`
 	KidsStayFree      string `json:"KidsStayFree,omitempty"`
+	CheckInTime       string `json:"CheckInTime,omitempty"`
+	CheckOutTime      string `json:"CheckOutTime,omitempty"`
+	TotalGuestCount   string `json:"TotalGuestCount,omitempty"`
 }
 
 // TaxPolicies **
