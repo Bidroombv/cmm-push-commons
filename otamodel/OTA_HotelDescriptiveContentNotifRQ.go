@@ -165,7 +165,7 @@ type Policies struct {
 
 // Policy **
 type Policy struct {
-	Code                   string                              `json:"Code"`
+	Code                   string                              `json:"Code,omitempty"`
 	CancelPolicy           *CancelPolicy                       `json:"CancelPolicy,omitempty"`
 	FeePolicies            *FeePolicies                        `json:"FeePolicies,omitempty"`
 	PetsPolicies           *PetsPolicies                       `json:"PetsPolicies,omitempty"`
