@@ -186,8 +186,8 @@ type GuaranteePaymentHotelContent struct {
 
 // PetsPolicies **
 type PetsPolicies struct {
-	PetsAllowedCode string        `json:"PetsAllowedCode"`
-	PetsPolicy      *[]PetsPolicy `json:"PetsPolicy,omitempty"`
+	PetsAllowedCode string       `json:"PetsAllowedCode"`
+	PetsPolicy      []PetsPolicy `json:"PetsPolicy,omitempty"`
 }
 
 // PetsPolicy **
