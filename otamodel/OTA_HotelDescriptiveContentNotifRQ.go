@@ -252,7 +252,19 @@ type TaxPolicies struct {
 
 // FacilityInfo **
 type FacilityInfo struct {
-	GuestRooms GuestRooms `json:"GuestRooms"`
+	MeetingRooms *MeetingRooms `json:"MeetingRooms,omitempty"`
+	GuestRooms   GuestRooms    `json:"GuestRooms"`
+}
+
+//MeetingRooms **
+type MeetingRooms struct {
+	MeetingRoomCount       string `json:"MeetingRoomCount,omitempty"`
+	SmallestRoomSpace      string `json:"SmallestRoomSpace,omitempty"`
+	LargestRoomSpace       string `json:"LargestRoomSpace,omitempty"`
+	UnitOfMeasure          string `json:"UnitOfMeasure,omitempty"`
+	UnitOfMeasureCode      string `json:"UnitOfMeasureCode,omitempty"`
+	TotalRoomSpace         string `json:"TotalRoomSpace,omitempty"`
+	LargestSeatingCapacity string `json:"LargestSeatingCapacity,omitempty"`
 }
 
 // GuestRooms **
