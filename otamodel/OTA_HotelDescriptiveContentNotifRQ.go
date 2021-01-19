@@ -405,8 +405,15 @@ type HotelName struct {
 
 // CategoryCodes **
 type CategoryCodes struct {
-	GuestRoomInfo *[]GuestRoomInfo `json:"GuestRoomInfo,omitempty"`
-	HotelCategory *[]HotelCategory `json:"HotelCategory,omitempty"`
+	SegmentCategory *SegmentCategory `json:"SegmentCategory,omitempty"`
+	GuestRoomInfo   *[]GuestRoomInfo `json:"GuestRoomInfo,omitempty"`
+	HotelCategory   *[]HotelCategory `json:"HotelCategory,omitempty"`
+}
+
+// SegmentCategory **
+type SegmentCategory struct {
+	Code       string `json:"Code,omitempty"`
+	ExistsCode string `json:"ExistsCode,omitempty"`
 }
 
 // HotelCategory **
@@ -463,20 +470,20 @@ type ImageItem struct {
 
 //TPAExtensionsImageItem **
 type TPAExtensionsImageItem struct {
-	Category     string       `json:"Category,omitempty"`
-	Code         string       `json:"Code,omitempty"`
-	TPAExtension TPAExtension `json:"TPAExtension"`
+	TPAExtension []TPAExtension `json:"TPAExtension"`
 }
 
 //TPAExtension **
 type TPAExtension struct {
-	Extension ExtensionImageItem `json:"Extension"`
+	Category  string               `json:"Category,omitempty"`
+	Code      string               `json:"Code,omitempty"`
+	Extension []ExtensionImageItem `json:"Extension"`
 }
 
 // ExtensionImageItem **
 type ExtensionImageItem struct {
 	Name string `json:"Name,omitempty"`
-	Item *Item  `json:"Item,omitempty"`
+	Item []Item `json:"Item,omitempty"`
 }
 
 //Item **
