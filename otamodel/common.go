@@ -27,10 +27,6 @@ type Rate struct {
 	NumberOfUnits          string                  `json:"NumberOfUnits,omitempty"`
 	CurrencyCode           string                  `json:"CurrencyCode,omitempty"`
 	PaymentPolicies        *PaymentPolicies        `json:"PaymentPolicies,omitempty"`
-	Restrictions           *Restrictions           `json:"Restrictions,omitempty"`
-	LengthOfStay           *LengthOfStay           `json:"LengthOfStay,omitempty"`
-	StayOfThrough          *StayOfThrough          `json:"StayOfThrough,omitempty"`
-	AdvancedBooking        *AdvancedBooking        `json:"AdvancedBooking,omitempty"`
 	OriginalData           map[string]interface{}  `json:"original_data,omitempty"`
 	BaseByGuestAmts        *BaseByGuestAmts        `json:"BaseByGuestAmts,omitempty"`
 	AdditionalGuestAmounts *AdditionalGuestAmounts `json:"AdditionalGuestAmounts,omitempty"`
@@ -198,6 +194,10 @@ type BookingRule struct {
 	MaxAdvancedBookingOffset string                 `json:"MaxAdvancedBookingOffset,omitempty"`
 	Start                    string                 `json:"Start,omitempty"`
 	End                      string                 `json:"End,omitempty"`
+	Restrictions             *Restrictions          `json:"Restrictions,omitempty"`
+	LengthOfStay             *LengthOfStay          `json:"LengthOfStay,omitempty"`
+	StayOfThrough            *StayOfThrough         `json:"StayOfThrough,omitempty"`
+	AdvancedBooking          *AdvancedBooking       `json:"AdvancedBooking,omitempty"`
 }
 
 type RestrictionStatus struct {
