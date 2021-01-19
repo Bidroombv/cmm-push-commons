@@ -146,6 +146,7 @@ type AffiliationInfo struct {
 	Awards Awards `json:"Awards,omitempty"`
 }
 
+//Awards **
 type Awards struct {
 	Award []Award `json:"Award,omitempty"`
 }
