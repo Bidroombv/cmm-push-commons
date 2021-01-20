@@ -153,8 +153,8 @@ type Text struct {
 }
 
 type Restrictions struct {
-	ClosedToArrival   string `json:"ClosedToArrival,omitempty"`
-	ClosedToDeparture string `json:"ClosedToDeparture,omitempty"`
+	OpenToArrival   string `json:"OpenToArrival,omitempty"`
+	OpenToDeparture string `json:"OpenToDeparture,omitempty"`
 }
 
 type LengthOfStay struct {
