@@ -27,10 +27,6 @@ type Rate struct {
 	NumberOfUnits          string                  `json:"NumberOfUnits,omitempty"`
 	CurrencyCode           string                  `json:"CurrencyCode,omitempty"`
 	PaymentPolicies        *PaymentPolicies        `json:"PaymentPolicies,omitempty"`
-	Restrictions           *Restrictions           `json:"Restrictions,omitempty"`
-	LengthOfStay           *LengthOfStay           `json:"LengthOfStay,omitempty"`
-	StayOfThrough          *StayOfThrough          `json:"StayOfThrough,omitempty"`
-	AdvancedBooking        *AdvancedBooking        `json:"AdvancedBooking,omitempty"`
 	OriginalData           map[string]interface{}  `json:"original_data,omitempty"`
 	BaseByGuestAmts        *BaseByGuestAmts        `json:"BaseByGuestAmts,omitempty"`
 	AdditionalGuestAmounts *AdditionalGuestAmounts `json:"AdditionalGuestAmounts,omitempty"`
@@ -156,27 +152,10 @@ type Text struct {
 	Text       string `json:"__text"`
 }
 
-type Restrictions struct {
-	ClosedToArrival   string `json:"ClosedToArrival,omitempty"`
-	ClosedToDeparture string `json:"ClosedToDeparture,omitempty"`
-}
-
 type LengthOfStay struct {
 	MinMaxMessageType string `json:"MinMaxMessageType,omitempty"`
 	Time              string `json:"Time,omitempty"`
 	TimeUnit          string `json:"TimeUnit,omitempty"`
-	MinLOS            string `json:"MinLOS,omitempty"`
-	MaxLOS            string `json:"MaxLOS,omitempty"`
-}
-
-type StayOfThrough struct {
-	MinST string `json:"MinST,omitempty"`
-	MaxST string `json:"MaxST,omitempty"`
-}
-
-type AdvancedBooking struct {
-	MinAD string `json:"MinAD,omitempty"`
-	MaxAD string `json:"MaxAD,omitempty"`
 }
 
 type BookingRules struct {
