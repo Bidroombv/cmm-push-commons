@@ -152,27 +152,10 @@ type Text struct {
 	Text       string `json:"__text"`
 }
 
-type Restrictions struct {
-	OpenToArrival   string `json:"OpenToArrival,omitempty"`
-	OpenToDeparture string `json:"OpenToDeparture,omitempty"`
-}
-
 type LengthOfStay struct {
 	MinMaxMessageType string `json:"MinMaxMessageType,omitempty"`
 	Time              string `json:"Time,omitempty"`
 	TimeUnit          string `json:"TimeUnit,omitempty"`
-	MinLOS            string `json:"MinLOS,omitempty"`
-	MaxLOS            string `json:"MaxLOS,omitempty"`
-}
-
-type StayOfThrough struct {
-	MinST string `json:"MinST,omitempty"`
-	MaxST string `json:"MaxST,omitempty"`
-}
-
-type AdvancedBooking struct {
-	MinAD string `json:"MinAD,omitempty"`
-	MaxAD string `json:"MaxAD,omitempty"`
 }
 
 type BookingRules struct {
@@ -194,10 +177,6 @@ type BookingRule struct {
 	MaxAdvancedBookingOffset string                 `json:"MaxAdvancedBookingOffset,omitempty"`
 	Start                    string                 `json:"Start,omitempty"`
 	End                      string                 `json:"End,omitempty"`
-	Restrictions             *Restrictions          `json:"Restrictions,omitempty"`
-	LengthOfStay             *LengthOfStay          `json:"LengthOfStay,omitempty"`
-	StayOfThrough            *StayOfThrough         `json:"StayOfThrough,omitempty"`
-	AdvancedBooking          *AdvancedBooking       `json:"AdvancedBooking,omitempty"`
 }
 
 type RestrictionStatus struct {
