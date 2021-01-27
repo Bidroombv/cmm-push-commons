@@ -225,7 +225,7 @@ type RatePlanTPAExtensions struct {
 type RatePlanTPAExtension struct {
 	Category     string    `json:"Category,omitempty"`
 	RatePlanCode string    `json:"RatePlanCode,omitempty"`
-	Extension    Extension `json:"Extension,omitempty"`
+	Extension    []Extension `json:"Extension,omitempty"`
 }
 
 type Extension struct {
@@ -237,6 +237,8 @@ type RatePlanItem struct {
 	Key   string `json:"Key,omitempty"`
 	Value string `json:"Value,omitempty"`
 	Text  string `json:"Text,omitempty"`
+	Start  string `json:"Start,omitempty"`
+	End  string `json:"End,omitempty"`
 }
 
 type PenaltyAmountPercent struct {
