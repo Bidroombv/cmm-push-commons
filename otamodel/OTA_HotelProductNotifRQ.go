@@ -131,33 +131,9 @@ type StayDateRange struct {
 	End      string `json:"End,omitempty"`
 }
 
-//TPAExtensions **
-type TPAExtensions struct {
-	PrepaymentPolicy *PaymentPoliciesGuaranteePayment `json:"PrepaymentPolicy,omitempty"`
-}
-
-//GuaranteePayment **
-type GuaranteePayment struct {
-	TPAExtensions *TPAExtensions        `json:"TPA_Extensions,omitempty"`
-	AmountPercent *PenaltyAmountPercent `json:"AmountPercent,omitempty"`
-	PolicyCode    string                `json:"PolicyCode,omitempty"`
-	GuaranteeType string                `json:"GuaranteeType,omitempty"`
-	HoldTime      string                `json:"HoldTime,omitempty"`
-	Start         string                `json:"Start,omitempty"`
-	End           string                `json:"End,omitempty"`
-	Mon           string                `json:"Mon,omitempty"`
-	Tue           string                `json:"Tue,omitempty"`
-	Weds          string                `json:"Weds,omitempty"`
-	Thur          string                `json:"Thur,omitempty"`
-	Fri           string                `json:"Fri,omitempty"`
-	Sat           string                `json:"Sat,omitempty"`
-	Sun           string                `json:"Sun,omitempty"`
-	PaymentCode   string                `json:"PaymentCode,omitempty"`
-}
-
 //GuaranteePaymentPolicy **
 type GuaranteePaymentPolicy struct {
-	GuaranteePayment []GuaranteePayment `json:"GuaranteePayment,omitempty"`
+	GuaranteePayment *[]PaymentPoliciesGuaranteePayment `json:"GuaranteePayment,omitempty"`
 }
 
 // HotelProductTPAExtensions **
