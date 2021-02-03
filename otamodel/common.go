@@ -116,14 +116,16 @@ type PaymentPoliciesGuaranteePayment struct {
 	Description      *Description          `json:"Description,omitempty"`
 	AmountPercent    *PenaltyAmountPercent `json:"AmountPercent,omitempty"`
 	AcceptedPayments *AcceptedPayments     `json:"AcceptedPayments,omitempty"`
-	EffectiveFrom    string                `json:"EffectiveFrom,omitempty"`
 }
 
 //TPAExtensions **
 type TPAExtensions struct {
-	PrepaymentPolicy *PaymentPoliciesGuaranteePayment `json:"PrepaymentPolicy,omitempty"`
+	PrepaymentPolicy *PrepaymentPolicy `json:"PrepaymentPolicy,omitempty"`
 }
 
+type PrepaymentPolicy struct {
+	EffectiveFrom string `json:"EffectiveFrom,omitempty"`
+}
 type MealsIncluded struct {
 	Breakfast     bool   `json:"Breakfast,omitempty"`
 	Lunch         bool   `json:"Lunch,omitempty"`
