@@ -99,6 +99,7 @@ type PaymentPolicies struct {
 }
 
 type PaymentPoliciesGuaranteePayment struct {
+	PolicyCode       string                `json:"PolicyCode,omitempty"`
 	TPAExtensions    *TPAExtensions        `json:"TPA_Extensions,omitempty"`
 	GuaranteeType    string                `json:"GuaranteeType,omitempty"`
 	HoldTime         string                `json:"HoldTime,omitempty"`
