@@ -286,27 +286,6 @@ type PaymentCard struct {
 	CardCode string `json:"CardCode,attr"`
 }
 
-//POS **
-type POS struct {
-	Source Source `json:"Source"`
-}
-
-//Source **
-type Source struct {
-	BookingChannel BookingChannel `json:"BookingChannel"`
-}
-
-//BookingChannel **
-type BookingChannel struct {
-	Type        string      `json:"Type,omitempty"`
-	CompanyName CompanyName `json:"CompanyName"`
-}
-
-//CompanyName **
-type CompanyName struct {
-	Code string `json:"Code,omitempty"`
-}
-
 // Taxes **
 type Taxes struct {
 	Tax []Tax `json:"Tax"`

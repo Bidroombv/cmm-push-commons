@@ -1,12 +1,12 @@
 package otamodel
 
+//HotelProductNotifRQ **
 type HotelProductNotifRQ struct {
 	OTAHotelProductNotifRQ OTAHotelProductNotifRQ `json:"OTA_HotelProductNotifRQ"`
 }
 
 //OTAHotelProductNotifRQ **
 type OTAHotelProductNotifRQ struct {
-	POS           POS            `json:"POS"`
 	HotelProducts *HotelProducts `json:"HotelProducts,omitempty"`
 }
 
@@ -143,22 +143,21 @@ type TPAExtensions struct {
 
 //GuaranteePayment **
 type GuaranteePayment struct {
-	TPAExtensions    *TPAExtensions        `json:"TPA_Extensions,omitempty"`
-	AmountPercent    *PenaltyAmountPercent `json:"AmountPercent,omitempty"`
-	PolicyCode       string                `json:"PolicyCode,omitempty"`
-	GuaranteeType    string                `json:"GuaranteeType,omitempty"`
-	HoldTime         string                `json:"HoldTime,omitempty"`
-	Start            string                `json:"Start,omitempty"`
-	End              string                `json:"End,omitempty"`
-	Mon              string                `json:"Mon,omitempty"`
-	Tue              string                `json:"Tue,omitempty"`
-	Weds             string                `json:"Weds,omitempty"`
-	Thur             string                `json:"Thur,omitempty"`
-	Fri              string                `json:"Fri,omitempty"`
-	Sat              string                `json:"Sat,omitempty"`
-	Sun              string                `json:"Sun,omitempty"`
-	PaymentCode      string                `json:"PaymentCode,omitempty"`
-	AcceptedPayments *AcceptedPayments     `json:"AcceptedPayments,omitempty"`
+	TPAExtensions *TPAExtensions        `json:"TPA_Extensions,omitempty"`
+	AmountPercent *PenaltyAmountPercent `json:"AmountPercent,omitempty"`
+	PolicyCode    string                `json:"PolicyCode,omitempty"`
+	GuaranteeType string                `json:"GuaranteeType,omitempty"`
+	HoldTime      string                `json:"HoldTime,omitempty"`
+	Start         string                `json:"Start,omitempty"`
+	End           string                `json:"End,omitempty"`
+	Mon           string                `json:"Mon,omitempty"`
+	Tue           string                `json:"Tue,omitempty"`
+	Weds          string                `json:"Weds,omitempty"`
+	Thur          string                `json:"Thur,omitempty"`
+	Fri           string                `json:"Fri,omitempty"`
+	Sat           string                `json:"Sat,omitempty"`
+	Sun           string                `json:"Sun,omitempty"`
+	PaymentCode   string                `json:"PaymentCode,omitempty"`
 }
 
 //GuaranteePaymentPolicy **
