@@ -131,14 +131,9 @@ type StayDateRange struct {
 	End      string `json:"End,omitempty"`
 }
 
-//PrepaymentPolicy **
-type PrepaymentPolicy struct {
-	EffectiveFrom string `json:"EffectiveFrom,omitempty"`
-}
-
 //TPAExtensions **
 type TPAExtensions struct {
-	PrepaymentPolicy *PrepaymentPolicy `json:"PrepaymentPolicy,omitempty"`
+	PrepaymentPolicy *PaymentPoliciesGuaranteePayment `json:"PrepaymentPolicy,omitempty"`
 }
 
 //GuaranteePayment **

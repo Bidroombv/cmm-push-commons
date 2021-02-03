@@ -114,6 +114,7 @@ type PaymentPoliciesGuaranteePayment struct {
 	Description      *Description          `json:"Description,omitempty"`
 	AmountPercent    *PenaltyAmountPercent `json:"AmountPercent,omitempty"`
 	AcceptedPayments *AcceptedPayments     `json:"AcceptedPayments,omitempty"`
+	EffectiveFrom    string                `json:"EffectiveFrom,omitempty"`
 }
 
 type MealsIncluded struct {
