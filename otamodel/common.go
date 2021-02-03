@@ -78,6 +78,7 @@ type CancelPolicies struct {
 }
 
 type CancelPenalty struct {
+	PolicyCode         string                `json:"PolicyCode,omitempty"`
 	NonRefundable      bool                  `json:"NonRefundable,omitempty"`
 	Start              string                `json:"Start,omitempty"`
 	End                string                `json:"End,omitempty"`
@@ -223,8 +224,8 @@ type RatePlanTPAExtensions struct {
 }
 
 type RatePlanTPAExtension struct {
-	Category     string    `json:"Category,omitempty"`
-	RatePlanCode string    `json:"RatePlanCode,omitempty"`
+	Category     string      `json:"Category,omitempty"`
+	RatePlanCode string      `json:"RatePlanCode,omitempty"`
 	Extension    []Extension `json:"Extension,omitempty"`
 }
 
@@ -237,8 +238,8 @@ type RatePlanItem struct {
 	Key   string `json:"Key,omitempty"`
 	Value string `json:"Value,omitempty"`
 	Text  string `json:"Text,omitempty"`
-	Start  string `json:"Start,omitempty"`
-	End  string `json:"End,omitempty"`
+	Start string `json:"Start,omitempty"`
+	End   string `json:"End,omitempty"`
 }
 
 type PenaltyAmountPercent struct {
@@ -253,8 +254,10 @@ type PenaltyAmountPercent struct {
 }
 
 type Description struct {
-	Name string `json:"Name,omitempty"`
-	Text string `json:"Text,omitempty"`
+	Name  string `json:"Name,omitempty"`
+	Text  string `json:"Text,omitempty"`
+	Image string `json:"Image,omitempty"`
+	URL   string `json:"URL,omitempty"`
 }
 
 type PenaltyDescription struct {
@@ -281,4 +284,46 @@ type AcceptedPayment struct {
 //PaymentCard **
 type PaymentCard struct {
 	CardCode string `json:"CardCode,attr"`
+}
+
+//POS **
+type POS struct {
+	Source Source `json:"Source"`
+}
+
+//Source **
+type Source struct {
+	BookingChannel BookingChannel `json:"BookingChannel"`
+}
+
+//BookingChannel **
+type BookingChannel struct {
+	Type        string      `json:"Type,omitempty"`
+	CompanyName CompanyName `json:"CompanyName"`
+}
+
+//CompanyName **
+type CompanyName struct {
+	Code string `json:"Code,omitempty"`
+}
+
+// Taxes **
+type Taxes struct {
+	Tax []Tax `json:"Tax"`
+}
+
+// Tax **
+type Tax struct {
+	Code                      string `json:"Code"`
+	Amount                    string `json:"Amount,omitempty"`
+	Percent                   string `json:"Percent,omitempty"`
+	Type                      string `json:"Type,omitempty"`
+	CurrencyCode              string `json:"CurrencyCode,omitempty"`
+	DecimalPlaces             string `json:"DecimalPlaces,omitempty"`
+	ChargeFrequency           string `json:"ChargeFrequency,omitempty"`
+	ChargeFrequencyExempt     string `json:"ChargeFrequencyExempt,omitempty"`
+	ChargeUnit                string `json:"ChargeUnit,omitempty"`
+	ChargeUnitExempt          string `json:"ChargeUnitExempt,omitempty"`
+	MaxChargeFrequencyApplies string `json:"MaxChargeFrequencyApplies,omitempty"`
+	MaxChargeUnitApplies      string `json:"MaxChargeUnitApplies,omitempty"`
 }

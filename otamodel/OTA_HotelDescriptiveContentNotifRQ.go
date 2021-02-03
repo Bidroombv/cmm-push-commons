@@ -218,22 +218,6 @@ type FeePolicy struct {
 	Taxes           *Taxes `json:"Taxes,omitempty"`
 }
 
-// Taxes **
-type Taxes struct {
-	Tax []Tax `json:"Tax"`
-}
-
-// Tax **
-type Tax struct {
-	Code            string `json:"Code"`
-	Amount          string `json:"Amount,omitempty"`
-	Percent         string `json:"Percent,omitempty"`
-	Type            string `json:"Type,omitempty"`
-	CurrencyCode    string `json:"CurrencyCode,omitempty"`
-	DecimalPlaces   string `json:"DecimalPlaces,omitempty"`
-	ChargeFrequency string `json:"ChargeFrequency,omitempty"`
-}
-
 // PolicyInfo **
 type PolicyInfo struct {
 	Description       string `json:"Description,omitempty"`
