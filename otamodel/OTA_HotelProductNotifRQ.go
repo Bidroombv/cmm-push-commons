@@ -16,7 +16,7 @@ type HotelProducts struct {
 	HotelName     string                     `json:"HotelName,omitempty"`
 	ChainCode     string                     `json:"ChainCode,omitempty"`
 	HotelProduct  *[]HotelProduct            `json:"HotelProduct,omitempty"`
-	TPAExtensions *HotelProductTPAExtensions `json:"TPAExtentions,omitempty"`
+	TPAExtensions *HotelProductTPAExtensions `json:"TPA_Extentions,omitempty"`
 }
 
 //HotelProduct **
@@ -29,7 +29,7 @@ type HotelProduct struct {
 	PolicyInfo        *HotelProductPolicyInfo    `json:"PolicyInfo,omitempty"`
 	Taxes             *Taxes                     `json:"Taxes,omitempty"`
 	Descriptions      *Descriptions              `json:"Descriptions,omitempty"`
-	TPAExtensions     *HotelProductTPAExtensions `json:"TPAExtentions,omitempty"`
+	TPAExtensions     *HotelProductTPAExtensions `json:"TPA_Extentions,omitempty"`
 }
 
 //Contacts **
