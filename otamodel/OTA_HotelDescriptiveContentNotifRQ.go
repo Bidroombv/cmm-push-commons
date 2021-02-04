@@ -35,7 +35,7 @@ type HotelDescriptiveContent struct {
 	MultimediaDescriptions *MultimediaDescriptions `json:"MultimediaDescriptions,omitempty"`
 	AffiliationInfo        *AffiliationInfo        `json:"AffiliationInfo,omitempty"`
 	ContactInfos           *ContactInfos           `json:"ContactInfos,omitempty"`
-	TPAExtensions          *TPAExtensionsImageItem `json:"TPA_Extensions,omitempty"`
+	TPAExtensions          *TPAExtensions          `json:"TPA_Extensions,omitempty"`
 	AreaInfo               *AreaInfo               `json:"AreaInfo,omitempty"`
 }
 
@@ -446,34 +446,10 @@ type ImageItems struct {
 
 // ImageItem **
 type ImageItem struct {
-	Category      string                  `json:"Category,omitempty"`
-	ImageFormat   []ImageFormat           `json:"ImageFormat"`
-	Description   *DescriptionImageItem   `json:"Description,omitempty"`
-	TPAExtensions *TPAExtensionsImageItem `json:"TPA_Extensions,omitempty"`
-}
-
-//TPAExtensionsImageItem **
-type TPAExtensionsImageItem struct {
-	TPAExtension []TPAExtension `json:"TPAExtension"`
-}
-
-//TPAExtension **
-type TPAExtension struct {
-	Category  string               `json:"Category,omitempty"`
-	Code      string               `json:"Code,omitempty"`
-	Extension []ExtensionImageItem `json:"Extension"`
-}
-
-// ExtensionImageItem **
-type ExtensionImageItem struct {
-	Name string `json:"Name,omitempty"`
-	Item []Item `json:"Item,omitempty"`
-}
-
-//Item **
-type Item struct {
-	Key   string `json:"Key"`
-	Value string `json:"Value"`
+	Category      string                `json:"Category,omitempty"`
+	ImageFormat   []ImageFormat         `json:"ImageFormat"`
+	Description   *DescriptionImageItem `json:"Description,omitempty"`
+	TPAExtensions *TPAExtensions        `json:"TPA_Extensions,omitempty"`
 }
 
 //DescriptionImageItem **
