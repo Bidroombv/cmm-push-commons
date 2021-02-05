@@ -7,7 +7,8 @@ type HotelProductNotifRQ struct {
 
 //OTAHotelProductNotifRQ **
 type OTAHotelProductNotifRQ struct {
-	HotelProducts *HotelProducts `json:"HotelProducts,omitempty"`
+	HotelProducts *HotelProducts             `json:"HotelProducts,omitempty"`
+	TPAExtensions *HotelProductTPAExtensions `json:"TPA_Extentions,omitempty"`
 }
 
 //HotelProducts **
@@ -16,7 +17,7 @@ type HotelProducts struct {
 	HotelName     string                     `json:"HotelName,omitempty"`
 	ChainCode     string                     `json:"ChainCode,omitempty"`
 	HotelProduct  *[]HotelProduct            `json:"HotelProduct,omitempty"`
-	TPAExtensions *HotelProductTPAExtensions `json:"TPA_Extentions,omitempty"`
+	TPAExtensions *HotelProductTPAExtensions `xml:"TPA_Extensions"`
 }
 
 //HotelProduct **
@@ -74,14 +75,14 @@ type HotelProductRatePlans struct {
 
 //HotelProductRatePlan **
 type HotelProductRatePlan struct {
-	RatePlanCode  string           `json:"RatePlanCode,omitempty"`
-	RatePlanName  string           `json:"RatePlanName,omitempty"`
-	RatePlanType  string           `json:"RatePlanType,omitempty"`
-	CurrencyCode  string           `json:"CurrencyCode,omitempty"`
-	BaseOccupancy string           `json:"BaseOccupancy,omitempty"`
-	Descriptions  *Descriptions    `json:"Descriptions,omitempty"`
-	SellDateRange *SellDateRange   `json:"SellDateRange,omitempty"`
-	StayDateRange *[]StayDateRange `json:"StayDateRange,omitempty"`
+	RatePlanCode  string         `json:"RatePlanCode,omitempty"`
+	RatePlanName  string         `json:"RatePlanName,omitempty"`
+	RatePlanType  string         `json:"RatePlanType,omitempty"`
+	CurrencyCode  string         `json:"CurrencyCode,omitempty"`
+	BaseOccupancy string         `json:"BaseOccupancy,omitempty"`
+	Descriptions  *Descriptions  `json:"Descriptions,omitempty"`
+	SellDateRange *SellDateRange `json:"SellDateRange,omitempty"`
+	StayDateRange *StayDateRange `json:"StayDateRange,omitempty"`
 }
 
 //SellDateRange **
