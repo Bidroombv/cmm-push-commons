@@ -294,16 +294,16 @@ type TPAExtensions struct {
 }
 
 type TPAExtension struct {
-	Category     string      `json:"Category,omitempty"`
-	Code         string      `json:"Code,omitempty"`
-	RatePlanCode string      `json:"RatePlanCode,omitempty"`
-	HotelCode    string      `json:"HotelCode,omitempty"`
-	Extension    []Extension `json:"Extension,omitempty"`
+	Category     string       `json:"Category,omitempty"`
+	Code         string       `json:"Code,omitempty"`
+	RatePlanCode string       `json:"RatePlanCode,omitempty"`
+	HotelCode    string       `json:"HotelCode,omitempty"`
+	Extension    *[]Extension `json:"Extension,omitempty"`
 }
 
 type Extension struct {
-	Name string `json:"Name,omitempty"`
-	Item []Item `json:"Item,omitempty"`
+	Name string  `json:"Name,omitempty"`
+	Item *[]Item `json:"Item,omitempty"`
 }
 
 type Item struct {
