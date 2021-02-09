@@ -118,11 +118,6 @@ type PaymentPoliciesGuaranteePayment struct {
 	AcceptedPayments *AcceptedPayments     `json:"AcceptedPayments,omitempty"`
 }
 
-//TPAExtensions **
-type TPAExtensions struct {
-	PrepaymentPolicy *PrepaymentPolicy `json:"PrepaymentPolicy,omitempty"`
-}
-
 type PrepaymentPolicy struct {
 	EffectiveFrom string `json:"EffectiveFrom,omitempty"`
 }
@@ -228,30 +223,6 @@ type Fee struct {
 	ChargeFrequency string `json:"ChargeFrequency,omitempty"`
 	Description     string `json:"Description,omitempty"`
 }
-
-type RatePlanTPAExtensions struct {
-	TPAExtension RatePlanTPAExtension `json:"TPA_Extension,omitempty"`
-}
-
-type RatePlanTPAExtension struct {
-	Category     string      `json:"Category,omitempty"`
-	RatePlanCode string      `json:"RatePlanCode,omitempty"`
-	Extension    []Extension `json:"Extension,omitempty"`
-}
-
-type Extension struct {
-	Name string         `json:"Name,omitempty"`
-	Item []RatePlanItem `json:"Item,omitempty"`
-}
-
-type RatePlanItem struct {
-	Key   string `json:"Key,omitempty"`
-	Value string `json:"Value,omitempty"`
-	Text  string `json:"Text,omitempty"`
-	Start string `json:"Start,omitempty"`
-	End   string `json:"End,omitempty"`
-}
-
 type PenaltyAmountPercent struct {
 	Percent       string `json:"Percent,omitempty"`
 	NmbrOfNights  string `json:"NmbrOfNights,omitempty"`
@@ -315,4 +286,30 @@ type Tax struct {
 	ChargeUnitExempt          string `json:"ChargeUnitExempt,omitempty"`
 	MaxChargeFrequencyApplies string `json:"MaxChargeFrequencyApplies,omitempty"`
 	MaxChargeUnitApplies      string `json:"MaxChargeUnitApplies,omitempty"`
+}
+
+type TPAExtensions struct {
+	TPAExtension     *[]TPAExtension   `json:"TPA_Extension,omitempty"`
+	PrepaymentPolicy *PrepaymentPolicy `json:"PrepaymentPolicy,omitempty"`
+}
+
+type TPAExtension struct {
+	Category     string       `json:"Category,omitempty"`
+	Code         string       `json:"Code,omitempty"`
+	RatePlanCode string       `json:"RatePlanCode,omitempty"`
+	HotelCode    string       `json:"HotelCode,omitempty"`
+	Extension    *[]Extension `json:"Extension,omitempty"`
+}
+
+type Extension struct {
+	Name string  `json:"Name,omitempty"`
+	Item *[]Item `json:"Item,omitempty"`
+}
+
+type Item struct {
+	Key   string `json:"Key,omitempty"`
+	Value string `json:"Value,omitempty"`
+	Text  string `json:"Text,omitempty"`
+	Start string `json:"Start,omitempty"`
+	End   string `json:"End,omitempty"`
 }

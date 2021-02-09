@@ -7,30 +7,30 @@ type HotelProductNotifRQ struct {
 
 //OTAHotelProductNotifRQ **
 type OTAHotelProductNotifRQ struct {
-	HotelProducts *HotelProducts             `json:"HotelProducts,omitempty"`
-	TPAExtensions *HotelProductTPAExtensions `json:"TPA_Extentions,omitempty"`
+	HotelProducts *HotelProducts `json:"HotelProducts,omitempty"`
+	TPAExtensions *TPAExtensions `json:"TPA_Extentions,omitempty"`
 }
 
 //HotelProducts **
 type HotelProducts struct {
-	HotelCode     string                     `json:"HotelCode,omitempty"`
-	HotelName     string                     `json:"HotelName,omitempty"`
-	ChainCode     string                     `json:"ChainCode,omitempty"`
-	HotelProduct  *[]HotelProduct            `json:"HotelProduct,omitempty"`
-	TPAExtensions *HotelProductTPAExtensions `xml:"TPA_Extensions"`
+	HotelCode     string          `json:"HotelCode,omitempty"`
+	HotelName     string          `json:"HotelName,omitempty"`
+	ChainCode     string          `json:"ChainCode,omitempty"`
+	HotelProduct  *[]HotelProduct `json:"HotelProduct,omitempty"`
+	TPAExtensions *TPAExtensions  `xml:"TPA_Extensions"`
 }
 
 //HotelProduct **
 type HotelProduct struct {
-	ProductNotifType  string                     `json:"ProductNotifType,omitempty"`
-	ProductStatusType string                     `json:"ProductStatusType,omitempty"`
-	Contacts          *Contacts                  `json:"Contacts,omitempty"`
-	RoomTypes         *RoomTypes                 `json:"RoomTypes,omitempty"`
-	RatePlans         *HotelProductRatePlans     `json:"RatePlans,omitempty"`
-	PolicyInfo        *HotelProductPolicyInfo    `json:"PolicyInfo,omitempty"`
-	Taxes             *Taxes                     `json:"Taxes,omitempty"`
-	Descriptions      *Descriptions              `json:"Descriptions,omitempty"`
-	TPAExtensions     *HotelProductTPAExtensions `json:"TPA_Extentions,omitempty"`
+	ProductNotifType  string                  `json:"ProductNotifType,omitempty"`
+	ProductStatusType string                  `json:"ProductStatusType,omitempty"`
+	Contacts          *Contacts               `json:"Contacts,omitempty"`
+	RoomTypes         *RoomTypes              `json:"RoomTypes,omitempty"`
+	RatePlans         *HotelProductRatePlans  `json:"RatePlans,omitempty"`
+	PolicyInfo        *HotelProductPolicyInfo `json:"PolicyInfo,omitempty"`
+	Taxes             *Taxes                  `json:"Taxes,omitempty"`
+	Descriptions      *Descriptions           `json:"Descriptions,omitempty"`
+	TPAExtensions     *TPAExtensions          `json:"TPA_Extentions,omitempty"`
 }
 
 //Contacts **
@@ -135,32 +135,4 @@ type StayDateRange struct {
 //GuaranteePaymentPolicy **
 type GuaranteePaymentPolicy struct {
 	GuaranteePayment *[]PaymentPoliciesGuaranteePayment `json:"GuaranteePayment,omitempty"`
-}
-
-// HotelProductTPAExtensions **
-type HotelProductTPAExtensions struct {
-	TPAExtension *[]HotelProductTPAExtension `json:"TPA_Extension,omitempty"`
-}
-
-//HotelProductTPAExtension **
-type HotelProductTPAExtension struct {
-	Category     string                   `json:"Category,omitempty"`
-	RatePlanCode string                   `json:"RatePlanCode,omitempty"`
-	HotelCode    string                   `json:"HotelCode,omitempty"`
-	Extension    *[]HotelProductExtension `json:"Extension,omitempty"`
-}
-
-// HotelProductExtension **
-type HotelProductExtension struct {
-	Name string             `json:"Name,omitempty"`
-	Item []HotelProductItem `json:"Item,omitempty"`
-}
-
-// HotelProductItem **
-type HotelProductItem struct {
-	Key   string `json:"Key,omitempty"`
-	Value string `json:"Value,omitempty"`
-	Text  string `json:"Text,omitempty"`
-	Start string `json:"Start,omitempty"`
-	End   string `json:"End,omitempty"`
 }

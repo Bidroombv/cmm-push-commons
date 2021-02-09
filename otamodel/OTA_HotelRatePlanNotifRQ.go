@@ -5,8 +5,8 @@ type HotelRatePlanNotifRQ struct {
 }
 
 type OTAHotelRatePlanNotifRQ struct {
-	RatePlans     RatePlans              `json:"RatePlans"`
-	TPAExtensions *RatePlanTPAExtensions `json:"TPAExtensions,omitempty"`
+	RatePlans     RatePlans      `json:"RatePlans"`
+	TPAExtensions *TPAExtensions `json:"TPAExtensions,omitempty"`
 }
 
 type RatePlans struct {
