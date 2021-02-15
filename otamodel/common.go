@@ -2,7 +2,7 @@ package otamodel
 
 type StatusApplicationControl struct {
 	InvTypeCode  string `json:"InvTypeCode"`
-	RatePlanCode string `json:"RatePlanCode"`
+	RatePlanCode string `json:"RatePlanCode,omitempty"`
 	Mon          string `json:"Mon,omitempty"`
 	Tue          string `json:"Tue,omitempty"`
 	Weds         string `json:"Weds,omitempty"`

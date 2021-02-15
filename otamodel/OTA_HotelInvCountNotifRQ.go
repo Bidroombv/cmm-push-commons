@@ -22,6 +22,7 @@ type Inventory struct {
 type Inventories struct {
 	Inventory []Inventory `json:"Inventory"`
 	HotelCode string      `json:"HotelCode"  valid:"required~Hotel code cannot be blank"`
+	ChainCode string      `json:"ChainCode,omitempty"`
 	HotelName string      `json:"HotelName,omitempty"`
 }
 
