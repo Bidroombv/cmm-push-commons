@@ -80,6 +80,7 @@ type CancelPolicies struct {
 type CancelPenalty struct {
 	PolicyCode         string                `json:"PolicyCode,omitempty"`
 	NonRefundable      bool                  `json:"NonRefundable,omitempty"`
+	NoCancelInd        bool                  `json:"NoCancelInd,omitempty"`
 	Start              string                `json:"Start,omitempty"`
 	End                string                `json:"End,omitempty"`
 	Mon                string                `json:"Mon,omitempty"`
