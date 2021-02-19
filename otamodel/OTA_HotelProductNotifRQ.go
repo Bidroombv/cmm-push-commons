@@ -13,11 +13,10 @@ type OTAHotelProductNotifRQ struct {
 
 //HotelProducts **
 type HotelProducts struct {
-	HotelCode     string          `json:"HotelCode,omitempty"`
-	HotelName     string          `json:"HotelName,omitempty"`
-	ChainCode     string          `json:"ChainCode,omitempty"`
-	HotelProduct  *[]HotelProduct `json:"HotelProduct,omitempty"`
-	TPAExtensions *TPAExtensions  `xml:"TPA_Extensions"`
+	HotelCode    string          `json:"HotelCode,omitempty"`
+	HotelName    string          `json:"HotelName,omitempty"`
+	ChainCode    string          `json:"ChainCode,omitempty"`
+	HotelProduct *[]HotelProduct `json:"HotelProduct,omitempty"`
 }
 
 //HotelProduct **
