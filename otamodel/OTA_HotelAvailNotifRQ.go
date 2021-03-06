@@ -11,6 +11,7 @@ type OTAHotelAvailNotifRQ struct {
 
 type AvailStatusMessages struct {
 	HotelCode          string               `json:"HotelCode"`
+	ChainCode          string               `json:"ChainCode,omitempty"`
 	AvailStatusMessage []AvailStatusMessage `json:"AvailStatusMessage"`
 }
 
