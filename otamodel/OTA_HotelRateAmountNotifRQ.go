@@ -12,6 +12,7 @@ type RateAmountMessage struct {
 type RateAmountMessages struct {
 	RateAmountMessage []RateAmountMessage `json:"RateAmountMessage"`
 	HotelCode         string              `json:"HotelCode" valid:"required~Hotel code cannot be blank"`
+	ChainCode         string              `json:"ChainCode,omitempty"`
 }
 
 type OTAHotelRateAmountNotifRQ struct {
