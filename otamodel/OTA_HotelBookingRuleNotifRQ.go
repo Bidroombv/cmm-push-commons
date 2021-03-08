@@ -11,6 +11,7 @@ type RuleMessage struct {
 
 type RuleMessages struct {
 	HotelCode   string        `json:"HotelCode" valid:"required~Hotel code cannot be blank"`
+	ChainCode   string        `json:"ChainCode,omitempty"`
 	RuleMessage []RuleMessage `json:"RuleMessage"`
 }
 
