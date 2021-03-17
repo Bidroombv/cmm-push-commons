@@ -194,7 +194,7 @@ type RestrictionStatus struct {
 }
 
 type LengthsOfStay struct {
-	ArrivalDateBased string         `json:"ArrivalDateBased"`
+	ArrivalDateBased string         `json:"ArrivalDateBased,omitempty"`
 	LengthOfStay     []LengthOfStay `json:"LengthOfStay,omitempty"`
 }
 
