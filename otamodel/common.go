@@ -194,7 +194,8 @@ type RestrictionStatus struct {
 }
 
 type LengthsOfStay struct {
-	LengthOfStay []LengthOfStay `json:"LengthOfStay,omitempty"`
+	ArrivalDateBased string         `json:"ArrivalDateBased"`
+	LengthOfStay     []LengthOfStay `json:"LengthOfStay,omitempty"`
 }
 
 // Guestline supports DOWRestrictions instead of DOW_Restrictions
