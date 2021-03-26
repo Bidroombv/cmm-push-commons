@@ -62,7 +62,7 @@ type BaseByGuestAmt struct {
 }
 
 type AdditionalGuestAmounts struct {
-	AdditionalGuestAmount []AdditionalGuestAmount `json:"AdditionalGuestAmount"`
+	AdditionalGuestAmount *[]AdditionalGuestAmount `json:"AdditionalGuestAmount"`
 }
 
 type AdditionalGuestAmount struct {
