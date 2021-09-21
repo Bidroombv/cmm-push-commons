@@ -8,7 +8,7 @@ type HotelProductNotifRQ struct {
 //OTAHotelProductNotifRQ **
 type OTAHotelProductNotifRQ struct {
 	HotelProducts *HotelProducts `json:"HotelProducts,omitempty"`
-	TPAExtensions *TPAExtensions `json:"TPA_Extentions,omitempty"`
+	TPAExtensions *TPAExtensions `json:"TPA_Extensions,omitempty"`
 }
 
 //HotelProducts **
@@ -29,7 +29,7 @@ type HotelProduct struct {
 	PolicyInfo        *HotelProductPolicyInfo `json:"PolicyInfo,omitempty"`
 	Taxes             *Taxes                  `json:"Taxes,omitempty"`
 	Descriptions      *Descriptions           `json:"Descriptions,omitempty"`
-	TPAExtensions     *TPAExtensions          `json:"TPA_Extentions,omitempty"`
+	TPAExtensions     *TPAExtensions          `json:"TPA_Extensions,omitempty"`
 }
 
 //Contacts **
