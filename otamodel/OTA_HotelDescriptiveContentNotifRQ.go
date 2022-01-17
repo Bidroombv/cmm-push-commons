@@ -91,14 +91,16 @@ type Addresses struct {
 
 // Address **
 type Address struct {
-	Language    string     `json:"Language,omitempty"`
-	AddressLine string     `json:"AddressLine,omitempty"`
-	CityName    string     `json:"CityName,omitempty"`
-	PostalCode  string     `json:"PostalCode,omitempty"`
-	CountryName string     `json:"CountryName,omitempty"`
-	CountryCode string     `json:"CountryCode,omitempty"`
-	HotelName   string     `json:"HotelName,omitempty"`
-	StateProv   *StateProv `json:"StateProv,omitempty"`
+	Language       string     `json:"Language,omitempty"`
+	AddressLine    string     `json:"AddressLine,omitempty"`
+	CityName       string     `json:"CityName,omitempty"`
+	PostalCode     string     `json:"PostalCode,omitempty"`
+	CountryName    string     `json:"CountryName,omitempty"`
+	CountryCode    string     `json:"CountryCode,omitempty"`
+	HotelName      string     `json:"HotelName,omitempty"`
+	AddressUseType string     `json:"AddressUseType,omitempty"`
+	Country        string     `json:"Country,omitempty"`
+	StateProv      *StateProv `json:"StateProv,omitempty"`
 }
 
 // StateProv **
@@ -108,7 +110,12 @@ type StateProv struct {
 
 // Emails **
 type Emails struct {
-	Email []string `json:"Email,omitempty"`
+	Email []Email `json:"Email,omitempty"`
+}
+
+type Email struct {
+	EmailType string `json:"EmailType,omitempty"`
+	Text      string `json:"Text,omitempty"`
 }
 
 // Names **
@@ -138,6 +145,7 @@ type Phone struct {
 	AreaCityCode      string `json:"AreaCityCode,omitempty"`
 	CountryAccessCode string `json:"CountryAccessCode,omitempty"`
 	PIN               string `json:"PIN,omitempty"`
+	PhoneLocationType string `json:"PhoneLocationType,omitempty"`
 }
 
 // URLs **
@@ -154,10 +162,10 @@ type LoyalPrograms struct {
 	LoyalProgram []LoyalProgram `json:"LoyalProgram,omitempty"`
 }
 type LoyalProgram struct {
-	ProgramName        string        `xml:"ProgramName,attr"`
-	TravelSector       string        `xml:"TravelSector,attr"`
-	HotelLevel         string        `xml:"HotelLevel,attr"`
-	ProgramDescription []Description `xml:"ProgramDescription"`
+	ProgramName        string        `json:"ProgramName,omitempty"`
+	TravelSector       string        `json:"TravelSector,omitempty"`
+	HotelLevel         string        `json:"HotelLevel,omitempty"`
+	ProgramDescription []Description `json:"ProgramDescription"`
 }
 
 //Awards **
@@ -181,6 +189,15 @@ type Policies struct {
 
 // Policy **
 type Policy struct {
+	Mon                    bool                                `json:"Mon,omitempty"`
+	Tue                    bool                                `json:"Tue,omitempty"`
+	Wed                    bool                                `json:"Wed,omitempty"`
+	Thur                   bool                                `json:"Thur,omitempty"`
+	Fri                    bool                                `json:"Fri,omitempty"`
+	Sat                    bool                                `json:"Sat,omitempty"`
+	Sun                    bool                                `json:"Sun,omitempty"`
+	Start                  string                              `json:"Start,omitempty"`
+	End                    string                              `json:"End,omitempty"`
 	Code                   string                              `json:"Code,omitempty"`
 	CancelPolicy           *CancelPolicy                       `json:"CancelPolicy,omitempty"`
 	FeePolicies            *FeePolicies                        `json:"FeePolicies,omitempty"`
@@ -188,6 +205,18 @@ type Policy struct {
 	GuaranteePaymentPolicy *GuaranteePaymentPolicyHotelContent `json:"GuaranteePaymentPolicy,omitempty"`
 	PolicyInfo             *PolicyInfo                         `json:"PolicyInfo,omitempty"`
 	TaxPolicies            *TaxPolicies                        `json:"TaxPolicies,omitempty"`
+	CheckoutCharges        *CheckoutCharges                    `json:"CheckoutCharges,omitempty"`
+}
+
+type CheckoutCharges struct {
+	CheckoutCharge []CheckoutCharge `json:"CheckoutCharges,omitempty"`
+}
+type CheckoutCharge struct {
+	Amount        string `json:"Amount,omitempty"`
+	Percent       string `json:"Percent,omitempty"`
+	CurrencyCode  string `json:"CurrencyCode,omitempty"`
+	DecimalPlaces string `json:"DecimalPlaces,omitempty"`
+	NmbrOfNights  string `json:"NmbrOfNights,omitempty"`
 }
 
 //GuaranteePaymentPolicyHotelContent **
@@ -197,6 +226,19 @@ type GuaranteePaymentPolicyHotelContent struct {
 
 //GuaranteePaymentHotelContent **
 type GuaranteePaymentHotelContent struct {
+	Mon              bool              `json:"Mon,omitempty"`
+	Tue              bool              `json:"Tue,omitempty"`
+	Wed              bool              `json:"Wed,omitempty"`
+	Thur             bool              `json:"Thur,omitempty"`
+	Fri              bool              `json:"Fri,omitempty"`
+	Sat              bool              `json:"Sat,omitempty"`
+	Sun              bool              `json:"Sun,omitempty"`
+	Start            string            `json:"Start,omitempty"`
+	End              string            `json:"End,omitempty"`
+	GuaranteeType    string            `json:"GuaranteeType,omitempty"`
+	HoldTime         string            `json:"HoldTime,omitempty"`
+	AmountPercent    *AmountPercent    `json:"AmountPercent,omitempty"`
+	Deadline         *Deadline         `json:"Deadline,omitempty"`
 	AcceptedPayments *AcceptedPayments `json:"AcceptedPayments,omitempty"`
 }
 
@@ -208,11 +250,16 @@ type PetsPolicies struct {
 
 // PetsPolicy **
 type PetsPolicy struct {
-	PetsPolicyCode    string       `json:"PetsPolicyCode,omitempty"`
-	MaxPetQuantity    string       `json:"MaxPetQuantity,omitempty"`
-	UnitOfMeasureCode string       `json:"UnitOfMeasureCode,omitempty"`
-	NonRefundableFee  string       `json:"NonRefundableFee,omitempty"`
-	Description       *Description `json:"Description,omitempty"`
+	PetsPolicyCode        string         `json:"PetsPolicyCode,omitempty"`
+	MaxPetQuantity        string         `json:"MaxPetQuantity,omitempty"`
+	UnitOfMeasureCode     string         `json:"UnitOfMeasureCode,omitempty"`
+	NonRefundableFee      string         `json:"NonRefundableFee,omitempty"`
+	UnitOfMeasureQuantity string         `json:"UnitOfMeasureQuantity,omitempty"`
+	RefundableDeposit     string         `json:"RefundableDeposit,omitempty"`
+	CurrencyCode          string         `json:"CurrencyCode,omitempty"`
+	DecimalPlaces         string         `json:"DecimalPlaces,omitempty"`
+	ChargeCode            string         `json:"ChargeCode,omitempty"`
+	Description           *[]Description `json:"Description,omitempty"`
 }
 
 // FeePolicies **
@@ -230,19 +277,26 @@ type FeePolicy struct {
 	DecimalPlaces   string `json:"DecimalPlaces,omitempty"`
 	ChargeFrequency string `json:"ChargeFrequency,omitempty"`
 	MandatoryInd    string `json:"MandatoryInd,omitempty"`
+	ChargeUnit      string `json:"ChargeUnit,omitempty"`
+	EffectiveDate   string `json:"EffectiveDate,omitempty"`
+	ExpireDate      string `json:"ExpireDate,omitempty"`
+	SequenceNbr     string `json:"SequenceNbr,omitempty"`
 	Taxes           *Taxes `json:"Taxes,omitempty"`
 }
 
 // PolicyInfo **
 type PolicyInfo struct {
-	Description       string `json:"Description,omitempty"`
-	MaxChildAge       string `json:"MaxChildAge,omitempty"`
-	MinGuestAge       string `json:"MinGuestAge,omitempty"`
-	AcceptedGuestType string `json:"AcceptedGuestType,omitempty"`
-	KidsStayFree      string `json:"KidsStayFree,omitempty"`
-	CheckInTime       string `json:"CheckInTime,omitempty"`
-	CheckOutTime      string `json:"CheckOutTime,omitempty"`
-	TotalGuestCount   string `json:"TotalGuestCount,omitempty"`
+	Description                string `json:"Description,omitempty"`
+	MaxChildAge                string `json:"MaxChildAge,omitempty"`
+	MinGuestAge                string `json:"MinGuestAge,omitempty"`
+	AcceptedGuestType          string `json:"AcceptedGuestType,omitempty"`
+	KidsStayFree               string `json:"KidsStayFree,omitempty"`
+	CheckInTime                string `json:"CheckInTime,omitempty"`
+	CheckOutTime               string `json:"CheckOutTime,omitempty"`
+	TotalGuestCount            string `json:"TotalGuestCount,omitempty"`
+	RoomGuaranteeLateArrvInd   string `json:"RoomGuaranteeLateArrvInd,omitempty"`
+	UsualStayFreeChildPerAdult string `json:"UsualStayFreeChildPerAdult,omitempty"`
+	UsualStayFreeCutoffAge     string `json:"UsualStayFreeCutoffAge,omitempty"`
 }
 
 // TaxPolicies **
@@ -304,6 +358,7 @@ type Amenity struct {
 	IncludedInRateIndicator string `json:"IncludedInRateIndicator,omitempty"`
 	CodeDetail              string `json:"CodeDetail,omitempty"`
 	DescriptiveText         string `json:"DescriptiveText,omitempty"`
+	Quantity                string `json:"Quantity,omitempty"`
 }
 
 // TypeRoom **
@@ -318,6 +373,8 @@ type TypeRoom struct {
 	Size              string `json:"Size,omitempty"`
 	StandardNumBeds   string `json:"StandardNumBeds,omitempty"`
 	StandardOccupancy string `json:"StandardOccupancy,omitempty"`
+	RoomLocationCode  string `json:"RoomLocationCode,omitempty"`
+	RoomViewCode      string `json:"RoomViewCode,omitempty"`
 }
 
 //HotelInfo **
@@ -414,7 +471,10 @@ type Feature struct {
 	UnitOfMeasure          string                  `json:"UnitOfMeasure,omitempty"`
 	UnitOfMeasureQuantity  string                  `json:"UnitOfMeasureQuantity,omitempty"`
 	MultimediaDescriptions *MultimediaDescriptions `json:"MultimediaDescriptions,omitempty"`
-	DescriptiveText        string                  `json:"DescriptiveText"`
+	DescriptiveText        string                  `json:"DescriptiveText,omitempty"`
+	SecurityCode           string                  `json:"SecurityCode,omitempty"`
+	AccessibilityCode      string                  `json:"AccessibilityCode,omitempty"`
+	Quantity               string                  `json:"Quantity,omitempty"`
 	Charge                 *Charge                 `json:"Charge,omitempty"`
 }
 
@@ -458,8 +518,8 @@ type CategoryCodes struct {
 	LocationCategory *[]LocationCategory `json:"LocationCategory,omitempty"`
 }
 type LocationCategory struct {
-	Code       string `json:"Code,attr"`
-	CodeDetail string `json:"CodeDetail,attr"`
+	Code       string `json:"Code,omitempty"`
+	CodeDetail string `json:"CodeDetail,omitempty"`
 }
 
 // SegmentCategory **

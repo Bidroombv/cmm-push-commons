@@ -78,6 +78,7 @@ type CancelPolicies struct {
 }
 
 type CancelPenalty struct {
+	RoomTypeCode       string                `json:"RoomTypeCode,omitempty"`
 	PolicyCode         string                `json:"PolicyCode,omitempty"`
 	NonRefundable      bool                  `json:"NonRefundable,omitempty"`
 	NoCancelInd        bool                  `json:"NoCancelInd,omitempty"`
@@ -266,7 +267,7 @@ type AcceptedPayment struct {
 
 //PaymentCard **
 type PaymentCard struct {
-	CardCode string `json:"CardCode,attr"`
+	CardCode string `json:"CardCode,omitempty"`
 }
 
 // Taxes **
@@ -288,6 +289,9 @@ type Tax struct {
 	ChargeUnitExempt          string `json:"ChargeUnitExempt,omitempty"`
 	MaxChargeFrequencyApplies string `json:"MaxChargeFrequencyApplies,omitempty"`
 	MaxChargeUnitApplies      string `json:"MaxChargeUnitApplies,omitempty"`
+	EffectiveDate             string `json:"EffectiveDate,omitempty"`
+	ExpireDate                string `json:"ExpireDate,omitempty"`
+	SequenceNbr               string `json:"SequenceNbr,omitempty"`
 }
 
 type TPAExtensions struct {
