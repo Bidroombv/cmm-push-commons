@@ -225,16 +225,22 @@ type Fee struct {
 	Percent         string `json:"Percent,omitempty"`
 	ChargeFrequency string `json:"ChargeFrequency,omitempty"`
 	Description     string `json:"Description,omitempty"`
+	ChargeUnit      string `json:"ChargeUnit,omitempty"`
+	CurrencyCode    string `json:"CurrencyCode,omitempty"`
+	EffectiveDate   string `json:"EffectiveDate,omitempty"`
+	ExpireDate      string `json:"ExpireDate,omitempty"`
+	SequenceNbr     string `json:"SequenceNbr,omitempty"`
 }
 type PenaltyAmountPercent struct {
-	Percent       string `json:"Percent,omitempty"`
-	NmbrOfNights  string `json:"NmbrOfNights,omitempty"`
-	Amount        string `json:"Amount,omitempty"`
-	CurrencyCode  string `json:"CurrencyCode,omitempty"`
-	TaxInclusive  bool   `json:"TaxInclusive,omitempty"`
-	FeesInclusive bool   `json:"FeesInclusive,omitempty"`
-	BasisType     string `json:"BasisType,omitempty"`
-	DecimalPlaces string `json:"DecimalPlaces,omitempty"`
+	Percent          string            `json:"Percent,omitempty"`
+	NmbrOfNights     string            `json:"NmbrOfNights,omitempty"`
+	Amount           string            `json:"Amount,omitempty"`
+	CurrencyCode     string            `json:"CurrencyCode,omitempty"`
+	TaxInclusive     bool              `json:"TaxInclusive,omitempty"`
+	FeesInclusive    bool              `json:"FeesInclusive,omitempty"`
+	BasisType        string            `json:"BasisType,omitempty"`
+	DecimalPlaces    string            `json:"DecimalPlaces,omitempty"`
+	AcceptedPayments *AcceptedPayments `json:"AcceptedPayments,omitempty"`
 }
 
 type Description struct {

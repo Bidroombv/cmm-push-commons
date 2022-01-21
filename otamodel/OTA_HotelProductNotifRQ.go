@@ -112,7 +112,7 @@ type ArrivalDaysOfWeek struct {
 type Deadline struct {
 	Time                 string `json:"Time,omitempty"`
 	OffsetUnitMultiplier string `json:"OffsetUnitMultiplier,omitempty"`
-	OffsetTimeUnit       string `json:"OffsetTimeUnits,omitempty"`
+	OffsetTimeUnits      string `json:"OffsetTimeUnits,omitempty"`
 	OffsetDropTime       string `json:"OffsetDropTime,omitempty"`
 }
 
