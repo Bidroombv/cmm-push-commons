@@ -18,6 +18,8 @@ type RatePlans struct {
 
 type RatePlan struct {
 	RatePlanID         string                 `json:"RatePlanID"`
+	RatePlanCode       string                 `json:"RatePlanCode"`
+	RatePlanType       string                 `json:"RatePlanType"`
 	Rates              Rates                  `json:"Rates"`
 	CurrencyCode       string                 `json:"CurrencyCode,omitempty"`
 	OriginalData       string                 `json:"original_data,omitempty"`
@@ -57,8 +59,9 @@ type RatePlanDescription struct {
 }
 
 type RatePlanDescriptionText struct {
-	Language string `json:"Language,omitempty"`
-	Text     string `json:"Text,omitempty"`
+	Language           string `json:"Language,omitempty"`
+	LastModifyDateTime string `json:"LastModifyDateTime,omitempty"`
+	Text               string `json:"Text,omitempty"`
 }
 
 type RatePlanLevelFee struct {

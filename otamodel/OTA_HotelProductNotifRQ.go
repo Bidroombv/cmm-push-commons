@@ -110,12 +110,19 @@ type ArrivalDaysOfWeek struct {
 
 //Deadline **
 type Deadline struct {
-	Time string `json:"Time,omitempty"`
+	Time                 string `json:"Time,omitempty"`
+	OffsetUnitMultiplier string `json:"OffsetUnitMultiplier,omitempty"`
+	OffsetTimeUnits      string `json:"OffsetTimeUnits,omitempty"`
+	OffsetDropTime       string `json:"OffsetDropTime,omitempty"`
 }
 
 //AmountPercent **
 type AmountPercent struct {
-	Amount string `json:"Amount,omitempty"`
+	Amount        string `json:"Amount,omitempty"`
+	Percent       string `json:"Percent,omitempty"`
+	BasisType     string `json:"BasisType,omitempty"`
+	NmbrOfNights  string `json:"NmbrOfNights,omitempty"`
+	DecimalPlaces string `json:"DecimalPlaces,omitempty"`
 }
 
 //CancelPolicy **

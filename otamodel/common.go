@@ -78,6 +78,7 @@ type CancelPolicies struct {
 }
 
 type CancelPenalty struct {
+	RoomTypeCode       string                `json:"RoomTypeCode,omitempty"`
 	PolicyCode         string                `json:"PolicyCode,omitempty"`
 	NonRefundable      bool                  `json:"NonRefundable,omitempty"`
 	NoCancelInd        bool                  `json:"NoCancelInd,omitempty"`
@@ -224,16 +225,22 @@ type Fee struct {
 	Percent         string `json:"Percent,omitempty"`
 	ChargeFrequency string `json:"ChargeFrequency,omitempty"`
 	Description     string `json:"Description,omitempty"`
+	ChargeUnit      string `json:"ChargeUnit,omitempty"`
+	CurrencyCode    string `json:"CurrencyCode,omitempty"`
+	EffectiveDate   string `json:"EffectiveDate,omitempty"`
+	ExpireDate      string `json:"ExpireDate,omitempty"`
+	SequenceNbr     string `json:"SequenceNbr,omitempty"`
 }
 type PenaltyAmountPercent struct {
-	Percent       string `json:"Percent,omitempty"`
-	NmbrOfNights  string `json:"NmbrOfNights,omitempty"`
-	Amount        string `json:"Amount,omitempty"`
-	CurrencyCode  string `json:"CurrencyCode,omitempty"`
-	TaxInclusive  bool   `json:"TaxInclusive,omitempty"`
-	FeesInclusive bool   `json:"FeesInclusive,omitempty"`
-	BasisType     string `json:"BasisType,omitempty"`
-	DecimalPlaces string `json:"DecimalPlaces,omitempty"`
+	Percent          string            `json:"Percent,omitempty"`
+	NmbrOfNights     string            `json:"NmbrOfNights,omitempty"`
+	Amount           string            `json:"Amount,omitempty"`
+	CurrencyCode     string            `json:"CurrencyCode,omitempty"`
+	TaxInclusive     bool              `json:"TaxInclusive,omitempty"`
+	FeesInclusive    bool              `json:"FeesInclusive,omitempty"`
+	BasisType        string            `json:"BasisType,omitempty"`
+	DecimalPlaces    string            `json:"DecimalPlaces,omitempty"`
+	AcceptedPayments *AcceptedPayments `json:"AcceptedPayments,omitempty"`
 }
 
 type Description struct {
@@ -266,7 +273,7 @@ type AcceptedPayment struct {
 
 //PaymentCard **
 type PaymentCard struct {
-	CardCode string `json:"CardCode,attr"`
+	CardCode string `json:"CardCode,omitempty"`
 }
 
 // Taxes **
@@ -288,6 +295,9 @@ type Tax struct {
 	ChargeUnitExempt          string `json:"ChargeUnitExempt,omitempty"`
 	MaxChargeFrequencyApplies string `json:"MaxChargeFrequencyApplies,omitempty"`
 	MaxChargeUnitApplies      string `json:"MaxChargeUnitApplies,omitempty"`
+	EffectiveDate             string `json:"EffectiveDate,omitempty"`
+	ExpireDate                string `json:"ExpireDate,omitempty"`
+	SequenceNbr               string `json:"SequenceNbr,omitempty"`
 }
 
 type TPAExtensions struct {
