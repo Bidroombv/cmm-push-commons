@@ -160,7 +160,7 @@ type Text struct {
 }
 
 type LengthOfStay struct {
-	LOSPattern        LOSPattern `json:"LOS_Pattern,omitempty"`
+	LOSPattern        *LOSPattern `json:"LOS_Pattern,omitempty"`
 	MinMaxMessageType string     `json:"MinMaxMessageType,omitempty"`
 	Time              string     `json:"Time,omitempty"`
 	TimeUnit          string     `json:"TimeUnit,omitempty"`
