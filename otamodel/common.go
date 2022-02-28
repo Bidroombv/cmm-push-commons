@@ -160,9 +160,16 @@ type Text struct {
 }
 
 type LengthOfStay struct {
-	MinMaxMessageType string `json:"MinMaxMessageType,omitempty"`
-	Time              string `json:"Time,omitempty"`
-	TimeUnit          string `json:"TimeUnit,omitempty"`
+	LOSPattern        LOSPattern `json:"LOS_Pattern,omitempty"`
+	MinMaxMessageType string     `json:"MinMaxMessageType,omitempty"`
+	Time              string     `json:"Time,omitempty"`
+	TimeUnit          string     `json:"TimeUnit,omitempty"`
+}
+
+type LOSPattern struct {
+	//This may be used when MinMaxMessageType is FullPatternLOS to identify the open and closed status by LOS
+	//e.g., if LengthsOfStay@FixedPatternLength="5" then FullPatternLOS="YYNYY" or FullPatternLOS="11011".
+	FullPatternLOS string `json:"FullPatternLOS"`
 }
 
 type BookingRules struct {
